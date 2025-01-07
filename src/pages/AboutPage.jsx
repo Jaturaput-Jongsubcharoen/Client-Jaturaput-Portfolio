@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from '../containers/NavigationBar';
+import '../App.css';
 
-function MainPage() {
+function AboutPage() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
@@ -22,12 +23,20 @@ function MainPage() {
   return (
     <>
       <NavigationBar />
-      <h1>Fruits List</h1>
-      {array.map((fruit, index) => (
-        <p key={index}>{fruit}</p>
-      ))}
+      <body>
+        <div class="main-grid">
+          <div class="box">
+          </div>
+          <div class="box">
+          </div>
+          <div class="box">
+          </div>
+          <div class="box">
+          </div>
+        </div>
+      </body>
     </>
   );
 }
 
-export default MainPage;
+export default AboutPage;

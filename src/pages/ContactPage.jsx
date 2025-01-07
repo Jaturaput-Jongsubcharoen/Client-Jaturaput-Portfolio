@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from '../containers/NavigationBar';
 
-function MainPage() {
+function ContactPage() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
@@ -30,4 +30,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default ContactPage;
