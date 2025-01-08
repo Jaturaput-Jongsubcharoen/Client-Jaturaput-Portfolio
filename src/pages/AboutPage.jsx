@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from '../containers/NavigationBar';
+import MovieAddictLogo from '../images/Movie-Addict-Logo2.png';
+
 import '../App.css';
+
 
 function AboutPage() {
   const [array, setArray] = useState([]);
@@ -25,13 +28,25 @@ function AboutPage() {
       <NavigationBar />
       <body>
         <div class="main-grid">
-          <div class="box">
+          <div class="sub-grid">
+            <h3>Project: </h3>
+            <p>This project is about ...</p>
+            <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="box">
+          <div class="sub-grid">
+            <h3>Project: </h3>
+            <p>This project is about ...</p>
+            <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="box">
+          <div class="sub-grid">
+            <h3>Project: </h3>
+            <p>This project is about ...</p>
+            <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="box">
+          <div class="sub-grid">
+            <h3>Project: </h3>
+            <p>This project is about ...</p>
+            <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
         </div>
       </body>
