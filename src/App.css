@@ -10,7 +10,7 @@
   align-items: center;
   background: hsla(155, 43%, 67%, 0.8);
   margin: 1em;
-  padding: 1em;
+  padding: 1em; /**/
   border: 2px dashed red;
   /*grid-auto-rows: 100px;*/
 }
