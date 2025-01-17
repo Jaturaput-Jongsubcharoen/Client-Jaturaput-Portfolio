@@ -9,6 +9,7 @@ import MyPicture from '../images/my_picture1(500x750).png';
 import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';
 import Tesla from '../images/screenshots/Tesla(1900x1080).png';
 import NutriKcal from '../images/screenshots/Nutri-Kcal(1900x1080).png';
+import QueueMeMobileApp from '../images/screenshots/QueueMe-Mobile-App3(475x986).png';
 
 import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).png';
 
@@ -21,6 +22,7 @@ function BentoGridDesignPage() {
     MovieAddict,
     Tesla,
     NutriKcal,
+    QueueMeMobileApp,
   ];
   
   const magazineDesignImages = [
@@ -41,6 +43,7 @@ function BentoGridDesignPage() {
     [MovieAddict]: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
     [Tesla]: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
     [NutriKcal]: "https://comp229-nutrisnap-client1.onrender.com/",
+    [QueueMeMobileApp]: "https://bit.ly/ClinicMobileApp-Figma",
     [MagazineDesign]: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
     [AWIIHouseWorkExperience]: "public/pdf/2_Jaturaput_Working at Wittawii Company_Porfolio.pdf",
   };
@@ -141,9 +144,73 @@ function BentoGridDesignPage() {
                     className="grid-nav2-menu"
                     onClick={() => handleCategoryChange("web")}
                   >
-                    <p>WEB</p>
+                    <p>WEB & MOBILE</p>
                     <br />
-                    <p>DESIGN</p>
+                    <p>APP DESIGN</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-content-box r1-c6-location">
+                <div className="grid-content-container" style={{ textAlign: "center" }}>
+                  {/*
+                  <div className="grid-content1">
+                    <h2>MOVIE-ADDICT</h2>
+                  </div>
+                  <div className="grid-content2">
+                    <img
+                      className="content-logo-project"
+                      src="web_design_project/Individual_Project/logo/Movie-Addict-Logo.png"
+                      alt="Movie Addict Logo"
+                    />
+                  </div>
+                  */}
+                  <div className="grid-content3">
+                    <a
+                      href="mailto:jjongsub@my.centennialcollege.ca"
+                      className="button-product"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      CONTACT
+                    </a>
+                  </div>
+                  <br />
+                  <br />
+                  <div className="grid-content4">
+                  <br />
+                  <p>LinkedIn:</p>
+                    <a
+                      href="https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidingHyperLink"
+                    >
+                      &nbsp;https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b
+                    </a>
+                  <br />
+                  <br />
+                  <p>College Email:</p>
+                    <a
+                      href="mailto:jjongsub@my.centennialcollege.ca"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidingHyperLink"
+                    >
+                      &nbsp;https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b
+                    </a>
+                  <br />
+                  <br />
+                  <p>Private Email:</p>
+                    <a
+                      href="mailto:macker.jong@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidingHyperLink"
+                    >
+                    macker.jong@gmail.com
+                    </a>
+                  
                   </div>
                 </div>
               </div>

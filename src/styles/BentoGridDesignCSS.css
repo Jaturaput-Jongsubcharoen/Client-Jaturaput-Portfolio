@@ -1993,9 +1993,10 @@ a:hover {
 
 
 .project-content-box {
-	display: block;
+	display: flex;
 	justify-content: center;
 	align-items: center;
+    margin: auto;
 	position: relative;
 	/*background:  rgba(255, 255, 255, 0.1);*/
 	/*backdrop-filter: blur(0px);*/
@@ -2961,3 +2962,14 @@ a:hover {
 	border: 1px solid rgb(0, 0, 0, 0.5);
 	box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 1);
 }
+
+
+.hidingHyperLink {
+    text-decoration: none; 
+    color: inherit;
+  }
+  
+  .hidingHyperLink:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
