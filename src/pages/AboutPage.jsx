@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavigationBar from '../containers/NavigationBar';
-import MovieAddictLogo from '../images/Movie-Addict-Logo2.png';
+import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';
 
 import '../App.css';
 

@@ -11,7 +11,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<BentoGridDesignPage />} />
+        <Route path="/MainPage" element={<MainPage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/Bento-Grid-Design" element={<BentoGridDesignPage />} />

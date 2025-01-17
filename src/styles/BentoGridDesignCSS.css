@@ -1640,8 +1640,18 @@
 	border-radius: 20px;
 	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.20);
 	/*border: 1px solid rgba(125, 108, 92, 0.5);*/
+    padding: 8%;
 	margin: 2%;
 	z-index: 2;
+}
+
+.project-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease-in-out; 
+
 }
 
 .project-box1 {
@@ -1909,16 +1919,26 @@ sub {
 */
 /*----------------------------------------------------------------*/
 
+a {
+    max-width: 100%;
+    max-height: 100%;
+    /*margin: 0%;*/
+    transition: all 0.5s;
+}
+
 a:hover {
+    max-width: 90%;
+    max-height: 90%;
 	/*opacity: 50%;*/
 	color: rgba(255, 255, 255, 0.8);		
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+	/*box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);*/
 	/*border-radius: 120px;*/
-	margin: 10px;
+	/*margin: 2%;*/
 	border-radius: 10px;
 	/*transform-style: preserve-3d;*/
-	background: rgb(0, 0, 0, 0.1);
+	/*background: rgb(0, 0, 0, 0.1);*/
 	/*transform: rotateZ(1deg);*/
+    transition: all 0.5s;
 }
 /*----------------------------------------------------------------*/
 .grid-content-container {

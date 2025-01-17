@@ -3,7 +3,75 @@ import axios from 'axios';
 import NavigationBar from '../containers/NavigationBar';
 import '../styles/BentoGridDesignCSS.css';
 
+import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';
+import MyPicture from '../images/my_picture1(500x750).png';
+
+import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';
+import Tesla from '../images/screenshots/Tesla(1900x1080).png';
+import NutriKcal from '../images/screenshots/Nutri-Kcal(1900x1080).png';
+
+import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).png';
+
+import AWIIHouseWorkExperience from '../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png';
+
+
 function BentoGridDesignPage() {
+
+  const webDesignImages = [
+    MovieAddict,
+    Tesla,
+    NutriKcal,
+  ];
+  
+  const magazineDesignImages = [
+    MagazineDesign,
+  ];
+  
+  const architecturalDesignImages = [
+    AWIIHouseWorkExperience,
+  ];
+  
+  // State for selected category and images
+  const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
+  const [selectedImage, setSelectedImage] = useState(webDesignImages[0]); // Default image
+  const [images, setImages] = useState(webDesignImages); // Default image array
+  
+  // Image links for WEB DESIGN only
+  const imageLinks = {
+    [MovieAddict]: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
+    [Tesla]: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
+    [NutriKcal]: "https://comp229-nutrisnap-client1.onrender.com/",
+    [MagazineDesign]: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
+    [AWIIHouseWorkExperience]: "public/pdf/2_Jaturaput_Working at Wittawii Company_Porfolio.pdf",
+  };
+  
+  // Handle category selection
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  
+    if (category === "web") {
+      setImages(webDesignImages);
+      setSelectedImage(webDesignImages[0]);
+    } else if (category === "magazine") {
+      setImages(magazineDesignImages);
+      setSelectedImage(magazineDesignImages[0]);
+    } else if (category === "architectural") {
+      setImages(architecturalDesignImages);
+      setSelectedImage(architecturalDesignImages[0]);
+    }
+  };
+
+  const handlePrev = () => {
+    const currentIndex = images.indexOf(selectedImage);
+    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    setSelectedImage(images[newIndex]);
+  };
+
+  const handleNext = () => {
+    const currentIndex = images.indexOf(selectedImage);
+    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    setSelectedImage(images[newIndex]);
+  };
 
   return (
     <>
@@ -48,54 +116,35 @@ function BentoGridDesignPage() {
               </p>
               <div className="nav-bar-box">
                 <div className="grid-nav-container">
-                  <a href="" className="grid-nav0-2-menu">
+                  {/* ARCHITECTURAL DESIGN */}
+                  <div
+                    className="grid-nav0-2-menu"
+                    onClick={() => handleCategoryChange("architectural")}
+                  >
                     <p>ARCHITECTURAL</p>
-                    <br/>
-                    <p>DESIGN</p>
-                  </a>
-                  <a href="" className="grid-nav1-menu">
-                    <p>MAGAZINE</p>
-                    <br/>
-                    <p>DESIGN</p>
-                  </a>
-                  {/*
-                  <p href="#" className="grid-nav1-menu">
-                    
                     <br />
-                    <a
-                      href="subpage/project/architectural_design/architectural_design_page.html"
-                      className="grid-nav1-sub1-menu"
-                    >
-                      ARCHITECTURAL DESIGN
-                    </a>
-                    <a
-                      href="subpage/project/magazine_design/magazine_design_page.html"
-                      className="grid-nav1-sub1-menu"
-                    >
-                      MAGAZINE DESIGN
-                    </a>
-                    <a
-                      href="subpage/project/web_design/web_design_page.html"
-                      className="grid-nav1-sub1-menu"
-                    >
-                      WEB DESIGN
-                    </a>
-                    <a
-                      href="subpage/project/magazine_design/magazine_design_page.html"
-                      className="grid-nav1-sub1-menu"
-                    >
-                      WORK
-                    </a>
-                  </p>
-                  */}
-                  <a
-                    href="subpage/about_me/about_me_page.html "
+                    <p>DESIGN</p>
+                  </div>
+
+                  {/* MAGAZINE DESIGN */}
+                  <div
+                    className="grid-nav1-menu"
+                    onClick={() => handleCategoryChange("magazine")}
+                  >
+                    <p>MAGAZINE</p>
+                    <br />
+                    <p>DESIGN</p>
+                  </div>
+
+                  {/* WEB DESIGN */}
+                  <div
                     className="grid-nav2-menu"
+                    onClick={() => handleCategoryChange("web")}
                   >
                     <p>WEB</p>
-                    <br/>
+                    <br />
                     <p>DESIGN</p>
-                  </a>
+                  </div>
                 </div>
               </div>
               {
@@ -246,9 +295,52 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="project-box">
-                <h2>PROJECT</h2>
-              </div>
+            <div className="project-box">
+              <button
+                onClick={handlePrev}
+                style={{
+                  position: "absolute",
+                  left: "10px",
+                  zIndex: 10,
+                  background: "rgba(0, 0, 0, 0.5)",
+                  color: "white",
+                  border: "none",
+                  padding: "10px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                &#8592; {/* Left arrow */}
+              </button>
+
+              {/*a:hover*/}
+              <a
+                href={imageLinks[selectedImage]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <img
+                src={selectedImage}
+              />
+              </a>
+
+              <button
+                onClick={handleNext}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  zIndex: 10,
+                  background: "rgba(0, 0, 0, 0.5)",
+                  color: "white",
+                  border: "none",
+                  padding: "10px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                &#8594; {/* Right arrow */}
+              </button>
+            </div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
