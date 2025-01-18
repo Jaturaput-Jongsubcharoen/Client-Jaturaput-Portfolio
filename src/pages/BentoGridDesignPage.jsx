@@ -10,7 +10,7 @@ import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
-import MagazineDesign from "../images/screenshots/Magazine-Design(1900x1080).png";
+import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
 
 
@@ -42,7 +42,7 @@ function BentoGridDesignPage() {
       type: "web & mobile design",
     },
     {
-      image: MagazineDesign,
+      image: MagazineDesign2,
       link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
       title: "Magazine Design",
       type: "magazine design",
