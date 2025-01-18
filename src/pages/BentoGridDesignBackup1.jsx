@@ -1,104 +1,93 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+import NavigationBar from '../containers/NavigationBar';
+import '../styles/BentoGridDesignCSS.css';
 
-import "../styles/BentoGridDesignCSS.css";
-import '../index.css';
+import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';
+import MyPicture from '../images/my_picture1(500x750).png';
 
-import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
-import Tesla from "../images/screenshots/Tesla(1900x1080).png";
-import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
-import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
-import MagazineDesign from "../images/screenshots/Magazine-Design(1900x1080).png";
-import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
+import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';
+import Tesla from '../images/screenshots/Tesla(1900x1080).png';
+import NutriKcal from '../images/screenshots/Nutri-Kcal(1900x1080).png';
+import QueueMeMobileApp from '../images/screenshots/QueueMe-Mobile-App3(475x986).png';
+
+import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).png';
+
+import AWIIHouseWorkExperience from '../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png';
 
 
-function BentoGridDesignPage() {
+function BentoGridDesignBackup1() {
 
-  const projects = [
-    {
-      image: MovieAddict,
-      link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
-      title: "Movie-Addict Project ",
-      type: "web & mobile design",
-    },
-    {
-      image: Tesla,
-      link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
-      title: "Tesla Assignment",
-      type: "web & mobile design",
-    },
-    {
-      image: NutriKcal,
-      link: "https://comp229-nutrisnap-client1.onrender.com/",
-      title: "Nutri-Kcal Client Project",
-      type: "web & mobile design",
-    },
-    {
-      image: QueueMeMobileApp,
-      link: "https://bit.ly/ClinicMobileApp-Figma",
-      title: "QueueMe Mobile App",
-      type: "web & mobile design",
-    },
-    {
-      image: MagazineDesign,
-      link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
-      title: "Magazine Design",
-      type: "magazine design",
-    },
-    {
-      image: AWIIHouseWorkExperience,
-      link: "public/pdf/2_Jaturaput_Working at Wittawii Company_Porfolio.pdf",
-      title: "Wittawii Company Work Experience",
-      type: "architectural design",
-    },
+  const webDesignImages = [
+    MovieAddict,
+    Tesla,
+    NutriKcal,
+    QueueMeMobileApp,
   ];
-
+  
+  const magazineDesignImages = [
+    MagazineDesign,
+  ];
+  
+  const architecturalDesignImages = [
+    AWIIHouseWorkExperience,
+  ];
+  
+  // State for selected category and images
   const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
-  const [filteredProjects, setFilteredProjects] = useState(
-    projects.filter((project) => project.type === "web & mobile design")
-  );
-  const [selectedProject, setSelectedProject] = useState(filteredProjects[0]);
-
-  useEffect(() => {
-    const filtered = projects.filter((project) => {
-      if (selectedCategory === "web") {
-        return project.type === "web & mobile design";
-      } else if (selectedCategory === "magazine") {
-        return project.type === "magazine design";
-      } else if (selectedCategory === "architectural") {
-        return project.type === "architectural design";
-      }
-      return false;
-    });
-
-    setFilteredProjects(filtered);
-    setSelectedProject(filtered[0]);
-  }, [selectedCategory]);
-
+  const [selectedImage, setSelectedImage] = useState(webDesignImages[0]); // Default image
+  const [images, setImages] = useState(webDesignImages); // Default image array
+  
+  // Image links for WEB DESIGN only
+  const imageLinks = {
+    [MovieAddict]: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
+    [Tesla]: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
+    [NutriKcal]: "https://comp229-nutrisnap-client1.onrender.com/",
+    [QueueMeMobileApp]: "https://bit.ly/ClinicMobileApp-Figma",
+    [MagazineDesign]: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
+    [AWIIHouseWorkExperience]: "public/pdf/2_Jaturaput_Working at Wittawii Company_Porfolio.pdf",
+  };
+  
+  // Handle category selection
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+  
+    if (category === "web") {
+      setImages(webDesignImages);
+      setSelectedImage(webDesignImages[0]);
+    } else if (category === "magazine") {
+      setImages(magazineDesignImages);
+      setSelectedImage(magazineDesignImages[0]);
+    } else if (category === "architectural") {
+      setImages(architecturalDesignImages);
+      setSelectedImage(architecturalDesignImages[0]);
+    }
   };
 
   const handlePrev = () => {
-    const currentIndex = filteredProjects.indexOf(selectedProject);
-    const newIndex =
-      currentIndex === 0 ? filteredProjects.length - 1 : currentIndex - 1;
-    setSelectedProject(filteredProjects[newIndex]);
+    const currentIndex = images.indexOf(selectedImage);
+    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    setSelectedImage(images[newIndex]);
   };
 
   const handleNext = () => {
-    const currentIndex = filteredProjects.indexOf(selectedProject);
-    const newIndex =
-      currentIndex === filteredProjects.length - 1 ? 0 : currentIndex + 1;
-    setSelectedProject(filteredProjects[newIndex]);
+    const currentIndex = images.indexOf(selectedImage);
+    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    setSelectedImage(images[newIndex]);
   };
-
-
 
   return (
     <>
       {
         /* Portfolio by Jaturaput Jongsubcharoen | AI - Software engineering */
       }
+
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="portfolio-CSS.css" />
+        <link rel="icon" type="logo/x-icon" href="logo/Movie-Addict-Logo2.png" />
+
+
+      <script src="portfolio-script.js"></script>
       {
         /* ______________________________________________________________________________________________________________________________________________________ */
       }
@@ -126,7 +115,7 @@ function BentoGridDesignPage() {
                   boxShadow: "inset 2px 2px 4px 0px rgba(0, 0, 0, .5)",
                 }}
               >
-                PROJECT
+                Project
               </p>
               <div className="nav-bar-box">
                 <div className="grid-nav-container">
@@ -170,7 +159,7 @@ function BentoGridDesignPage() {
                   boxShadow: "inset 2px 2px 4px 0px rgba(0, 0, 0, .5)",
                 }}
               >
-                CONTACT
+                Contact
               </p>
               <div className="nav-bar-box-Contact r1-c9-location">
                 <div className="project-content-box"> {/*className="project-content-box"*/}
@@ -392,22 +381,17 @@ function BentoGridDesignPage() {
                 &#8592; {/* Left arrow */}
               </button>
 
-              <div className="sub-grid-projects">
-
               {/*a:hover*/}
-              <div className="sub-grid-item">
-              <div className="rounded-border-gradient">
-                <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                  <img src={selectedProject.image} alt={selectedProject.title} />
-                </a>
-              </div>
-              </div>
+              <a
+                href={imageLinks[selectedImage]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              <img
+                src={selectedImage}
+              />
+              </a>
 
-              <div className="sub-grid-item">
-              <h3>{selectedProject.title}</h3>
-              </div>
-
-              </div>
               <button onClick={handleNext} className="right-arrow-Sliding">
                 &#8594; {/* Right arrow */}
               </button>
@@ -426,4 +410,4 @@ function BentoGridDesignPage() {
   );
 }
 
-export default BentoGridDesignPage;
+export default BentoGridDesignBackup1;
