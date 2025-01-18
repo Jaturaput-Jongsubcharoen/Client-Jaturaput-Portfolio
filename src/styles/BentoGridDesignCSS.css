@@ -232,7 +232,7 @@
 	grid-template-columns: repeat(10, 1fr);
 	/*border: 1px dashed rgb(206, 103, 44);*/
 	width: 100vw;
-  	height: 100vh;
+    height: 100vh;
 	grid-gap: 0px;
 	z-index: -999;
 }
