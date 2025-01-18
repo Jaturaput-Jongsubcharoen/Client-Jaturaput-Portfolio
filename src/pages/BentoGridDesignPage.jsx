@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import "../styles/BentoGridDesignCSS.css";
 import '../index.css';
 
+import myPicture1 from "../images/my_picture1(500x750).png";
+import myPicture2 from "../images/my_picture2(800x800).png";
+
 import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
@@ -17,25 +20,25 @@ function BentoGridDesignPage() {
     {
       image: MovieAddict,
       link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
-      title: "Movie-Addict Project ",
+      title: "Movie-Addict (Website) Project ",
       type: "web & mobile design",
     },
     {
       image: Tesla,
       link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
-      title: "Tesla Assignment",
+      title: "Tesla Specification (Website) Project",
       type: "web & mobile design",
     },
     {
       image: NutriKcal,
       link: "https://comp229-nutrisnap-client1.onrender.com/",
-      title: "Nutri-Kcal Client Project",
+      title: "Nutritional Tracking (Website) Project",
       type: "web & mobile design",
     },
     {
       image: QueueMeMobileApp,
       link: "https://bit.ly/ClinicMobileApp-Figma",
-      title: "QueueMe Mobile App",
+      title: "Clinic Appointment (Mobile App) Design",
       type: "web & mobile design",
     },
     {
@@ -46,7 +49,7 @@ function BentoGridDesignPage() {
     },
     {
       image: AWIIHouseWorkExperience,
-      link: "public/pdf/2_Jaturaput_Working at Wittawii Company_Porfolio.pdf",
+      link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       title: "Wittawii Company Work Experience",
       type: "architectural design",
     },
@@ -201,6 +204,16 @@ function BentoGridDesignPage() {
                     <br />
                     */}
                     <div className="grid-content1">
+                    <h3>Github:</h3>
+                      <a
+                        href="https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidingHyperLink"
+                      >
+                        https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git
+                      </a>
+                    <br />
                     <br />
                     <h3>LinkedIn:</h3>
                       <a
@@ -386,35 +399,38 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-            <div className="project-box">
-              <button
-                onClick={handlePrev} className="left-arrow-Sliding">
-                &#8592; {/* Left arrow */}
-              </button>
+              <div className="project-box">
+                <button
+                  onClick={handlePrev} className="left-arrow-Sliding">
+                  &#8592; {/* Left arrow */}
+                </button>
 
-              <div className="sub-grid-projects">
+                <div className="sub-grid-projects">
 
-              {/*a:hover*/}
-              <div className="sub-grid-item">
-              <div className="rounded-border-gradient">
-                <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                  <img src={selectedProject.image} alt={selectedProject.title} />
-                </a>
-              </div>
-              </div>
+                {/*a:hover*/}
+                <div className="sub-grid-item">
+                <div className="rounded-border-gradient">
+                  <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                    <img src={selectedProject.image} alt={selectedProject.title} />
+                  </a>
+                </div>
+                </div>
 
-              <div className="sub-grid-item">
-              <h3>{selectedProject.title}</h3>
-              </div>
+                <div className="sub-grid-item">
+                <h3>{selectedProject.title}</h3>
+                </div>
 
+                </div>
+                <button onClick={handleNext} className="right-arrow-Sliding">
+                  &#8594; {/* Right arrow */}
+                </button>
               </div>
-              <button onClick={handleNext} className="right-arrow-Sliding">
-                &#8594; {/* Right arrow */}
-              </button>
-            </div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
+              <div className="project-img-box">
+                  <img src={myPicture2}  />
+              </div>
             </div>
           </div>
           {

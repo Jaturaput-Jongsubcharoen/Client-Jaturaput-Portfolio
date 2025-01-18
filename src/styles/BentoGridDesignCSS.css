@@ -2020,6 +2020,20 @@ a:hover {
 	z-index: 10;
 	opacity: 0.5;
 }
+.grid-content-container h3 {
+	text-align: justify;
+	display: block;
+}
+.grid-content-container a {
+	text-align: justify;
+	display: block;
+}
+
+
+
+.grid-content1 p {
+	text-align: left;
+}
 
 .grid-content1 {
 	grid-row: 1/2;
@@ -2652,6 +2666,7 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	transition: transform 0.5s;
+	z-index: -1;
 }
 
 .content-logo:hover {
@@ -2760,6 +2775,7 @@ a:hover {
 	overflow-y: hidden;
 	/*overflow-y: scroll;*/
 	/*scroll-snap-type: y mandatory;*/
+	z-index: -1;
 }
 
 .scrolling-slides {
@@ -3078,7 +3094,38 @@ a:hover {
 	border-radius: 0.5em;
 	padding: 10px;
 	font-size: 14px;
+	color: rgba(0, 0, 0, 0.5);;
 }
 
 /*----------------------------------------------------------------*/
 
+.project-img-box {
+	grid-row: 2/5;
+	grid-column: 4/7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));*/
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	/*border-radius: 20px;*/
+	/*box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.20);*/
+	/*border: 1px solid rgba(125, 108, 92, 0.5);*/
+	/*margin: 1%;*/
+	z-index: 0;
+}
+
+.project-img-box img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	/*border-radius: 20px;*/
+	/*box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.20);*/
+	filter: grayscale(100%); 
+	/*border: 1px solid rgba(125, 108, 92, 0.5);*/
+	opacity: 10%;
+	width: 100%;
+	height: 100%;
+}
