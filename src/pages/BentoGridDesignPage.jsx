@@ -212,7 +212,7 @@ function BentoGridDesignPage() {
                     <br />
                     */}
                     <div className="grid-content1">
-                    <h3>Github:</h3>
+                    <h3>Github: Client Side</h3>
                       <a
                         href="https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git"
                         target="_blank"
@@ -222,6 +222,16 @@ function BentoGridDesignPage() {
                         https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git
                       </a>
                     <br />
+                    <br />
+                    <h3>Github: Server Side</h3>
+                      <a
+                        href="https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio.git"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidingHyperLink"
+                      >
+                        https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio.git
+                      </a>
                     <br />
                     <h3>LinkedIn:</h3>
                       <a
