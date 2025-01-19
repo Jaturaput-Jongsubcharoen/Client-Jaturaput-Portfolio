@@ -431,7 +431,7 @@ function BentoGridDesignPage() {
                   </div>
 
                   <div className="sub-grid-item">
-                    <h3>{selectedProject.type}</h3>
+                    <h3 className="font-size-type-detail">{selectedProject.type}</h3>
                   </div>
 
                   <div className="sub-grid-item">
@@ -439,7 +439,7 @@ function BentoGridDesignPage() {
                   </div>
 
                   <div className="sub-grid-item">
-                    <p>{filteredProjects.indexOf(selectedProject) + 1} / {filteredProjects.length}</p>
+                    <p className="font-size-pages-detail sub-grid-item-pages">{filteredProjects.indexOf(selectedProject) + 1} / {filteredProjects.length}</p>
                   </div>
                 </div>
 
