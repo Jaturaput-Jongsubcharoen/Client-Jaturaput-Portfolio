@@ -10,9 +10,11 @@ import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
-import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
-import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
 
+import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
+
+import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
+import UndergraduateArchitectureProject from "../images/screenshots/Undergraduate-Architecture-Project(2480x3508)-300PxInch.png";
 
 function BentoGridDesignPage() {
 
@@ -51,6 +53,12 @@ function BentoGridDesignPage() {
       image: AWIIHouseWorkExperience,
       link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       title: "Wittawii Company Work Experience",
+      type: "architectural design",
+    },
+    {
+      image: UndergraduateArchitectureProject,
+      link: "https://online.fliphtml5.com/ukqkz/ybin/#p=1",
+      title: "Undergraduate Architecture Project",
       type: "architectural design",
     },
   ];
