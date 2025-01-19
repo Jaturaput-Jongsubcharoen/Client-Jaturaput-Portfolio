@@ -23,60 +23,60 @@ function BentoGridDesignPage() {
       image: MovieAddict,
       link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
       title: "Movie-Addict (Website) Project ",
-      type: "web & mobile design",
+      type: "WEB & MOBILE DESIGN",
     },
     {
       image: Tesla,
       link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
       title: "Tesla Specification (Website) Project",
-      type: "web & mobile design",
+      type: "WEB & MOBILE DESIGN",
     },
     {
       image: NutriKcal,
       link: "https://comp229-nutrisnap-client1.onrender.com/",
       title: "Nutritional Tracking (Website) Project",
-      type: "web & mobile design",
+      type: "WEB & MOBILE DESIGN",
     },
     {
       image: QueueMeMobileApp,
       link: "https://bit.ly/ClinicMobileApp-Figma",
       title: "Clinic Appointment (Mobile App) Design",
-      type: "web & mobile design",
+      type: "WEB & MOBILE DESIGN",
     },
     {
       image: MagazineDesign2,
       link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
       title: "Magazine Design",
-      type: "magazine design",
+      type: "MAGAZINE DESIGN",
     },
     {
       image: AWIIHouseWorkExperience,
       link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       title: "Wittawii Company Work Experience",
-      type: "architectural design",
+      type: "ARCHITECTURAL DESIGN",
     },
     {
       image: UndergraduateArchitectureProject,
       link: "https://online.fliphtml5.com/ukqkz/ybin/#p=1",
       title: "Undergraduate Architecture Project",
-      type: "architectural design",
+      type: "ARCHITECTURAL DESIGN",
     },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
-  const [filteredProjects, setFilteredProjects] = useState(
-    projects.filter((project) => project.type === "web & mobile design")
-  );
+  const [filteredProjects, setFilteredProjects] = useState(projects.filter((project) => project.type === "WEB & MOBILE DESIGN"));
   const [selectedProject, setSelectedProject] = useState(filteredProjects[0]);
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const filtered = projects.filter((project) => {
       if (selectedCategory === "web") {
-        return project.type === "web & mobile design";
+        return project.type === "WEB & MOBILE DESIGN";
       } else if (selectedCategory === "magazine") {
-        return project.type === "magazine design";
+        return project.type === "MAGAZINE DESIGN";
       } else if (selectedCategory === "architectural") {
-        return project.type === "architectural design";
+        return project.type === "ARCHITECTURAL DESIGN";
       }
       return false;
     });
@@ -414,21 +414,35 @@ function BentoGridDesignPage() {
                 </button>
 
                 <div className="sub-grid-projects">
+                  <div className="sub-grid-item">
+                    <div className="sub-grid-item-topic">
+                      <p><b>SELECT ACADEMIC PROJECTS</b></p>
+                    </div>
+                  </div>
+                  
+                  {/*a:hover*/}
+                  <div className="sub-grid-item">
+                    <div className="rounded-border-gradient">
+                      <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                        <img src={selectedProject.image} alt={selectedProject.title} />
+                        <div className="hover-text"><p>V I E W &nbsp;&nbsp; P R O J E C T</p></div>
+                      </a>
+                    </div>
+                  </div>
 
-                {/*a:hover*/}
-                <div className="sub-grid-item">
-                <div className="rounded-border-gradient">
-                  <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                    <img src={selectedProject.image} alt={selectedProject.title} />
-                  </a>
-                </div>
+                  <div className="sub-grid-item">
+                    <h3>{selectedProject.type}</h3>
+                  </div>
+
+                  <div className="sub-grid-item">
+                    <h4 className="font-size-detail">PROJECT TITLE:&nbsp; {selectedProject.title}</h4>
+                  </div>
+
+                  <div className="sub-grid-item">
+                    <p>{filteredProjects.indexOf(selectedProject) + 1} / {filteredProjects.length}</p>
+                  </div>
                 </div>
 
-                <div className="sub-grid-item">
-                <h3>{selectedProject.title}</h3>
-                </div>
-
-                </div>
                 <button onClick={handleNext} className="right-arrow-Sliding">
                   &#8594; {/* Right arrow */}
                 </button>
