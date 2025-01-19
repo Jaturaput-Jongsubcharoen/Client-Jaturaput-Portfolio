@@ -5,6 +5,7 @@ import '../index.css';
 
 import myPicture1 from "../images/my_picture1(500x750).png";
 import myPicture2 from "../images/my_picture2(800x800).png";
+import g1jo from "../gif/G1JO.gif";
 
 import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
@@ -463,6 +464,11 @@ function BentoGridDesignPage() {
               <div className="project-img-box">
                   <img src={myPicture2}  />
               </div>
+              {/*
+              <div className="project-gif-box">
+                  <img src={g1jo}  />
+              </div>
+              */}
             </div>
           </div>
           {
