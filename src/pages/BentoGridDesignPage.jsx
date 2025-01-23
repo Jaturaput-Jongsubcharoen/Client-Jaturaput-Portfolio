@@ -23,44 +23,57 @@ function BentoGridDesignPage() {
     {
       image: MovieAddict,
       link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
-      title: "Movie-Addict (Website) Project ",
+      title: "Movie-Addict (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS | Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed streaming service website that announces movies, allowing users to rent/purchase them",
     },
     {
       image: Tesla,
       link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
       title: "Tesla Specification (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS | Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created a visually appealing and responsive website to showcase Tesla's specifications and features. Focused on delivering a clean, modern layout, ensuring compatibility across devices. Incorporated interactive elements such as hover effects, animations, and structured navigation for enhanced user experience. Ensured proper SEO techniques for better discoverability of the webpage.",
     },
     {
       image: NutriKcal,
       link: "https://comp229-nutrisnap-client1.onrender.com/",
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, JavaScript | React, Node, Express | GitHub, MongoDB Compass, Render | Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Handled all website functions on the website to connect between the MongoDB, backend server and frontend server and managed the deployment successfully with user-friendly design. All features were tied to user authentication; users without a user ID had to create one and log in first, with tokens used for verification.",
     },
     {
       image: QueueMeMobileApp,
       link: "https://bit.ly/ClinicMobileApp-Figma",
       title: "Clinic Appointment (Mobile App) Design",
       type: "WEB & MOBILE DESIGN",
+      software_and_tools: "Figma | Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
     },
     {
       image: MagazineDesign2,
       link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
       title: "Magazine Design",
       type: "MAGAZINE DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created an interactive and visually appealing magazine layout to present articles, advertisements, and images effectively. Focused on utilizing creative typography and graphics for an engaging reading experience. Integrated features for smooth navigation, such as hyperlinks and clickable elements, to enhance accessibility in digital formats.",
     },
     {
       image: AWIIHouseWorkExperience,
       link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       title: "Wittawii Company Work Experience",
-      type: "ARCHITECTURAL DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
     },
     {
       image: UndergraduateArchitectureProject,
       link: "https://online.fliphtml5.com/ukqkz/ybin/#p=1",
       title: "Undergraduate Architecture Project",
       type: "ARCHITECTURAL DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
+      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
     },
   ];
 
@@ -69,6 +82,8 @@ function BentoGridDesignPage() {
   const [selectedProject, setSelectedProject] = useState(filteredProjects[0]);
   
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     const filtered = projects.filter((project) => {
@@ -104,6 +119,9 @@ function BentoGridDesignPage() {
     setSelectedProject(filteredProjects[newIndex]);
   };
 
+  const formatDetail = (text) => {
+    return text.replace(/&nbsp;/g, " ").trim();
+  };
 
 
   return (
@@ -273,68 +291,68 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="Grid-1-1"></div>
-              <div className="Grid-1-2"></div>
-              <div className="Grid-1-3"></div>
-              <div className="Grid-1-4"></div>
-              <div className="Grid-1-5"></div>
-              <div className="Grid-1-6"></div>
-              <div className="Grid-1-7"></div>
-              <div className="Grid-1-8"></div>
-              <div className="Grid-1-9"></div>
-              <div className="Grid-1-10"></div>
+              <div className="Grid-1-1 fade"></div>
+              <div className="Grid-1-2 fade"></div>
+              <div className="Grid-1-3 fade"></div>
+              <div className="Grid-1-4 fade"></div>
+              <div className="Grid-1-5 fade"></div>
+              <div className="Grid-1-6 fade"></div>
+              <div className="Grid-1-7 fade"></div>
+              <div className="Grid-1-8 fade"></div>
+              <div className="Grid-1-9 fade"></div>
+              <div className="Grid-1-10 fade"></div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="Grid-2-1"></div>
-              <div className="Grid-2-2"></div>
-              <div className="Grid-2-3"></div>
-              <div className="Grid-2-4"></div>
-              <div className="Grid-2-5"></div>
-              <div className="Grid-2-6"></div>
-              <div className="Grid-2-7"></div>
-              <div className="Grid-2-8"></div>
-              <div className="Grid-2-9"></div>
-              <div className="Grid-2-10"></div>
+              <div className="Grid-2-1 fade"></div>
+              <div className="Grid-2-2 fade"></div>
+              <div className="Grid-2-3 fade"></div>
+              <div className="Grid-2-4 fade"></div>
+              <div className="Grid-2-5 fade"></div>
+              <div className="Grid-2-6 fade"></div>
+              <div className="Grid-2-7 fade"></div>
+              <div className="Grid-2-8 fade"></div>
+              <div className="Grid-2-9 fade"></div>
+              <div className="Grid-2-10 fade"></div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="Grid-3-1"></div>
-              <div className="Grid-3-2"></div>
-              <div className="Grid-3-3"></div>
-              <div className="Grid-3-4"></div>
-              <div className="Grid-3-5"></div>
-              <div className="Grid-3-6"></div>
-              <div className="Grid-3-7"></div>
-              <div className="Grid-3-8"></div>
-              <div className="Grid-3-9"></div>
-              <div className="Grid-3-10"></div>
+              <div className="Grid-3-1 fade"></div>
+              <div className="Grid-3-2 fade"></div>
+              <div className="Grid-3-3 fade"></div>
+              <div className="Grid-3-4 fade"></div>
+              <div className="Grid-3-5 fade"></div>
+              <div className="Grid-3-6 fade"></div>
+              <div className="Grid-3-7 fade"></div>
+              <div className="Grid-3-8 fade"></div>
+              <div className="Grid-3-9 fade"></div>
+              <div className="Grid-3-10 fade"></div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="Grid-4-1"></div>
-              <div className="Grid-4-2"></div>
-              <div className="Grid-4-3"></div>
-              <div className="Grid-4-4"></div>
-              <div className="Grid-4-5"></div>
-              <div className="Grid-4-6"></div>
-              <div className="Grid-4-7"></div>
-              <div className="Grid-4-8"></div>
-              <div className="Grid-4-9"></div>
-              <div className="Grid-4-10"></div>
+              <div className="Grid-4-1 fade"></div>
+              <div className="Grid-4-2 fade"></div>
+              <div className="Grid-4-3 fade"></div>
+              <div className="Grid-4-4 fade"></div>
+              <div className="Grid-4-5 fade"></div>
+              <div className="Grid-4-6 fade"></div>
+              <div className="Grid-4-7 fade"></div>
+              <div className="Grid-4-8 fade"></div>
+              <div className="Grid-4-9 fade"></div>
+              <div className="Grid-4-10 fade"></div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className="Grid-5-1"></div>
-              <div className="Grid-5-2"></div>
-              <div className="Grid-5-3"></div>
-              <div className="Grid-5-4"></div>
-              <div className="Grid-5-5"></div>
-              <div className="Grid-5-6"></div>
-              <div className="Grid-5-7"></div>
-              <div className="Grid-5-8"></div>
-              <div className="Grid-5-9"></div>
-              <div className="Grid-5-10"></div>
+              <div className="Grid-5-1 fade"></div>
+              <div className="Grid-5-2 fade"></div>
+              <div className="Grid-5-3 fade"></div>
+              <div className="Grid-5-4 fade"></div>
+              <div className="Grid-5-5 fade"></div>
+              <div className="Grid-5-6 fade"></div>
+              <div className="Grid-5-7 fade"></div>
+              <div className="Grid-5-8 fade"></div>
+              <div className="Grid-5-9 fade"></div>
+              <div className="Grid-5-10 fade"></div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
@@ -450,6 +468,12 @@ function BentoGridDesignPage() {
                   </div>
 
                   <div className="sub-grid-item">
+                    <button className="detail-button" onClick={() => setShowDetails(!showDetails)}>
+                      <p>{showDetails ? "Hide Details" : "View Details"}</p>
+                    </button>
+                  </div>
+
+                  <div className="sub-grid-item">
                     <p className="font-size-pages-detail sub-grid-item-pages">{filteredProjects.indexOf(selectedProject) + 1} / {filteredProjects.length}</p>
                   </div>
                 </div>
@@ -463,6 +487,26 @@ function BentoGridDesignPage() {
               }
               <div className="project-img-box">
                   <img src={myPicture2}  />
+              </div>
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <div className={`project-display ${showDetails ? "fade-in" : "fade-out"}`} style={{ visibility: showDetails ? "visible" : "hidden" }}>
+                <div className="sub-grid-detail">
+                  <div className="sub-grid-item-detail">
+                      <p className="project-detail">Software & Tools:</p>
+                  </div>
+                  <div className="sub-grid-item-detail">
+                    <p className="project-detail">{selectedProject.software_and_tools}</p>
+                  </div>
+
+                  <div className="sub-grid-item-detail">
+                      <p className="project-detail">Details:</p>
+                  </div>
+                  <div className="sub-grid-item-detail">
+                  <p className="project-detail" dangerouslySetInnerHTML={{ __html: selectedProject.detail }}></p>
+                  </div>
+                </div>
               </div>
               {/*
               <div className="project-gif-box">
