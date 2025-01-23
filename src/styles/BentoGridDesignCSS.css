@@ -16,6 +16,7 @@
 	background-attachment: fixed;
 	background-position: center;
 	text-align: justify;
+	animation: fadeIn 0.5s;
 	/*padding-top: 80px;*/
 }
 
@@ -3351,11 +3352,12 @@ hr {
 
 .fade {
 	opacity: 0; 
-	animation: fadeIn 0.5s ease-in-out forwards, fadeOut 0.5s ease-in-out 3s forwards; 
+	animation: fadeIn 1.5s ease-in-out forwards; 
   }
   
   
-  @keyframes fadeIn {
+/* Fade-In Animation */
+@keyframes fadeIn {
 	0% {
 	  opacity: 0;
 	  transform: scale(0.95);
@@ -3363,5 +3365,161 @@ hr {
 	100% {
 	  opacity: 1;
 	  transform: scale(1);
+	}
+  }
+  
+  /* Fade-Out Animation */
+  @keyframes fadeOut {
+	0% {
+	  opacity: 1;
+	  transform: scale(1);
+	}
+	100% {
+	  opacity: 0;
+	  transform: scale(0.95);
+	}
+  }
+  
+  /* Slide-In from Left */
+  @keyframes slideInLeft {
+	0% {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  
+  /* Slide-Out to Left */
+  @keyframes slideOutLeft {
+	0% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateX(-100%);
+	  opacity: 0;
+	}
+  }
+  
+  /* Slide-In from Right */
+  @keyframes slideInRight {
+	0% {
+	  transform: translateX(100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  
+  /* Slide-Out to Right */
+  @keyframes slideOutRight {
+	0% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateX(100%);
+	  opacity: 0;
+	}
+  }
+  
+  /* Slide-In from Top */
+  @keyframes slideInTop {
+	0% {
+	  transform: translateY(-100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  /* Slide-Out to Top */
+  @keyframes slideOutTop {
+	0% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateY(-100%);
+	  opacity: 0;
+	}
+  }
+  
+  /* Slide-In from Bottom */
+  @keyframes slideInBottom {
+	0% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  /* Slide-Out to Bottom */
+  @keyframes slideOutBottom {
+	0% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+  }
+  
+  /* Scale-Up Animation */
+  @keyframes scaleUp {
+	0% {
+	  transform: scale(0.8);
+	  opacity: 0;
+	}
+	100% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }
+  
+  /* Scale-Down Animation */
+  @keyframes scaleDown {
+	0% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(0.8);
+	  opacity: 0;
+	}
+  }
+  
+  /* Rotate-In Animation */
+  @keyframes rotateIn {
+	0% {
+	  transform: rotate(-360deg);
+	  opacity: 0;
+	}
+	100% {
+	  transform: rotate(0);
+	  opacity: 1;
+	}
+  }
+  
+  /* Rotate-Out Animation */
+  @keyframes rotateOut {
+	0% {
+	  transform: rotate(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: rotate(360deg);
+	  opacity: 0;
 	}
   }
