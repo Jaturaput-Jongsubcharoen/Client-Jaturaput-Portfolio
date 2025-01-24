@@ -271,7 +271,7 @@ function BentoGridDesignPage() {
                         rel="noopener noreferrer"
                         className="hidingHyperLink"
                       >
-                        https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b
+                        jjongsub@my.centennialcollege.ca
                       </a>
                     <br />
                     <br />
