@@ -64,6 +64,7 @@ function BentoGridDesignPage() {
       image: AWIIHouseWorkExperience,
       link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       title: "Wittawii Company Work Experience",
+      type: "ARCHITECTURAL DESIGN",
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
     },
