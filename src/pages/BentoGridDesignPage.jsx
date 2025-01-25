@@ -39,6 +39,11 @@ function BentoGridDesignPage() {
       title: "Tesla Specification (Website) Project",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS | Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created a visually appealing and responsive website to showcase Tesla's specifications and features. Focused on delivering a clean, modern layout, ensuring compatibility across devices. Incorporated interactive elements such as hover effects, animations, and structured navigation for enhanced user experience. Ensured proper SEO techniques for better discoverability of the webpage.",
     },
     {
@@ -47,6 +52,11 @@ function BentoGridDesignPage() {
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript | React, Node, Express | GitHub, MongoDB Compass, Render | Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Handled all website functions on the website to connect between the MongoDB, backend server and frontend server and managed the deployment successfully with user-friendly design. All features were tied to user authentication; users without a user ID had to create one and log in first, with tokens used for verification.",
     },
     {
@@ -55,6 +65,11 @@ function BentoGridDesignPage() {
       title: "Clinic Appointment (Mobile App) Design",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "Figma | Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
     },
     {
@@ -63,6 +78,11 @@ function BentoGridDesignPage() {
       title: "Magazine Design",
       type: "MAGAZINE DESIGN",
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created an interactive and visually appealing magazine layout to present articles, advertisements, and images effectively. Focused on utilizing creative typography and graphics for an engaging reading experience. Integrated features for smooth navigation, such as hyperlinks and clickable elements, to enhance accessibility in digital formats.",
     },
     {
@@ -71,6 +91,11 @@ function BentoGridDesignPage() {
       title: "Wittawii Company Work Experience",
       type: "ARCHITECTURAL DESIGN",
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
     },
     {
@@ -79,6 +104,11 @@ function BentoGridDesignPage() {
       title: "Undergraduate Architecture Project",
       type: "ARCHITECTURAL DESIGN",
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
     },
   ];
