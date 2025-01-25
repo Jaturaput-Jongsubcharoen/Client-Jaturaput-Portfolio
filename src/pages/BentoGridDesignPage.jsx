@@ -6,6 +6,8 @@ import '../index.css';
 
 import myPicture1 from "../images/my_picture1(500x750).png";
 import myPicture2 from "../images/my_picture2(800x800).png";
+import tapePicture from "../images/tape_picture(800x800).png";
+import tapePicture2 from "../images/tape_picture2(800x800).png";
 import g1jo from "../gif/G1JO.gif";
 
 import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
@@ -554,6 +556,15 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
+              
+              <div className="project-tape1-img-box">
+                  <img src={tapePicture}  />
+              </div>
+              {/*
+              <div className="project-tape2-img-box">
+                  <img src={tapePicture2}  />
+              </div>
+              */}
               <div className="project-img-box">
                   <img src={myPicture2}  />
               </div>
