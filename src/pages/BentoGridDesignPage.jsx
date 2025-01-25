@@ -556,11 +556,11 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              
+              {/*
               <div className="project-tape1-img-box">
                   <img src={tapePicture}  />
               </div>
-              {/*
+              
               <div className="project-tape2-img-box">
                   <img src={tapePicture2}  />
               </div>
