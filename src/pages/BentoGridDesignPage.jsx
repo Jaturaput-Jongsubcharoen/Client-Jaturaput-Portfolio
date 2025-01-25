@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { formatDateWithOrdinal } from "../containers/FormatDate";
 
 import "../styles/BentoGridDesignCSS.css";
 import '../index.css';
@@ -25,52 +26,52 @@ function BentoGridDesignPage() {
       link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
       title: "Movie-Addict (Website) Project",
       type: "WEB & MOBILE DESIGN",
-      software_and_tools: "HTML, CSS | Photoshop",
+      software_and_tools: "HTML, CSS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
+        start: "2024-03-25",
         end: "2024-04-08",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed streaming service website that announces movies, allowing users to rent/purchase them",
+      detail: "Designed streaming service website that announces movies, allowing users to rent/purchase them",
     },
     {
       image: Tesla,
       link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
       title: "Tesla Specification (Website) Project",
       type: "WEB & MOBILE DESIGN",
-      software_and_tools: "HTML, CSS | Photoshop",
+      software_and_tools: "HTML, CSS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2024-01-29",
+        end: "2024-02-05",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created a visually appealing and responsive website to showcase Tesla's specifications and features. Focused on delivering a clean, modern layout, ensuring compatibility across devices. Incorporated interactive elements such as hover effects, animations, and structured navigation for enhanced user experience. Ensured proper SEO techniques for better discoverability of the webpage.",
+      detail: "Created a visually appealing and responsive website to showcase Tesla's specifications and features. Focused on delivering a clean, modern layout, ensuring compatibility across devices. Incorporated interactive elements such as hover effects, animations, and structured navigation for enhanced user experience. Ensured proper SEO techniques for better discoverability of the webpage.",
     },
     {
       image: NutriKcal,
       link: "https://comp229-nutrisnap-client1.onrender.com/",
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
-      software_and_tools: "HTML, CSS, JavaScript | React, Node, Express | GitHub, MongoDB Compass, Render | Photoshop",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2024-11-14",
+        end: "2024-12-12",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Handled all website functions on the website to connect between the MongoDB, backend server and frontend server and managed the deployment successfully with user-friendly design. All features were tied to user authentication; users without a user ID had to create one and log in first, with tokens used for verification.",
+      detail: "Handled all website functions on the website to connect between the MongoDB, backend server and frontend server and managed the deployment successfully with user-friendly design. All features were tied to user authentication; users without a user ID had to create one and log in first, with tokens used for verification.",
     },
     {
       image: QueueMeMobileApp,
       link: "https://bit.ly/ClinicMobileApp-Figma",
       title: "Clinic Appointment (Mobile App) Design",
       type: "WEB & MOBILE DESIGN",
-      software_and_tools: "Figma | Photoshop",
+      software_and_tools: "Figma, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2024-11-21",
+        end: "2024-12-05",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
+      detail: "Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
     },
     {
       image: MagazineDesign2,
@@ -80,10 +81,10 @@ function BentoGridDesignPage() {
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2022-10-07",
+        end: "2022-10-14",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created an interactive and visually appealing magazine layout to present articles, advertisements, and images effectively. Focused on utilizing creative typography and graphics for an engaging reading experience. Integrated features for smooth navigation, such as hyperlinks and clickable elements, to enhance accessibility in digital formats.",
+      detail: "Created an interactive and visually appealing magazine layout to present articles, advertisements, and images effectively. Focused on utilizing creative typography and graphics for an engaging reading experience. Integrated features for smooth navigation, such as hyperlinks and clickable elements, to enhance accessibility in digital formats.",
     },
     {
       image: AWIIHouseWorkExperience,
@@ -93,10 +94,10 @@ function BentoGridDesignPage() {
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2022-01-01",
+        end: "2022-11-11",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
+      detail: "Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
     },
     {
       image: UndergraduateArchitectureProject,
@@ -106,10 +107,10 @@ function BentoGridDesignPage() {
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
       work_types: "Individual Project",
       project_duration: {
-        start: "2024-04-01",
-        end: "2024-04-08",
+        start: "2016-08-08",
+        end: "2021-05-27",
       },
-      detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
+      detail: "Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
     },
   ];
 
@@ -169,10 +170,16 @@ function BentoGridDesignPage() {
     return daysDifference;
   };
   
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" }).format(date);
+  };
+
   const duration = calculateDuration(
     projects[0].project_duration.start,
     projects[0].project_duration.end
   );
+
   /*
   console.log(`Project Duration: ${duration} days`);
   */
@@ -498,10 +505,14 @@ function BentoGridDesignPage() {
                 <div className="sub-grid-projects">
                   <div className="sub-grid-item">
                     <div className="sub-grid-item-topic">
-                      <p><b>SELECT ACADEMIC PROJECTS</b></p>
+                      <h4>SELECT ACADEMIC PROJECTS</h4>
                     </div>
                   </div>
-                  
+                  {/*
+                  <div className="sub-grid-item">
+                    <p className="font-size-type-detail">Please click the image below to view the project.</p>
+                  </div>
+                  */}
                   {/*a:hover*/}
                   <div className="sub-grid-item">
                     <div className="rounded-border-gradient">
@@ -512,8 +523,13 @@ function BentoGridDesignPage() {
                     </div>
                   </div>
 
+                  {/*
                   <div className="sub-grid-item">
                     <h3 className="font-size-type-detail">{selectedProject.type}</h3>
+                  </div>
+                  */}
+                  <div className="sub-grid-item">
+                    <p className="font-size-type-image">Please click the image above to view the project.</p>
                   </div>
 
                   <div className="sub-grid-item">
@@ -547,23 +563,66 @@ function BentoGridDesignPage() {
               <div className={`project-display ${showDetails ? "fade-in" : "fade-out"}`} style={{ visibility: showDetails ? "visible" : "hidden" }}>
                 <div className="sub-grid-detail">
                   <div className="sub-grid-item-detail">
-                      <p className="project-detail">Software & Tools:</p>
+                      <p className="project-detail"><b>Software & Tools:</b></p>
                   </div>
                   <div className="sub-grid-item-detail">
-                    <p className="project-detail">{selectedProject.software_and_tools}</p>
+                    {selectedProject.software_and_tools
+                      .split(",")
+                      .reduce((acc, tool, index) => {
+                        const groupIndex = Math.floor(index / 5);
+                        if (!acc[groupIndex]) {
+                          acc[groupIndex] = []; // Initialize new group - Reminder: Do not change
+                        }
+                        acc[groupIndex].push(tool.trim()); // Add tool to group - Reminder: Do not change
+                        return acc;
+                      }, [])
+                      .map((group, groupIndex) => (
+                        <div key={groupIndex} className="project-tool-group">
+                          {group.map((tool, toolIndex) => (
+                            <span key={toolIndex} className="project-tool">
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      ))}
+                  </div>
+                  <div className="sub-grid-item-detail">
+                  </div>
+
+                  <div className="sub-grid-detail2">
+                    <div className="sub-grid-item-detail">
+                      <p className="project-detail"><b>Start Date:</b></p>
+                    </div>
+                    <div className="sub-grid-item-detail">
+                      <p className="project-detail"><b>End Date:</b></p>
+                    </div>
+                    <div className="sub-grid-item-detail">
+                      <p className="project-detail">
+                        {formatDateWithOrdinal(selectedProject.project_duration.start)}
+                      </p>
+                    </div>
+                    <div className="sub-grid-item-detail">
+                      <p className="project-detail">
+                        {formatDateWithOrdinal(selectedProject.project_duration.end)}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="sub-grid-item-detail">
                   </div>
 
                   <div className="sub-grid-item-detail">
-                    <p className="project-detail">Duration:</p>
+                    <p className="project-detail"><b>Duration:</b></p>
                   </div>
                   <div className="sub-grid-item-detail">
                     <p className="project-detail">
                       {calculateDuration(selectedProject.project_duration.start, selectedProject.project_duration.end)} days
                     </p>
                   </div>
+                  <div className="sub-grid-item-detail">
+                  </div>
 
                   <div className="sub-grid-item-detail">
-                      <p className="project-detail">Details:</p>
+                      <p className="project-detail"><b>Details:</b></p>
                   </div>
                   <div className="sub-grid-item-detail">
                     <p className="project-detail" dangerouslySetInnerHTML={{ __html: selectedProject.detail }}></p>

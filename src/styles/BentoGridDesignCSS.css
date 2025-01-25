@@ -3078,9 +3078,9 @@ a:hover {
 /*----------------------------------------------------------------*/
 .sub-grid-projects {
 	display: grid;
-	grid-template-rows: 5% 70% 5% 5% 5% 10%;
+	grid-template-rows: 5% 65% 5% 10% 5% 10%;
 	grid-template-columns: repeat(1, 1fr);
-	gap: 0.6rem;
+	gap: 0.4rem;
 	width: 100%;
 	height: 100%;
 	padding: 2%;
@@ -3096,8 +3096,7 @@ a:hover {
 	/*background-color: #e0e0e0;*/
 	/*border: 0.1em ridge rgba(255, 255, 255, 0.6);*/
 	border-radius: 0.5em;
-	padding: 0px;
-	font-size: 14px;
+	padding: 2%;
 	color: rgba(255, 255, 255, 0.8);
 }
 
@@ -3208,7 +3207,7 @@ rounded-border-gradient {
 /*----------------------------------------------------------------*/
 .sub-grid-item-topic {
 	display: flex;
-	font-size: 140%;
+	font-size: 120%;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -3218,7 +3217,7 @@ rounded-border-gradient {
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 0.8rem;
 	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.20);
-	padding: 10px; 
+	padding: 2%; 
 }
 
 .sub-grid-item-pages{
@@ -3242,6 +3241,11 @@ hr {
 	width: 50%;
 }
 /*----------------------------------------------------------------*/
+.font-size-type-image {
+	font-size: 80%;
+	color: rgba(0, 0, 0, 0.3);
+}
+
 .font-size-type-detail {
 	font-size: 120%;
 }
@@ -3328,27 +3332,67 @@ hr {
   line-height: 1.5;
 }
 /*----------------------------------------------------------------*/
-.sub-grid-detail {
+.sub-grid-detail2 {
 	display: grid;
-	grid-template-rows: 10% 20% 10% 25% 10% 25%;
-	grid-template-columns: repeat(1, 1fr);
-	gap: 0;
+	grid-template-rows: 35% 65%;
+	grid-template-columns: 50% 50%;
+	gap: 0.8rem;
 	/*border: 1px dashed red;*/
 }
-  
-.sub-grid-item-detail {
+
+.sub-grid-item-detail2 {
 	display: flex;
 	align-items: start;
 	justify-content: start;
 	text-align: left;
 	/*background-color: #e0e0e0;*/
 	/*border: 0.1em ridge rgba(255, 255, 255, 0.6);*/
-	border-radius: 0.5em;
+	border-radius: 10%;
 	padding: 0px;
 	font-size: 14px;
 	color: rgba(0, 0, 0, 0.5);;
 }
 
+.sub-grid-detail {
+	display: grid;
+	grid-template-rows: 8% 26% 4% 12% 4% 6% 10% 4% 6% 20%;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 0.8rem;
+	/*border: 1px dashed red;*/
+}
+  
+.sub-grid-item-detail {
+	display: block;
+	align-items: start;
+	justify-content: start;
+	text-align: left;
+	/*border: thick double #ff0000;*/
+	/*background-color: #e0e0e0;*/
+	/*border: 0.1em ridge rgba(255, 255, 255, 0.6);*/
+	border-radius: 0.5em;
+	padding: 0px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.6);;
+}
+
+.project-tool-group {
+	display: flex; 
+	flex-wrap: wrap; 
+	gap: 10px; 
+	justify-content: start;
+	margin-bottom: 2%;
+	
+  }
+  
+  .project-tool {
+	font-size: 14px;
+	padding: 1%;
+	/*background-color: rgba(255, 255, 255, 0.1);*/
+	border-radius: 20%; 
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+  }
 
 .fade {
 	opacity: 0; 
