@@ -419,6 +419,7 @@
 	transition: 0.5s;
 }
 
+
 .Grid-2-6 {
 	grid-row: 2/3;
 	grid-column: 6/7;
@@ -3444,9 +3445,9 @@ hr {
 	justify-content: start;
 	margin-bottom: 2%;
 	
-  }
+}
   
-  .project-tool {
+.project-tool {
 	font-size: 14px;
 	padding: 1%;
 	/*background-color: rgba(255, 255, 255, 0.1);*/
@@ -3454,7 +3455,164 @@ hr {
 	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-  }
+}
+/*----------------------------------------------------------------*/
+.Grid-2-4 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-2-4:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+
+.Grid-2-5 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-2-5:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+
+.Grid-2-6 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-2-6:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+
+.Grid-3-5 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-3-5:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+
+.Grid-3-6 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-3-6:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+
+.Grid-4-6 img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 0%;
+}
+
+.Grid-4-6:hover img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.2);
+	border: 0.5px solid rgb(70, 70, 70);
+	transition: 0.5s;
+	opacity: 50%;
+}
+/*----------------------------------------------------------------*/
 
 .fade {
 	opacity: 0; 
@@ -3472,10 +3630,10 @@ hr {
 	  opacity: 1;
 	  transform: scale(1);
 	}
-  }
+}
   
   /* Fade-Out Animation */
-  @keyframes fadeOut {
+@keyframes fadeOut {
 	0% {
 	  opacity: 1;
 	  transform: scale(1);
@@ -3484,10 +3642,10 @@ hr {
 	  opacity: 0;
 	  transform: scale(0.95);
 	}
-  }
+}
   
   /* Slide-In from Left */
-  @keyframes slideInLeft {
+@keyframes slideInLeft {
 	0% {
 	  transform: translateX(-100%);
 	  opacity: 0;
@@ -3496,10 +3654,10 @@ hr {
 	  transform: translateX(0);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Slide-Out to Left */
-  @keyframes slideOutLeft {
+@keyframes slideOutLeft {
 	0% {
 	  transform: translateX(0);
 	  opacity: 1;
@@ -3508,10 +3666,10 @@ hr {
 	  transform: translateX(-100%);
 	  opacity: 0;
 	}
-  }
+}
   
   /* Slide-In from Right */
-  @keyframes slideInRight {
+@keyframes slideInRight {
 	0% {
 	  transform: translateX(100%);
 	  opacity: 0;
@@ -3520,10 +3678,10 @@ hr {
 	  transform: translateX(0);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Slide-Out to Right */
-  @keyframes slideOutRight {
+@keyframes slideOutRight {
 	0% {
 	  transform: translateX(0);
 	  opacity: 1;
@@ -3532,10 +3690,10 @@ hr {
 	  transform: translateX(100%);
 	  opacity: 0;
 	}
-  }
+}
   
   /* Slide-In from Top */
-  @keyframes slideInTop {
+@keyframes slideInTop {
 	0% {
 	  transform: translateY(-100%);
 	  opacity: 0;
@@ -3544,10 +3702,10 @@ hr {
 	  transform: translateY(0);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Slide-Out to Top */
-  @keyframes slideOutTop {
+@keyframes slideOutTop {
 	0% {
 	  transform: translateY(0);
 	  opacity: 1;
@@ -3556,10 +3714,10 @@ hr {
 	  transform: translateY(-100%);
 	  opacity: 0;
 	}
-  }
+}
   
   /* Slide-In from Bottom */
-  @keyframes slideInBottom {
+@keyframes slideInBottom {
 	0% {
 	  transform: translateY(100%);
 	  opacity: 0;
@@ -3568,10 +3726,10 @@ hr {
 	  transform: translateY(0);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Slide-Out to Bottom */
-  @keyframes slideOutBottom {
+@keyframes slideOutBottom {
 	0% {
 	  transform: translateY(0);
 	  opacity: 1;
@@ -3580,10 +3738,10 @@ hr {
 	  transform: translateY(100%);
 	  opacity: 0;
 	}
-  }
+}
   
   /* Scale-Up Animation */
-  @keyframes scaleUp {
+@keyframes scaleUp {
 	0% {
 	  transform: scale(0.8);
 	  opacity: 0;
@@ -3592,10 +3750,10 @@ hr {
 	  transform: scale(1);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Scale-Down Animation */
-  @keyframes scaleDown {
+@keyframes scaleDown {
 	0% {
 	  transform: scale(1);
 	  opacity: 1;
@@ -3604,10 +3762,10 @@ hr {
 	  transform: scale(0.8);
 	  opacity: 0;
 	}
-  }
+}
   
   /* Rotate-In Animation */
-  @keyframes rotateIn {
+@keyframes rotateIn {
 	0% {
 	  transform: rotate(-360deg);
 	  opacity: 0;
@@ -3616,10 +3774,10 @@ hr {
 	  transform: rotate(0);
 	  opacity: 1;
 	}
-  }
+}
   
   /* Rotate-Out Animation */
-  @keyframes rotateOut {
+@keyframes rotateOut {
 	0% {
 	  transform: rotate(0);
 	  opacity: 1;
@@ -3628,4 +3786,4 @@ hr {
 	  transform: rotate(360deg);
 	  opacity: 0;
 	}
-  }
+}
