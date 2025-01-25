@@ -26,6 +26,11 @@ function BentoGridDesignPage() {
       title: "Movie-Addict (Website) Project",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS | Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-04-01",
+        end: "2024-04-08",
+      },
       detail: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Designed streaming service website that announces movies, allowing users to rent/purchase them",
     },
     {
@@ -120,10 +125,27 @@ function BentoGridDesignPage() {
     setSelectedProject(filteredProjects[newIndex]);
   };
 
+  /*
   const formatDetail = (text) => {
     return text.replace(/&nbsp;/g, " ").trim();
   };
+  */
 
+  const calculateDuration = (start, end) => {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const timeDifference = endDate - startDate;
+    const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+    return daysDifference;
+  };
+  
+  const duration = calculateDuration(
+    projects[0].project_duration.start,
+    projects[0].project_duration.end
+  );
+  /*
+  console.log(`Project Duration: ${duration} days`);
+  */
 
   return (
     <>
@@ -502,10 +524,19 @@ function BentoGridDesignPage() {
                   </div>
 
                   <div className="sub-grid-item-detail">
+                    <p className="project-detail">Duration:</p>
+                  </div>
+                  <div className="sub-grid-item-detail">
+                    <p className="project-detail">
+                      {calculateDuration(selectedProject.project_duration.start, selectedProject.project_duration.end)} days
+                    </p>
+                  </div>
+
+                  <div className="sub-grid-item-detail">
                       <p className="project-detail">Details:</p>
                   </div>
                   <div className="sub-grid-item-detail">
-                  <p className="project-detail" dangerouslySetInnerHTML={{ __html: selectedProject.detail }}></p>
+                    <p className="project-detail" dangerouslySetInnerHTML={{ __html: selectedProject.detail }}></p>
                   </div>
                 </div>
               </div>

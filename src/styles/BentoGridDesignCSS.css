@@ -3330,7 +3330,7 @@ hr {
 /*----------------------------------------------------------------*/
 .sub-grid-detail {
 	display: grid;
-	grid-template-rows: 10% 40% 10% 40%;
+	grid-template-rows: 10% 20% 10% 25% 10% 25%;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 0;
 	/*border: 1px dashed red;*/
