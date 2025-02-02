@@ -88,7 +88,7 @@ function BentoGridDesignPage() {
     },
     {
       image: HeavenLandOracleSQLDeveloper,
-      link: "../public/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
+      link: "/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
       title: "Amusement Park Database Management System",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "Oracle SQL Developer, draw.io, Power Point",
