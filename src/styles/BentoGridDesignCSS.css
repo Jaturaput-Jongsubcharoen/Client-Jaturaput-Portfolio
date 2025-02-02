@@ -3420,7 +3420,7 @@ hr {
 
 .sub-grid-detail {
 	display: grid;
-	grid-template-rows: 8% 24% 4% 12% 4% 6% 10% 4% 6% 22%;
+	grid-template-rows: 8% 20% 4% 10% 4% 6% 10% 4% 4% 4% 6% 20%;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 0.8rem;
 	/*border: 1px dashed red;*/

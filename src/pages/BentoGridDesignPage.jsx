@@ -24,6 +24,7 @@ import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
+import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -65,7 +66,7 @@ function BentoGridDesignPage() {
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, Photoshop",
-      work_types: "Individual Project",
+      work_types: "Group of 5",
       project_duration: {
         start: "2024-11-14",
         end: "2024-12-12",
@@ -84,6 +85,19 @@ function BentoGridDesignPage() {
         end: "2024-12-05",
       },
       detail: "Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
+    },
+    {
+      image: HeavenLandOracleSQLDeveloper,
+      link: "../public/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
+      title: "Amusement Park Database Management System",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "Oracle SQL Developer, draw.io, Power Point",
+      work_types: "Group of 3",
+      project_duration: {
+        start: "2024-07-15",
+        end: "2024-08-05",
+      },
+      detail: "This database system provides a comprehensive framework for managing an amusement park's operations. It ensures data integrity while tracking visitors, ticket sales, attraction management, staff schedules, and seasonal variations. Key tables include Visitor, Ticket, SeasonDate, Attraction, Staff, WorkShift, TicketPurchased, Recording, and TicketAccess, facilitating seamless record-keeping and operational efficiency.",
     },
     {
       image: MagazineDesign2,
@@ -257,9 +271,9 @@ function BentoGridDesignPage() {
                     className="grid-nav2-menu"
                     onClick={() => handleCategoryChange("web")}
                   >
-                    <p>WEB & MOBILE</p>
+                    <p>SOFTWARE</p>
                     <br />
-                    <p>APP DESIGN</p>
+                    <p>DEVELOPMENT</p>
                   </div>
                 </div>
               </div>
@@ -647,6 +661,14 @@ function BentoGridDesignPage() {
                       {calculateDuration(selectedProject.project_duration.start, selectedProject.project_duration.end)} days
                     </p>
                   </div>
+
+                  <div className="sub-grid-item-detail">
+                    <p className="project-detail"><b>Work Type:</b></p>
+                  </div>
+                  <div className="sub-grid-item-detail">
+                    <p className="project-detail">{selectedProject.work_types}</p>
+                  </div>
+
                   <div className="sub-grid-item-detail">
                   </div>
 
