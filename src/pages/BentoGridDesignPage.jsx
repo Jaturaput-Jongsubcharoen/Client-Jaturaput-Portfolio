@@ -4,6 +4,7 @@ import { formatDateWithOrdinal } from "../containers/FormatDate";
 import "../styles/BentoGridDesignCSS.css";
 import '../index.css';
 
+import jaturaputLogo from '../images/logos/jaturaput-logo.png';
 import myPicture1 from "../images/my_picture1(500x750).png";
 import myPicture2 from "../images/my_picture2(800x800).png";
 import tapePicture from "../images/tape_picture(800x800).png";
@@ -440,7 +441,9 @@ function BentoGridDesignPage() {
               <div className="Grid-5-9 fade"></div>
               <div className="Grid-5-10 fade"></div>
               {
-                /* ______________________________________________________________________________________________________________________________________________________ */
+                /*
+                <img src={jaturaputLogo} alt={jaturaputLogo} />
+                ______________________________________________________________________________________________________________________________________________________ */
               }
 
               {

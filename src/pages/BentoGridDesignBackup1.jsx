@@ -4,6 +4,7 @@ import NavigationBar from '../containers/NavigationBar';
 import '../styles/BentoGridDesignCSS.css';
 
 import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';
+import jaturaputLogo from '../images/logos/jaturaput-logo.png';
 import MyPicture from '../images/my_picture1(500x750).png';
 
 import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';

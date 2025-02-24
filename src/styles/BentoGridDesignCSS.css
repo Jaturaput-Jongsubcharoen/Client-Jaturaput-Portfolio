@@ -791,6 +791,11 @@
 	border: 0.5px solid rgb(70, 70, 70);
 	transition: 0.5s;
 }
+.Grid-5-6 img {
+	width: 50%; 
+	height: 50%;
+	filter: grayscale(0%);
+}
 
 .Grid-5-7 {
 	grid-row: 5/6;
