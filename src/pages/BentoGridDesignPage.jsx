@@ -12,6 +12,7 @@ import PaintLetters from '../components/letters/PaintLetters.jsx';
 import ProjectCategoryNav from '../components/nav/ProjectCategoryNav.jsx';
 import ContactsButton from "../components/buttons/ContactsButton.jsx";
 
+import DisplayMyPicture from '../components/projects/DisplayMyPicture.jsx';
 import DisplayProject from '../components/projects/DisplayProject.jsx';
 import DisplayProjectDetail from '../components/projects/DisplayProjectDetail.jsx';
 
@@ -158,9 +159,7 @@ function BentoGridDesignPage() {
                   <img src={tapePicture2}  />
               </div>
               */}
-              <div className="project-img-box">
-                  <img src={myPicture2}  />
-              </div>
+              <DisplayMyPicture />
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
