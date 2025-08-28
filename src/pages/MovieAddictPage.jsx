@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import NavigationBar from '../containers/NavigationBar';
+import NavigationBar from '../helpers/NavigationBar';
 
 function MovieAddictPage() {
   const [array, setArray] = useState([]);

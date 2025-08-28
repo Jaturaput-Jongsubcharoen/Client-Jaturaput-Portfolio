@@ -1,7 +1,11 @@
+import { formatDateWithOrdinal } from "../../helpers/FormatDate";
+import "../../styles/BentoGridDesignCSS.css";
 
+function DisplayProjectDetail({ selectedProject, showDetails, calculateDuration }) {
 
-function DisplayProjectDetailFunction() {
-
+    // This is a safety guard in case the list is empty
+    if (!calculateDuration) return null;
+    
     return(
         <>
             <div className={`project-display ${showDetails ? "fade-in" : "fade-out"}`} style={{ visibility: showDetails ? "visible" : "hidden" }}>
@@ -84,4 +88,4 @@ function DisplayProjectDetailFunction() {
         </>
     )
 }
-export default DisplayProjectDetailFunction
+export default DisplayProjectDetail

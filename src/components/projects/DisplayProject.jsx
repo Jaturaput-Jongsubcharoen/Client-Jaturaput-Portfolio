@@ -1,6 +1,6 @@
-import "../styles/BentoGridDesignCSS.css";
+import "../../styles/BentoGridDesignCSS.css";
 
-function DisplayProjectFunction({ selectedProject, filteredProjects, showDetails, setShowDetails, handlePrev,  handleNext, calculateDuration}) {
+function DisplayProjectFunction({ selectedProject, filteredProjects, showDetails, setShowDetails, handlePrev,  handleNext}) {
     
     // This is a safety guard in case the list is empty
     if (!selectedProject) return null;

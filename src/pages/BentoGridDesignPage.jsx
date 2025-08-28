@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
-import { formatDateWithOrdinal } from "../containers/FormatDate";
-
+import { formatDateWithOrdinal } from "../helpers/FormatDate.jsx";
+//
 import "../styles/BentoGridDesignCSS.css";
 import '../index.css';
 
-import GridBackground from '../components/GridBackground.jsx';
-import PortLetters from '../components/PortLetters.jsx';
-import FolioLetters from '../components/FolioLetters.jsx';
-import PaintLetters from '../components/PaintLetters.jsx';
+import GridBackground from '../components/layout/GridBackground.jsx';
+import PortLetters from '../components/letters/PortLetters.jsx';
+import FolioLetters from '../components/letters/FolioLetters.jsx';
+import PaintLetters from '../components/letters/PaintLetters.jsx';
 
-import ProjectCategoryNav from '../nav/ProjectCategoryNav.jsx';
-import ContactsButton from "../components/ContactsButton.jsx";
+import ProjectCategoryNav from '../components/nav/ProjectCategoryNav.jsx';
+import ContactsButton from "../components/buttons/ContactsButton.jsx";
 
-import DisplayProjectFunction from '../components/DisplayProjectFunction.jsx';
+import DisplayProject from '../components/projects/DisplayProject.jsx';
+import DisplayProjectDetail from '../components/projects/DisplayProjectDetail.jsx';
 
 import jaturaputLogo from '../images/logos/jaturaput-logo.png';
 import myPicture1 from "../images/my_picture1(500x750).png";
@@ -120,36 +121,29 @@ function BentoGridDesignPage() {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
               <ProjectCategoryNav handleCategoryChange={handleCategoryChange} />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
+
               <ContactsButton />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
+
               <GridBackground />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
+
               <PortLetters />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
+
               <FolioLetters />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
+
               <PaintLetters />
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <DisplayProjectFunction
+
+              <DisplayProject
                 selectedProject={selectedProject}
                 filteredProjects={filteredProjects}
                 showDetails={showDetails}
                 setShowDetails={setShowDetails}
                 handlePrev={handlePrev}
                 handleNext={handleNext}
+              />
+
+              <DisplayProjectDetail
+                selectedProject={selectedProject}
+                showDetails={showDetails}
                 calculateDuration={calculateDuration}
               />
               {
@@ -178,83 +172,7 @@ function BentoGridDesignPage() {
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
-              <div className={`project-display ${showDetails ? "fade-in" : "fade-out"}`} style={{ visibility: showDetails ? "visible" : "hidden" }}>
-                <div className="sub-grid-detail">
-                  <div className="sub-grid-item-detail">
-                      <p className="project-detail"><b>Software & Tools:</b></p>
-                  </div>
-                  <div className="sub-grid-item-detail">
-                    {selectedProject.software_and_tools
-                      .split(",")
-                      .reduce((acc, tool, index) => {
-                        const groupIndex = Math.floor(index / 5);
-                        if (!acc[groupIndex]) {
-                          acc[groupIndex] = []; // Initialize new group - Reminder: Do not change
-                        }
-                        acc[groupIndex].push(tool.trim()); // Add tool to group - Reminder: Do not change
-                        return acc;
-                      }, [])
-                      .map((group, groupIndex) => (
-                        <div key={groupIndex} className="project-tool-group">
-                          {group.map((tool, toolIndex) => (
-                            <span key={toolIndex} className="project-tool">
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      ))}
-                  </div>
-                  <div className="sub-grid-item-detail">
-                  </div>
 
-                  <div className="sub-grid-detail2">
-                    <div className="sub-grid-item-detail">
-                      <p className="project-detail"><b>Start Date:</b></p>
-                    </div>
-                    <div className="sub-grid-item-detail">
-                      <p className="project-detail"><b>End Date:</b></p>
-                    </div>
-                    <div className="sub-grid-item-detail">
-                      <p className="project-detail">
-                        {formatDateWithOrdinal(selectedProject.project_duration.start)}
-                      </p>
-                    </div>
-                    <div className="sub-grid-item-detail">
-                      <p className="project-detail">
-                        {formatDateWithOrdinal(selectedProject.project_duration.end)}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="sub-grid-item-detail">
-                  </div>
-
-                  <div className="sub-grid-item-detail">
-                    <p className="project-detail"><b>Duration:</b></p>
-                  </div>
-                  <div className="sub-grid-item-detail">
-                    <p className="project-detail">
-                      {calculateDuration(selectedProject.project_duration.start, selectedProject.project_duration.end)} days
-                    </p>
-                  </div>
-
-                  <div className="sub-grid-item-detail">
-                    <p className="project-detail"><b>Work Type:</b></p>
-                  </div>
-                  <div className="sub-grid-item-detail">
-                    <p className="project-detail">{selectedProject.work_types}</p>
-                  </div>
-
-                  <div className="sub-grid-item-detail">
-                  </div>
-
-                  <div className="sub-grid-item-detail">
-                      <p className="project-detail"><b>Details:</b></p>
-                  </div>
-                  <div className="sub-grid-item-detail">
-                    <p className="project-detail" dangerouslySetInnerHTML={{ __html: selectedProject.detail }}></p>
-                  </div>
-                </div>
-              </div>
               {/*
               <div className="project-gif-box">
                   <img src={g1jo}  />

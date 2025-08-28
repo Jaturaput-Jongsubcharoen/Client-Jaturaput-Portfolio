@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import NavigationBar from '../containers/NavigationBar';
+import NavigationBar from '../helpers/NavigationBar';
 import '../styles/BentoGridDesignCSS.css';
 
 import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';

@@ -1,14 +1,14 @@
-import "../styles/BentoGridDesignCSS.css";
+import "../../styles/BentoGridDesignCSS.css";
 
-import picturePeices1 from "../images/picture_peices/picture_peices1.png";
-import picturePeices2 from "../images/picture_peices/picture_peices2.png";
-import picturePeices3 from "../images/picture_peices/picture_peices3.png";
-import picturePeices4 from "../images/picture_peices/picture_peices4.png";
-import picturePeices5 from "../images/picture_peices/picture_peices5.png";
-import picturePeices6 from "../images/picture_peices/picture_peices6.png";
-import picturePeices7 from "../images/picture_peices/picture_peices7.png";
-import picturePeices8 from "../images/picture_peices/picture_peices8.png";
-import picturePeices9 from "../images/picture_peices/picture_peices9.png";
+import picturePeices1 from "../../images/picture_peices/picture_peices1.png";
+import picturePeices2 from "../../images/picture_peices/picture_peices2.png";
+import picturePeices3 from "../../images/picture_peices/picture_peices3.png";
+import picturePeices4 from "../../images/picture_peices/picture_peices4.png";
+import picturePeices5 from "../../images/picture_peices/picture_peices5.png";
+import picturePeices6 from "../../images/picture_peices/picture_peices6.png";
+import picturePeices7 from "../../images/picture_peices/picture_peices7.png";
+import picturePeices8 from "../../images/picture_peices/picture_peices8.png";
+import picturePeices9 from "../../images/picture_peices/picture_peices9.png";
 
 function GridBackground() {
     return(

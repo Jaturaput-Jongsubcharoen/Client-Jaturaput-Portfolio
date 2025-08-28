@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/BentoGridDesignCSS.css";
+import "../../styles/BentoGridDesignCSS.css";
 
 function ProjectCategoryNav({ handleCategoryChange }) {
 

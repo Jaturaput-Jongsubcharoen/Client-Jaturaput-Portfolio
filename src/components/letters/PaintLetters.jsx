@@ -1,4 +1,4 @@
-import "../styles/BentoGridDesignCSS.css";
+import "../../styles/BentoGridDesignCSS.css";
 
 function PaintLetters() {
     return(
