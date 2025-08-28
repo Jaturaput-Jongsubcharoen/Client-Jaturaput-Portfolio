@@ -1,5 +1,5 @@
 import myPicture2 from "../../images/my_picture2(800x800).png";
-import "./DisplayMyPictureProfile.css";
+import "../../styles/layout/ResponsiveGrid.css";
 
 function DisplayMyPictureProfile() {
   return (

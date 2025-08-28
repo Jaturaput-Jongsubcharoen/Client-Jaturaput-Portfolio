@@ -1,0 +1,50 @@
+/* Container (your existing rules OK) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 100dvh;
+  position: relative;
+  background: linear-gradient(454deg, #363636, #ffffff);
+  z-index: 0;
+}
+
+/* Each cell explicit, sits below the photo */
+.grid-item {
+  border: 1px solid #000;
+  background: none;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;       /* enables z-index */
+  z-index: 10;               /* base layer */
+}
+
+/* Photo overlaps the cells it sits on */
+.profile-img-box {
+  grid-row: 3 / 6;          /* rows 3–5 */
+  grid-column: 4 / 7;       /* cols 4–6 */
+  position: relative;
+  z-index: 5;              /* above .grid-item */
+  display: flex; align-items: center; justify-content: center;
+}
+.profile-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Phone: 3 columns; keep overlap using grid lines only */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 16.66vh;      /* same row height feel as desktop */
+    height: auto;                 /* allow scroll */
+    overflow-y: auto;
+  }
+  .profile-img-box {
+    grid-row: 3 / 6;              /* rows 3–5 */
+    grid-column: 1 / 4;           /* span all 3 columns */
+    z-index: 5;
+  }
+}
