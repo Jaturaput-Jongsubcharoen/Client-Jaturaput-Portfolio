@@ -1,0 +1,109 @@
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 40px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1003;
+  color: #ffffff;
+}
+
+.hamburger.is-open { 
+    left: calc(280px + 12px); 
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px;
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; 
+  border: 0;
+}
+
+.backdrop {
+  position: fixed; 
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  color: #ffffff;
+  z-index: 1000;
+}
+
+.drawer {
+  position: fixed; top: 0; left: 0;
+  color: #ffffff;
+  height: 100vh; 
+  width: 280px; 
+  max-width: 85vw;
+  background: #000000; 
+  box-shadow: 2px 0 24px rgba(0,0,0,.15);
+  padding: 2rem 1.25rem; 
+  z-index: 1002;
+  animation: slide-in .25s ease-out forwards;
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
+
+@keyframes slide-in { 
+    from { 
+        transform: translateX(-100%);
+    } to { 
+        transform: translateX(0);
+    } 
+}
+
+.drawer ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 3rem 0 0 0;
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem;
+}
+.drawer a {
+  text-decoration: none; 
+  font-size: 1.1rem; 
+  color: #ffffff;
+  padding: .25rem .125rem; 
+  border-radius: 6px;
+}
+.drawer a:hover, .drawer a:focus { 
+    background: #000000; 
+    outline: none; 
+}
+
+@media (max-width: 330px) {
+  .drawer { 
+    width: 85vw; 
+  }
+  .hamburger.is-open { 
+    left: calc(85vw + 12px); 
+  }
+}
+
+/* new header inside the drawer */
+.drawer-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* push X to the right */
+  margin-bottom: 1rem;
+}
+
+/* style the close button */
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;   /* or #000 if drawer bg is light */
+  font-size: 1.5rem;
+}
