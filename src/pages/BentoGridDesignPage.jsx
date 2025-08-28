@@ -4,6 +4,12 @@ import { formatDateWithOrdinal } from "../containers/FormatDate";
 import "../styles/BentoGridDesignCSS.css";
 import '../index.css';
 
+import GridBackground from '../components/GridBackground.jsx';
+import PortLetters from '../components/PortLetters.jsx';
+import FolioLetters from '../components/FolioLetters.jsx';
+import PaintLetters from '../components/PaintLetters.jsx';
+import ContactsButton from "../components/ContactsButton.jsx";
+
 import jaturaputLogo from '../images/logos/jaturaput-logo.png';
 import myPicture1 from "../images/my_picture1(500x750).png";
 import myPicture2 from "../images/my_picture2(800x800).png";
@@ -11,21 +17,12 @@ import tapePicture from "../images/tape_picture(800x800).png";
 import tapePicture2 from "../images/tape_picture2(800x800).png";
 import g1jo from "../gif/G1JO.gif";
 
-import picturePeices1 from "../images/picture_peices/picture_peices1.png";
-import picturePeices2 from "../images/picture_peices/picture_peices2.png";
-import picturePeices3 from "../images/picture_peices/picture_peices3.png";
-import picturePeices4 from "../images/picture_peices/picture_peices4.png";
-import picturePeices5 from "../images/picture_peices/picture_peices5.png";
-import picturePeices6 from "../images/picture_peices/picture_peices6.png";
-import picturePeices7 from "../images/picture_peices/picture_peices7.png";
-import picturePeices8 from "../images/picture_peices/picture_peices8.png";
-import picturePeices9 from "../images/picture_peices/picture_peices9.png";
-
 import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
 import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
+import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -101,6 +98,19 @@ function BentoGridDesignPage() {
       detail: "This database system provides a comprehensive framework for managing an amusement park's operations. It ensures data integrity while tracking visitors, ticket sales, attraction management, staff schedules, and seasonal variations. Key tables include Visitor, Ticket, SeasonDate, Attraction, Staff, WorkShift, TicketPurchased, Recording, and TicketAccess, facilitating seamless record-keeping and operational efficiency.",
     },
     {
+      image: ColissionFatalityPrediction,
+      link: "https://machine-learning-collision-fatality.onrender.com/",
+      title: "Colission Fatality Prediction (Website & Machine Learning) Project",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, JavaScript, Python, React, Trained ML Model (.pkl), Render",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2025-04-31",
+        end: "2025-05-28",
+      },
+      detail: "This web app predicts the likelihood of a fatal traffic collision in Toronto using machine learning models like Random Forest, KNN, SVM, Neural Networks, and Logistic Regression, based on user-selected road, driver, and environmental conditions. When you select a model, its performance is displayed to help you understand how well it predicts fatal outcomes by Jaturaput (Mac) Jongsubcharoen.",
+    },
+    {
       image: MagazineDesign2,
       link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
       title: "Magazine Design",
@@ -139,6 +149,7 @@ function BentoGridDesignPage() {
       },
       detail: "Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
     },
+
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
@@ -278,250 +289,27 @@ function BentoGridDesignPage() {
                   </div>
                 </div>
               </div>
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <ContactsButton />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <GridBackground />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <PortLetters />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <FolioLetters />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              <PaintLetters />
 
-              <p
-                className="grid-nav0-1-Contact"
-                style={{
-                  border: "1px solid rgba(255, 255, 255, 0.4)",
-                  padding: "6px",
-                  boxShadow: "inset 2px 2px 4px 0px rgba(0, 0, 0, .5)",
-                }}
-              >
-                CONTACT
-              </p>
-              <div className="nav-bar-box-Contact r1-c9-location">
-                <div className="project-content-box"> {/*className="project-content-box"*/}
-                  <div className="grid-content-container" style={{ textAlign: "center" }}> {/*className="grid-content-container"*/}
-                    {/*/
-                    <div className="grid-content1">
-                      <h2>MOVIE-ADDICT</h2>
-                    </div>
-                    <div className="grid-content2">
-                      <img
-                        className="content-logo-project"
-                        src="web_design_project/Individual_Project/logo/Movie-Addict-Logo.png"
-                        alt="Movie Addict Logo"
-                      />
-                    </div>
-                    
-                    <div className="grid-content3">
-                      <a
-                        href="mailto:jjongsub@my.centennialcollege.ca"
-                        className="button-product"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        CONTACT
-                      </a>
-                    </div>
-                    <br />
-                    <br />
-                    */}
-                    <div className="grid-content1">
-                    <h3>Github: Client Side</h3>
-                      <a
-                        href="https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidingHyperLink"
-                      >
-                        https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio.git
-                      </a>
-                    <br />
-                    <br />
-                    <h3>Github: Server Side</h3>
-                      <a
-                        href="https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidingHyperLink"
-                      >
-                        https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio.git
-                      </a>
-                    <br />
-                    <h3>LinkedIn:</h3>
-                      <a
-                        href="https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidingHyperLink"
-                      >
-                        https://www.linkedin.com/in/jaturaput-jongsubcharoen-5267ba25b
-                      </a>
-                    <br />
-                    <br />
-                    <h3>College Email:</h3>
-                      <a
-                        href="mailto:jjongsub@my.centennialcollege.ca"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidingHyperLink"
-                      >
-                        jjongsub@my.centennialcollege.ca
-                      </a>
-                    <br />
-                    <br />
-                    <h3>Private Email:</h3>
-                      <a
-                        href="mailto:macker.jong@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hidingHyperLink"
-                      >
-                        macker.jong@gmail.com
-                      </a>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="Grid-1-1 fade"></div>
-              <div className="Grid-1-2 fade"></div>
-              <div className="Grid-1-3 fade"></div>
-              <div className="Grid-1-4 fade"></div>
-              <div className="Grid-1-5 fade"></div>
-              <div className="Grid-1-6 fade"></div>
-              <div className="Grid-1-7 fade"></div>
-              <div className="Grid-1-8 fade"></div>
-              <div className="Grid-1-9 fade"></div>
-              <div className="Grid-1-10 fade"></div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="Grid-2-1 fade"></div>
-              <div className="Grid-2-2 fade"></div>
-              <div className="Grid-2-3 fade"></div>
-              <div className="Grid-2-4 fade"><img src={picturePeices1}  /></div>
-              <div className="Grid-2-5 fade"><img src={picturePeices2}  /></div>
-              <div className="Grid-2-6 fade"><img src={picturePeices3}  /></div>
-              <div className="Grid-2-7 fade"></div>
-              <div className="Grid-2-8 fade"></div>
-              <div className="Grid-2-9 fade"></div>
-              <div className="Grid-2-10 fade"></div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="Grid-3-1 fade"></div>
-              <div className="Grid-3-2 fade"></div>
-              <div className="Grid-3-3 fade"></div>
-              <div className="Grid-3-4 fade"></div>
-              <div className="Grid-3-5 fade"><img src={picturePeices5}  /></div>
-              <div className="Grid-3-6 fade"><img src={picturePeices6}  /></div>
-              <div className="Grid-3-7 fade"></div>
-              <div className="Grid-3-8 fade"></div>
-              <div className="Grid-3-9 fade"></div>
-              <div className="Grid-3-10 fade"></div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="Grid-4-1 fade"></div>
-              <div className="Grid-4-2 fade"></div>
-              <div className="Grid-4-3 fade"></div>
-              <div className="Grid-4-4 fade"></div>
-              <div className="Grid-4-5 fade"></div>
-              <div className="Grid-4-6 fade"><img src={picturePeices9}  /></div>
-              <div className="Grid-4-7 fade"></div>
-              <div className="Grid-4-8 fade"></div>
-              <div className="Grid-4-9 fade"></div>
-              <div className="Grid-4-10 fade"></div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="Grid-5-1 fade"></div>
-              <div className="Grid-5-2 fade"></div>
-              <div className="Grid-5-3 fade"></div>
-              <div className="Grid-5-4 fade"></div>
-              <div className="Grid-5-5 fade"></div>
-              <div className="Grid-5-6 fade"></div>
-              <div className="Grid-5-7 fade"></div>
-              <div className="Grid-5-8 fade"></div>
-              <div className="Grid-5-9 fade"></div>
-              <div className="Grid-5-10 fade"></div>
-              {
-                /*
-                <img src={jaturaputLogo} alt={jaturaputLogo} />
-                ______________________________________________________________________________________________________________________________________________________ */
-              }
-
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="title1-box r1-c2-location">
-                <span style={{ "--i": 0 }}>
-                  <h2>P</h2>
-                </span>
-                <span style={{ "--i": 1 }}></span>
-                <span style={{ "--i": 2 }}></span>
-                <span style={{ "--i": 3 }}></span>
-              </div>
-              <div className="title1-box r2-c3-location">
-                <span style={{ "--i": 0 }}>
-                  <h2>O</h2>
-                </span>
-                <span style={{ "--i": 1 }}></span>
-                <span style={{ "--i": 2 }}></span>
-                <span style={{ "--i": 3 }}></span>
-              </div>
-              <div className="title1-box r3-c4-location">
-                <span style={{ "--i": 0 }}>
-                  <h2>R</h2>
-                </span>
-                <span style={{ "--i": 1 }}></span>
-                <span style={{ "--i": 2 }}></span>
-                <span style={{ "--i": 3 }}></span>
-              </div>
-              <div className="title1-box r4-c5-location">
-                <span style={{ "--i": 0 }}>
-                  <h2>T</h2>
-                </span>
-                <span style={{ "--i": 1 }}></span>
-                <span style={{ "--i": 2 }}></span>
-                <span style={{ "--i": 3 }}></span>
-              </div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="title2-box r1-c3-location">
-                <h2>F</h2>
-              </div>
-              <div className="title2-box r2-c3-location">
-                <h2>O</h2>
-              </div>
-              <div className="title2-box r3-c3-location">
-                <h2>L</h2>
-              </div>
-              <div className="font4-title2-box r4-c3-location">
-                <h2>i</h2>
-                <h2>i</h2>
-              </div>
-              <div className="title2-box r5-c3-location">
-                <h2>O</h2>
-              </div>
-              {
-                /* ______________________________________________________________________________________________________________________________________________________ */
-              }
-              <div className="font1-painting-box r4-c1-location">
-                <h2>P</h2>
-                <h2>P</h2>
-              </div>
-              <div className="font2-painting-box r4-c2-location">
-                <h2>A</h2>
-                <h2>A</h2>
-              </div>
-              {
-                /*
-                <div className="font3-painting-box">
-                    <h2>I</h2>
-                </div>
-                */
-              }
-              <div className="font4-painting-box r4-c4-location">
-                <h2>N</h2>
-                <h2>N</h2>
-              </div>
               {
                 /* ______________________________________________________________________________________________________________________________________________________ */
               }
