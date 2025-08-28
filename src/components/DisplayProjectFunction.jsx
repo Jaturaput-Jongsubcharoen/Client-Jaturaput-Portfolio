@@ -1,5 +1,43 @@
+import { useState, useEffect } from "react";
+import projects from "../data/JaturaputProject"
+
 
 function DisplayProjectFunction() {
+
+    const [filteredProjects, setFilteredProjects] = useState(projects.filter((project) => project.type === "WEB & MOBILE DESIGN"));
+    const [selectedProject, setSelectedProject] = useState(filteredProjects[0]);
+    const [showDetails, setShowDetails] = useState(false);
+
+    const handlePrev = () => {
+        const currentIndex = filteredProjects.indexOf(selectedProject);
+        const newIndex =
+        currentIndex === 0 ? filteredProjects.length - 1 : currentIndex - 1;
+        setSelectedProject(filteredProjects[newIndex]);
+    };
+
+    const handleNext = () => {
+        const currentIndex = filteredProjects.indexOf(selectedProject);
+        const newIndex =
+        currentIndex === filteredProjects.length - 1 ? 0 : currentIndex + 1;
+        setSelectedProject(filteredProjects[newIndex]);
+    };
+
+    useEffect(() => {
+    const filtered = projects.filter((project) => {
+      if (selectedCategory === "web") {
+        return project.type === "WEB & MOBILE DESIGN";
+      } else if (selectedCategory === "magazine") {
+        return project.type === "MAGAZINE DESIGN";
+      } else if (selectedCategory === "architectural") {
+        return project.type === "ARCHITECTURAL DESIGN";
+      }
+      return false;
+    });
+
+        setFilteredProjects(filtered);
+        setSelectedProject(filtered[0]);
+    }, [selectedCategory]);
+
     return(
         <>
             <div className="project-box">
