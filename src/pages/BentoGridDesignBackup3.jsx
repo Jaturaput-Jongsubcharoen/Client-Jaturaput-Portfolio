@@ -25,7 +25,7 @@ import g1jo from "../gif/G1JO.gif";
 
 import projects from '../data/JaturaputProject.js';
 
-function BentoGridDesignPage() {
+function BentoGridDesignBackup3() {
 
   const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
   const [filteredProjects, setFilteredProjects] = useState(projects.filter((project) => project.type === "WEB & MOBILE DESIGN"));
@@ -118,7 +118,9 @@ function BentoGridDesignPage() {
           }
           <div className="scrolling-slides">
             <div className="Grid-container">
-
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
               <ProjectCategoryNav handleCategoryChange={handleCategoryChange} />
 
               <ContactsButton />
@@ -130,8 +132,6 @@ function BentoGridDesignPage() {
               <FolioLetters />
 
               <PaintLetters />
-
-              <DisplayMyPicture />
 
               <DisplayProject
                 selectedProject={selectedProject}
@@ -147,13 +147,45 @@ function BentoGridDesignPage() {
                 showDetails={showDetails}
                 calculateDuration={calculateDuration}
               />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              {/*
+              <div className="project-tape1-img-box">
+                  <img src={tapePicture}  />
+              </div>
               
+              <div className="project-tape2-img-box">
+                  <img src={tapePicture2}  />
+              </div>
+              */}
+              <DisplayMyPicture />
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+              {/*
+              <div className="r2-c4-location">
+                  <img src={picturePeices1}  />
+              </div>
+              */}
+              {
+                /* ______________________________________________________________________________________________________________________________________________________ */
+              }
+
+              {/*
+              <div className="project-gif-box">
+                  <img src={g1jo}  />
+              </div>
+              */}
             </div>
           </div>
+          {
+            /* ______________________________________________________________________________________________________________________________________________________ */
+          }
         </div>
       </div>
     </>
   );
 }
 
-export default BentoGridDesignPage;
+export default BentoGridDesignBackup3;

@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage';
 import BentoGridDesignPage from './pages/BentoGridDesignPage';
 import BentoGridDesignBackup1 from './pages/BentoGridDesignBackup1';
 import BentoGridDesignBackup2 from './pages/BentoGridDesignBackup2';
+import BentoGridDesignBackup3 from './pages/BentoGridDesignBackup3';
 import MovieAddictPage from './pages/MovieAddictPage';
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Bento-Grid-Design" element={<BentoGridDesignPage />} />
         <Route path="/Bento-Grid-Design-backup1" element={<BentoGridDesignBackup1 />} />
         <Route path="/Bento-Grid-Design-backup2" element={<BentoGridDesignBackup2 />} />
+        <Route path="/Bento-Grid-Design-backup3" element={<BentoGridDesignBackup3 />} />
         <Route path="/Movie-Addict" element={<MovieAddictPage />} />
       </Routes>
     </Router>
