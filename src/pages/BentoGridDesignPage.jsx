@@ -10,6 +10,7 @@ import PaintLetters from '../components/letters/PaintLetters.jsx';
 
 import ProjectCategoryNav from '../components/nav/ProjectCategoryNav.jsx';
 import ContactsButton from "../components/buttons/ContactsButton.jsx";
+import ContactsMenu from '../components/buttons/ContactsMenu.jsx';
 
 import DisplayMyPicture from '../components/projects/DisplayMyPicture.jsx';
 import DisplayProject from '../components/projects/DisplayProject.jsx';

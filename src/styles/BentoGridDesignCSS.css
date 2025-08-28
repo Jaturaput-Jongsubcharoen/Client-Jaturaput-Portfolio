@@ -3044,12 +3044,17 @@ a:hover {
 /*----------------------------------------------------------------*/
 .hidingHyperLink {
     text-decoration: none; 
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
     color: inherit;
+	transition: 0.5s;
 }
   
 .hidingHyperLink:hover {
     color: #000000;
     text-decoration: underline;
+	
 }
 /*----------------------------------------------------------------*/
 .left-arrow-Sliding {

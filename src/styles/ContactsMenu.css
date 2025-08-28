@@ -1,0 +1,82 @@
+/* Container positions relative so the panel can anchor to it */
+.contact-menu {
+  position: relative;
+  width: fit-content;
+}
+
+/* Reuse your existing tile look; just ensure it's a button */
+.contact-toggle {
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 10px;
+  box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 120ms ease, background 120ms ease;
+}
+.contact-toggle:hover { transform: translateY(-1px); }
+.contact-toggle.active { background: rgba(255,255,255,0.08); }
+
+/* Floating panel (glassy card) */
+.contact-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 340px;
+  max-width: 420px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  animation: cm-fade-in 160ms ease-out;
+  z-index: 30;
+}
+
+@keyframes cm-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid of link cards */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Each link card */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  word-break: break-word;
+}
+.contact-card:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
