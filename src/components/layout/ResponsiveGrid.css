@@ -7,8 +7,9 @@
   height: 100dvh;      /* dynamic viewport height, no overflow */
   margin: 0;           /* remove margin to avoid scroll */
   padding: 0;          /* remove padding (or keep minimal) */
-  background: #111;
+  background: linear-gradient(454deg, #363636, #ffffff);
   border-color: solid 1rem #ffffff;
+  position: relative;
 }
 
 .grid-item {
@@ -20,6 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* give stacking context */
+  z-index: 1;         /* lower layer */
   /*border-radius: 6px;*/
 }
 
@@ -31,5 +34,43 @@
     grid-auto-rows: 16.66vh;                 /* each row same height as desktop */
     height: auto;                            /* let it grow */
     overflow-y: auto;                        /* allow scrolling */
+    background: linear-gradient(454deg, #363636, #ffffff);
   }
+  .profile-img-box {
+    /* float above grid cells 3–5 across all 3 columns */
+    position: absolute;
+    z-index: 5;
+
+    /* rows are 16.66vh tall → row 3 starts after 2 rows */
+    top: calc(16.66vh * 2);    /* start at row 3 */
+    left: 0;                   /* col 1 */
+    width: 100%;               /* span all 3 columns */
+    height: calc(16.66vh * 3); /* span rows 3–5 */
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .profile-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/*-----------------------------------------------------------------------*/
+
+/* profile box overlaps */
+.profile-img-box {
+  grid-row: 3 / 6;        /* same grid placement */
+  grid-column: 4 / 7;
+  position: absolute;
+  z-index: 2;             /* higher layer -> overlaps */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img-box img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
 }

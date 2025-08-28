@@ -7,6 +7,7 @@ import BentoGridDesignPage from './pages/BentoGridDesignPage';
 import BentoGridDesignBackup1 from './pages/BentoGridDesignBackup1';
 import BentoGridDesignBackup2 from './pages/BentoGridDesignBackup2';
 import BentoGridDesignBackup3 from './pages/BentoGridDesignBackup3';
+import BentoGridDesignBackup5 from './pages/BentoGridDesignBackup5';
 import MovieAddictPage from './pages/MovieAddictPage';
 import HamburgerNav from './components/nav/HamburgerNav';
 import ResponsiveGrid from './components/layout/ResponsiveGrid';
@@ -16,14 +17,15 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<BentoGridDesignPage />} />
-        <Route path="/MainPage" element={<MainPage />} />
-        <Route path="/About" element={<AboutPage />} />
+        <Route path="/main-page" element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/Bento-Grid-Design" element={<BentoGridDesignPage />} />
-        <Route path="/Bento-Grid-Design-backup1" element={<BentoGridDesignBackup1 />} />
-        <Route path="/Bento-Grid-Design-backup2" element={<BentoGridDesignBackup2 />} />
-        <Route path="/Bento-Grid-Design-backup3" element={<BentoGridDesignBackup3 />} />
-        <Route path="/Movie-Addict" element={<MovieAddictPage />} />
+        <Route path="/bento-grid-design" element={<BentoGridDesignPage />} />
+        <Route path="/bento-grid-design-backup1" element={<BentoGridDesignBackup1 />} />
+        <Route path="/bento-grid-design-backup2" element={<BentoGridDesignBackup2 />} />
+        <Route path="/bento-Grid-design-backup3" element={<BentoGridDesignBackup3 />} />
+        <Route path="/bento-grid-design-backup5" element={<BentoGridDesignBackup5 />} />
+        <Route path="/movie-addict" element={<MovieAddictPage />} />
         <Route path="/hamburger-nav" element={<HamburgerNav />}/>
         <Route path="/responsive-grid" element={<ResponsiveGrid />}/>
       </Routes>

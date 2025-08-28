@@ -1,4 +1,5 @@
 import "./ResponsiveGrid.css";
+import DisplayMyPictureProfile from "../projects/DisplayMyPictureProfile";
 
 export default function ResponsiveGrid() {
   return (
@@ -8,6 +9,7 @@ export default function ResponsiveGrid() {
           Item {i + 1}
         </div>
       ))}
+        <DisplayMyPictureProfile />
     </div>
   );
 }

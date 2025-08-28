@@ -2779,7 +2779,7 @@ a:hover {
 	height: 100dvh;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(454deg, #363636, #ffffff);
+
 	overflow-x: hidden;
 	overflow-y: hidden;
 	/*overflow-y: scroll;*/
