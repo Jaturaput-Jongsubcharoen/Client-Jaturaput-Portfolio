@@ -9,6 +9,7 @@ import BentoGridDesignBackup2 from './pages/BentoGridDesignBackup2';
 import BentoGridDesignBackup3 from './pages/BentoGridDesignBackup3';
 import MovieAddictPage from './pages/MovieAddictPage';
 import HamburgerNav from './components/nav/HamburgerNav';
+import ResponsiveGrid from './components/layout/ResponsiveGrid';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Bento-Grid-Design-backup3" element={<BentoGridDesignBackup3 />} />
         <Route path="/Movie-Addict" element={<MovieAddictPage />} />
         <Route path="/hamburger-nav" element={<HamburgerNav />}/>
+        <Route path="/responsive-grid" element={<ResponsiveGrid />}/>
       </Routes>
     </Router>
   );
