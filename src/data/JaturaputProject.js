@@ -1,0 +1,134 @@
+import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
+import Tesla from "../images/screenshots/Tesla(1900x1080).png";
+import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
+import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
+import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
+import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
+
+import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
+
+import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
+import UndergraduateArchitectureProject from "../images/screenshots/Undergraduate-Architecture-Project(2480x3508)-300PxInch.png";
+
+
+const projects = [
+    {
+      image: MovieAddict,
+      link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
+      title: "Movie-Addict (Website) Project",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-03-25",
+        end: "2024-04-08",
+      },
+      detail: "Designed streaming service website that announces movies, allowing users to rent/purchase them",
+    },
+    {
+      image: Tesla,
+      link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
+      title: "Tesla Specification (Website) Project",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-01-29",
+        end: "2024-02-05",
+      },
+      detail: "Created a visually appealing and responsive website to showcase Tesla's specifications and features. Focused on delivering a clean, modern layout, ensuring compatibility across devices. Incorporated interactive elements such as hover effects, animations, and structured navigation for enhanced user experience. Ensured proper SEO techniques for better discoverability of the webpage.",
+    },
+    {
+      image: NutriKcal,
+      link: "https://comp229-nutrisnap-client1.onrender.com/",
+      title: "Nutritional Tracking (Website) Project",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, Photoshop",
+      work_types: "Group of 5",
+      project_duration: {
+        start: "2024-11-14",
+        end: "2024-12-12",
+      },
+      detail: "Handled all website functions on the website to connect between the MongoDB, backend server and frontend server and managed the deployment successfully with user-friendly design. All features were tied to user authentication; users without a user ID had to create one and log in first, with tokens used for verification.",
+    },
+    {
+      image: QueueMeMobileApp,
+      link: "https://bit.ly/ClinicMobileApp-Figma",
+      title: "Clinic Appointment (Mobile App) Design",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "Figma, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2024-11-21",
+        end: "2024-12-05",
+      },
+      detail: "Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
+    },
+    {
+      image: HeavenLandOracleSQLDeveloper,
+      link: "/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
+      title: "Amusement Park Database Management System",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "Oracle SQL Developer, draw.io, Power Point",
+      work_types: "Group of 3",
+      project_duration: {
+        start: "2024-07-15",
+        end: "2024-08-05",
+      },
+      detail: "This database system provides a comprehensive framework for managing an amusement park's operations. It ensures data integrity while tracking visitors, ticket sales, attraction management, staff schedules, and seasonal variations. Key tables include Visitor, Ticket, SeasonDate, Attraction, Staff, WorkShift, TicketPurchased, Recording, and TicketAccess, facilitating seamless record-keeping and operational efficiency.",
+    },
+    {
+      image: ColissionFatalityPrediction,
+      link: "https://machine-learning-collision-fatality.onrender.com/",
+      title: "Colission Fatality Prediction (Website & Machine Learning) Project",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, JavaScript, Python, React, Trained ML Model (.pkl), Render",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2025-04-31",
+        end: "2025-05-28",
+      },
+      detail: "This web app predicts the likelihood of a fatal traffic collision in Toronto using machine learning models like Random Forest, KNN, SVM, Neural Networks, and Logistic Regression, based on user-selected road, driver, and environmental conditions. When you select a model, its performance is displayed to help you understand how well it predicts fatal outcomes by Jaturaput (Mac) Jongsubcharoen.",
+    },
+    {
+      image: MagazineDesign2,
+      link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
+      title: "Magazine Design",
+      type: "MAGAZINE DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2022-10-07",
+        end: "2022-10-14",
+      },
+      detail: "Created an interactive and visually appealing magazine layout to present articles, advertisements, and images effectively. Focused on utilizing creative typography and graphics for an engaging reading experience. Integrated features for smooth navigation, such as hyperlinks and clickable elements, to enhance accessibility in digital formats.",
+    },
+    {
+      image: AWIIHouseWorkExperience,
+      link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
+      title: "Wittawii Company Work Experience",
+      type: "ARCHITECTURAL DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2022-01-01",
+        end: "2022-11-11",
+      },
+      detail: "Worked as an architectural designer for residential and commercial projects. Designed detailed 3D models and rendered realistic visualizations to present to clients. Collaborated closely with team members to refine designs based on feedback. Produced floor plans and construction documents using 2D AutoCAD while ensuring adherence to project timelines and quality standards.",
+    },
+    {
+      image: UndergraduateArchitectureProject,
+      link: "https://online.fliphtml5.com/ukqkz/ybin/#p=1",
+      title: "Undergraduate Architecture Project",
+      type: "ARCHITECTURAL DESIGN",
+      software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2016-08-08",
+        end: "2021-05-27",
+      },
+      detail: "Developed an innovative architectural design project as part of undergraduate coursework. Conducted extensive research to understand user needs and environmental impact, integrating sustainability into the project. Created 3D models and rendered photorealistic images using V-Ray for presentations. Produced detailed site plans, elevations, and conceptual drawings to communicate the design intent effectively.",
+    },
+
+];
+export default projects
