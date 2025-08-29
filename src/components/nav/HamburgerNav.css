@@ -2,134 +2,184 @@
 .hamburger-cell {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  align-self: stretch;
-  justify-self: stretch;
-  display: flex;
-  align-items: center;
+  display: flex; 
+  align-items: center; 
   justify-content: center;
   z-index: 1003;
 }
 
-/* Simple text button */
-.hamburger {
-  display: flex; 
-  background: transparent;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
+/* Button */
+.hamburger { 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  background: transparent; 
+  border: 0; color:#fff; 
+  cursor:pointer; 
+  font-weight:600; 
 }
 .hamburger-text { 
-  font-size: .95rem;
-  border: 1px solid #ffffff;
-  margin: 0;
-  border-radius: 10%;
-  display: inline-block;  
-  transition: 0.5s;
+  font-size:.95rem; 
+  border:1px solid #fff; 
+  padding:.5rem 1rem; 
+  border-radius:6px; 
+  transition:.3s; 
+}
+.hamburger-text:hover, .hamburger-text:focus { 
+  background: rgba(0,0,0,.5); 
+  outline: none; 
 }
 
-.hamburger-text:hover,
-.hamburger-text:focus {
-  background: rgba(0,0,0,0.5);
-  outline: none; /* remove default blue outline */
-}
-
-/* Backdrop behind links */
-.backdrop {
+/* Backdrop fade */
+.backdrop { 
   position: fixed; 
-  inset: 0;
-  background: rgba(0,0,0,.35);
+  inset: 0; 
+  background: rgba(0,0,0,.35); 
   z-index: 20;
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity 220ms ease-in-out; }
+
+.backdrop.is-open { 
+  opacity: 1; 
+  pointer-events: auto; 
 }
 
-/* Make <li> act as direct grid children */
-/* Remove absolute, rely on parent grid */
-.grid-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: contents;  /* makes li behave as if direct children of grid */
-  z-index: 25;  /* above gradient */
-  position: relative;
-}
-
-/* Style for each nav item */
-.grid-nav > li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 6px 12px;
-  border: 1px solid #ffffff;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.35);
-}
-.grid-nav > li a:hover,
-.grid-nav > li a:focus {
-  background: rgba(0,0,0,0.5);
-}
-
-/* Background container for nav */
+/* LEFT COLUMN (col 1) — gradient + grid rows */
 .nav-background {
   grid-row: 1 / 5;
   grid-column: 1 / 2;
   background: linear-gradient(454deg, #363636, #ffffff);
-  z-index: 30; /* higher than backdrop */
+  z-index: 30;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
-  align-items: stretch;                 /* <-- make rows fill height */
-  justify-items: stretch;               /* <-- make rows fill width  */
+  align-items: stretch;
+  justify-items: stretch;
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 
+  /* Fade */
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
+  transform: translateX(-6px);
+  border-inline: 1px solid #000;      /* single 1px vertical edges */
+}
+.nav-background.is-open { 
+  opacity: 1; 
+  pointer-events: auto; 
+  transform: translateX(0); }
+
+/* Horizontal separators per row (avoid double-thick) */
+.nav-background > li { 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  border-block-start: 1px solid #000; 
+}
+.nav-background > li:last-child { 
+  border-block-end: 1px solid #000; 
 }
 
-.nav-background > li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 2px solid #000000;
+/* Left nav item placement (rows 2–4, col 1) */
+.nav-projects       { 
+  grid-row: 2 / 3; 
+}
+.nav-qualifications { 
+  grid-row: 3 / 4; 
+}
+.nav-contacts       { 
+  grid-row: 4 / 5; 
 }
 
-/* Ensure each one lands in its row */
-.nav-projects       { grid-row: 2 / 3; }
-.nav-qualifications { grid-row: 3 / 4; }
-.nav-contacts       { grid-row: 4 / 5; }
+/* Left nav buttons/links */
+.nav-btn {
+  color:#fff; 
+  background: rgba(0,0,0,.35); 
+  border:1px solid #fff;
+  border-radius:6px; 
+  padding:.5rem .9rem; 
+  font-size:.95rem; 
+  cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.nav-btn:hover, .nav-btn:focus { 
+  background: rgba(0,0,0,.5); 
+  outline:none; 
+  transform: translateY(-1px); }
 
-.grid-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  padding: 6px 10px;
-  background: rgba(0,0,0,0.4);
-  border-radius: 4px;
+/* ========= PROJECT CATEGORIES IN COL 2 ========= */
+
+/* Background for col 2 (doesn't block clicks) */
+.projects-col-bg {
+  grid-row: 2 / 5;
+  grid-column: 2 / 3;
+  background: linear-gradient(454deg, #363636, #ffffff);
+  z-index: 28; 
+  opacity: 0; 
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
+  transform: translateX(-6px);
+  border-inline: 1px solid #000;
+}
+.projects-col-bg.is-open { 
+  opacity: 1; 
+  transform: translateX(0); 
 }
 
-/* Smooth fade for both the dim backdrop and the nav column */
-.backdrop,
-.nav-background {
-  opacity: 0;
-  pointer-events: none;          /* don’t block clicks when hidden */
-  transition: opacity 220ms ease-in-out;
-  will-change: opacity;
+/* The list itself sits above bg; grid with 4 slots (Close row + 3 items) */
+.projects-col {
+  grid-row: 1 / 5;
+  grid-column: 2 / 3;
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+  display: grid; 
+  grid-template-rows: repeat(4, 1fr);
+  z-index: 40;
+  opacity: 0; 
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
+  transform: translateX(-6px);
+}
+.projects-col.is-open { 
+  opacity: 1; 
+  pointer-events: auto; 
+  transform: translateX(0); 
 }
 
-/* Visible state */
-.backdrop.is-open,
-.nav-background.is-open {
-  opacity: 1;
-  pointer-events: auto;
+/* Horizontal separators per row (like col 1) */
+.projects-col > li { 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  border-block-start: 1px solid #000; 
+}
+.projects-col > li:last-child { 
+  border-block-end: 1px solid #000; 
 }
 
-/* Optional: give the column a subtle slide as it fades */
-.nav-background { transform: translateX(-6px); transition: opacity 220ms ease-in-out, transform 220ms ease-in-out; }
-.nav-background.is-open { transform: translateX(0); }
+/* Exact placement you requested: rows 2–4, col 2 */
+.proj-web  { grid-row: 2; }
+.proj-mag  { grid-row: 3; }
+.proj-arch { grid-row: 4; }
 
+/* Buttons for categories */
+.proj-btn {
+  color:#fff; 
+  background: rgba(0,0,0,.35); 
+  border:1px solid #fff;
+  border-radius:6px; 
+  padding:.5rem .9rem; 
+  font-size:.95rem; 
+  cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.proj-btn:hover, .proj-btn:focus { 
+  background: rgba(0,0,0,.5); 
+  outline:none; 
+  transform: translateY(-1px); }
 
-
-/* Phone keeps the same cells (column 1), works with your 3-col grid */
+/* Keep the rest of your media queries as-is */
 @media (max-width: 768px) {
-  .hamburger-cell { /* still centered in (1,1) */ }
+  .hamburger-cell { }
 }
-
-
-
