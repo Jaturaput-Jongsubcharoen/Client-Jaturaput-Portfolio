@@ -26,9 +26,9 @@ export default function ResponsiveGrid({ children }) {
   // phone 4 cols: rows 3–5 (3/6), cols 2–4 (2/5)
   let imgArea;
   if (cols === 4) {
-    imgArea = { r1: 3, r2: 6, c1: 2, c2: 5 };
+    imgArea = { r1: 2, r2: 6, c1: 1, c2: 5 };
   } else {
-    imgArea = { r1: 3, r2: 6, c1: 4, c2: 7 };
+    imgArea = { r1: 2, r2: 6, c1: 3, c2: 7 };
   }
 
   const spanRows = imgArea.r2 - imgArea.r1; // 3

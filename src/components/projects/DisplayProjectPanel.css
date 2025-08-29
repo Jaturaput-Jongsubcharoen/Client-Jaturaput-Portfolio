@@ -3,7 +3,7 @@
 /* OUTER: sits in the grid and fills the area exactly */
 .project-panel {
   /* exact grid placement */
-  grid-area: 3 / 7 / 6 / 10;   /* row-start / col-start / row-end / col-end */
+  grid-area: 2 / 7 / 6 / 10;   /* row-start / col-start / row-end / col-end */
   align-self: stretch;
   justify-self: stretch;
 
