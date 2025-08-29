@@ -74,8 +74,8 @@ export default function BentoGridDesignBackup5() {
         />
       )}
 
-      {/* Mount details ONLY when open to avoid layout push on mobile */}
-      {showDetails && selectedProject && (
+      {/* Mount details when only open to avoid layout push on mobile */}
+      {selectedProject && (
         <DisplayProjectDetailPanel
           selectedProject={selectedProject}
           showDetails={showDetails}
