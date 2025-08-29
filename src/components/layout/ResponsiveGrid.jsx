@@ -29,7 +29,7 @@ export default function ResponsiveGrid({ children }) {
                 className="grid-item"
                 style={{ gridColumn: `${col} / ${col + 1}`, gridRow: `${row} / ${row + 1}` }}
             >
-                Item {i + 1}
+                {/* Item {i + 1} */}
             </div>
             );
         })}

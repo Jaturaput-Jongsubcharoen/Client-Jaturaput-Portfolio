@@ -1,211 +1,135 @@
-.hamburger {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  width: 40px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1003;
-  color: #ffffff;
-}
-
-.hamburger.is-open { 
-    left: calc(280px + 12px); 
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px; 
-  height: 1px; 
-  padding: 0; 
-  margin: -1px;
-  overflow: hidden; 
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; 
-  border: 0;
-}
-
-.backdrop {
-  position: fixed; 
-  inset: 0;
-  background: rgba(0,0,0,.4);
-  color: #ffffff;
-  z-index: 1000;
-}
-
-.drawer {
-  position: fixed; top: 0; left: 0;
-  color: #ffffff;
-  height: 100vh; 
-  width: 280px; 
-  max-width: 85vw;
-  background: #000000; 
-  box-shadow: 2px 0 24px rgba(0,0,0,.15);
-  padding: 2rem 1.25rem; 
-  z-index: 1002;
-  animation: slide-in .25s ease-out forwards;
-  display: flex; 
-  align-items: flex-start; 
-  justify-content: flex-start;
-}
-
-@keyframes slide-in { 
-    from { 
-        transform: translateX(-100%);
-    } to { 
-        transform: translateX(0);
-    } 
-}
-
-.drawer ul {
-  list-style: none; 
-  margin: 0; 
-  padding: 3rem 0 0 0;
-  display: flex; 
-  flex-direction: column; 
-  gap: 1rem;
-}
-.drawer a {
-  text-decoration: none; 
-  font-size: 1.1rem; 
-  color: #ffffff;
-  padding: .25rem .125rem; 
-  border-radius: 6px;
-}
-.drawer a:hover, .drawer a:focus { 
-    background: #000000; 
-    outline: none; 
-}
-
-@media (max-width: 330px) {
-  .drawer { 
-    width: 85vw; 
-  }
-  .hamburger.is-open { 
-    left: calc(85vw + 12px); 
-  }
-}
-
-/* new header inside the drawer */
-.drawer-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* push X to the right */
-  margin-bottom: 1rem;
-}
-
-/* style the close button */
-.close-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;   /* or #000 if drawer bg is light */
-  font-size: 1.5rem;
-}
-
-
-/*---------------------------------------------------*/
-
-/* place the component into the grid's top-left cell */
+/* Button wrapper in (row1,col1), centered */
 .hamburger-cell {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-
-  /* fill the entire tile */
   align-self: stretch;
   justify-self: stretch;
-
-  /* center the button inside the tile */
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 1003;
 }
 
-/* the button itself sits inside the cell */
+/* Simple text button */
 .hamburger {
-  position: static;      /* <-- NOT fixed/relative */
-  top: auto;             /* cancel earlier rules */
-  left: auto;            /* cancel earlier rules */
-  width: 40px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; 
   background: transparent;
   border: 0;
   color: #fff;
   cursor: pointer;
+  font-weight: 600;
 }
-.hamburger.is-open { left: auto; }
-
-/* screen-reader only text */
-.sr-only {
-  position: absolute; 
-  width:1px; 
-  height:1px; 
-  padding:0; 
-  margin:-1px;
-  overflow:hidden; 
-  clip:rect(0,0,0,0); 
-  white-space:nowrap; 
-  border:0;
+.hamburger-text { 
+  font-size: .95rem;
+  border: 1px solid #ffffff;
+  margin: 0;
+  border-radius: 10%;
+  display: inline-block;  
+  transition: 0.5s;
 }
 
-/* overlay & drawer remain fixed so they cover the whole viewport */
+.hamburger-text:hover,
+.hamburger-text:focus {
+  background: rgba(0,0,0,0.5);
+  outline: none; /* remove default blue outline */
+}
+
+/* Backdrop behind links */
 .backdrop {
   position: fixed; 
-  inset: 0; 
-  background: rgba(0,0,0,.4); 
-  z-index: 1000;
-}
-.drawer {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  height: 100vh; 
-  width: 280px; 
-  max-width: 85vw;
-  background: #111; 
-  color: #fff; 
-  box-shadow: 2px 0 24px rgba(0,0,0,.15);
-  padding: 2rem 1.25rem; 
-  z-index: 1002; 
-  animation: slide-in .25s ease-out forwards;
-  display: flex; 
-  align-items: flex-start; 
-  justify-content: flex-start;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 20;
 }
 
-@keyframes slide-in { 
-  from { transform: translateX(-100%);
-  } to { transform: translateX(0);
-  } 
-}
-.drawer ul { 
-  list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1rem; 
-}
-.drawer a, .drawer a:visited { 
-  color:#fff; 
-  text-decoration:none; 
-  font-size:1.1rem; 
+/* Make <li> act as direct grid children */
+/* Remove absolute, rely on parent grid */
+.grid-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: contents;  /* makes li behave as if direct children of grid */
+  z-index: 25;  /* above gradient */
+  position: relative;
 }
 
-.drawer a:hover, .drawer a:focus { 
-  background: rgba(255,255,255,.12); 
-  border-radius:6px; 
-  outline:none; 
+/* Style for each nav item */
+.grid-nav > li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.35);
+}
+.grid-nav > li a:hover,
+.grid-nav > li a:focus {
+  background: rgba(0,0,0,0.5);
 }
 
-/* phone: grid is 3 cols; keep the hamburger in the same (1,1) cell */
+/* Background container for nav */
+.nav-background {
+  grid-row: 1 / 5;
+  grid-column: 1 / 2;
+  background: linear-gradient(454deg, #363636, #ffffff);
+  z-index: 30; /* higher than backdrop */
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: stretch;                 /* <-- make rows fill height */
+  justify-items: stretch;               /* <-- make rows fill width  */
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
+}
+
+.nav-background > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #000000;
+}
+
+/* Ensure each one lands in its row */
+.nav-projects       { grid-row: 2 / 3; }
+.nav-qualifications { grid-row: 3 / 4; }
+.nav-contacts       { grid-row: 4 / 5; }
+
+.grid-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 4px;
+}
+
+/* Smooth fade for both the dim backdrop and the nav column */
+.backdrop,
+.nav-background {
+  opacity: 0;
+  pointer-events: none;          /* don’t block clicks when hidden */
+  transition: opacity 220ms ease-in-out;
+  will-change: opacity;
+}
+
+/* Visible state */
+.backdrop.is-open,
+.nav-background.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: give the column a subtle slide as it fades */
+.nav-background { transform: translateX(-6px); transition: opacity 220ms ease-in-out, transform 220ms ease-in-out; }
+.nav-background.is-open { transform: translateX(0); }
+
+
+
+/* Phone keeps the same cells (column 1), works with your 3-col grid */
 @media (max-width: 768px) {
-  .hamburger-cell { 
-    padding: 8px; 
-  }
+  .hamburger-cell { /* still centered in (1,1) */ }
 }
+
+
+

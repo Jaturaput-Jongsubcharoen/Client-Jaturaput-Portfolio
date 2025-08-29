@@ -14,9 +14,19 @@
   border: 1px solid #000;
   background: none;
   color: #fff;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   position: relative;       /* enables z-index */
   z-index: 10;               /* base layer */
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+  margin: 5%;                 /* adds spacing inside the grid cell */
+  border-radius: 8%;
+  background: rgba(255, 255, 255, 0.1); /* optional highlight */
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
 }
 
 /* Photo overlaps the cells it sits on */
