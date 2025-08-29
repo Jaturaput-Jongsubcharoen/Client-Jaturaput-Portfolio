@@ -32,8 +32,7 @@ export default function HamburgerNav() {
         onClick={() => setOpen(o => !o)}
         ref={buttonRef}
       >
-        <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-        <FontAwesomeIcon icon={open ? faXmark : faBars} size="lg" />
+        <span className="hamburger-text">{open ? "Close" : "Menu"}</span>
       </button>
 
       {open && (

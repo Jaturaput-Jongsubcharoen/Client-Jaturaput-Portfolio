@@ -115,25 +115,35 @@
 .hamburger-cell {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  align-self: start;
-  justify-self: start;
-  z-index: 1003;        /* above grid tiles */
-  padding: 6px;         /* nice breathing room inside the cell */
+
+  /* fill the entire tile */
+  align-self: stretch;
+  justify-self: stretch;
+
+  /* center the button inside the tile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1003;
 }
 
 /* the button itself sits inside the cell */
 .hamburger {
-  position: relative;   /* not fixed; lives in the grid cell */
+  position: static;      /* <-- NOT fixed/relative */
+  top: auto;             /* cancel earlier rules */
+  left: auto;            /* cancel earlier rules */
   width: 40px;
   height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: none;
+  border: 0;
+  color: #fff;
   cursor: pointer;
-  color: #fff;          /* icon color */
 }
+.hamburger.is-open { left: auto; }
 
 /* screen-reader only text */
 .sr-only {
