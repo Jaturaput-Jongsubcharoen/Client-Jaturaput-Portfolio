@@ -1,13 +1,12 @@
+// src/components/letters/LetterBox.jsx
 import { useContinuousSpin } from "../../hooks/useContinuousSpin";
 
 export default function LetterBox({
-  className = "",
-  base = 60,           // deg/sec
-  hover = 160,         // deg/sec
-  tiltX = "0deg",
-  tiltZ = "0deg",
-  depth = "92px",
   children,
+  className = "",
+  style = {},
+  base = 60,
+  hover = 160,
 }) {
   const spin = useContinuousSpin(base, hover);
 
@@ -17,7 +16,14 @@ export default function LetterBox({
       ref={spin.ref}
       onMouseEnter={spin.onMouseEnter}
       onMouseLeave={spin.onMouseLeave}
-      style={{ "--tilt-x": tiltX, "--tilt-z": tiltZ, "--depth": depth }}
+      style={{
+        "--persp": "900px",
+        "--tilt-x": "0deg",
+        "--tilt-z": "0deg",
+        "--depth": "92px",
+        "--angle": "0deg", // initial value, JS updates this
+        ...style,
+      }}
     >
       {children}
     </div>

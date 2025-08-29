@@ -1,28 +1,40 @@
-import { useEffect, useRef, useState } from "react";
+// src/hooks/useContinuousSpin.js
+import { useEffect, useRef, useCallback } from "react";
 
-export function useContinuousSpin(baseDegPerSec = 60, hoverDegPerSec = 160) {
+export function useContinuousSpin(baseSpeed = 60, hoverSpeed = 160) {
   const ref = useRef(null);
-  const [speed, setSpeed] = useState(baseDegPerSec);
+  const angleRef = useRef(0);
+  const speedRef = useRef(baseSpeed);
+  const rafRef = useRef(null);
+  const lastRef = useRef(performance.now());
+
+  const tick = useCallback((now) => {
+    const dt = (now - lastRef.current) / 1000; // seconds
+    lastRef.current = now;
+
+    // update angle
+    angleRef.current = (angleRef.current + speedRef.current * dt) % 360;
+
+    // push to CSS custom property
+    if (ref.current) {
+      ref.current.style.setProperty("--angle", `${angleRef.current}deg`);
+    }
+
+    rafRef.current = requestAnimationFrame(tick);
+  }, []);
 
   useEffect(() => {
-    let raf, last = performance.now();
-    let angle = 0;
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [tick]);
 
-    const loop = (now) => {
-      const dt = (now - last) / 1000;
-      last = now;
-      angle = (angle + speed * dt) % 720;
-      if (ref.current) ref.current.style.setProperty("--angle", angle + "deg");
-      raf = requestAnimationFrame(loop);
-    };
-
-    raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
-  }, [speed]);
-
-  return {
-    ref,
-    onMouseEnter: () => setSpeed(hoverDegPerSec),
-    onMouseLeave: () => setSpeed(baseDegPerSec),
+  const onMouseEnter = () => {
+    speedRef.current = hoverSpeed;
   };
+
+  const onMouseLeave = () => {
+    speedRef.current = baseSpeed;
+  };
+
+  return { ref, onMouseEnter, onMouseLeave };
 }

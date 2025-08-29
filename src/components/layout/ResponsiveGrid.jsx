@@ -3,26 +3,36 @@ import { useEffect, useState } from "react";
 import "../../styles/layout/ResponsiveGrid.css";
 
 export default function ResponsiveGrid({ children }) {
-  const [cols, setCols] = useState(window.innerWidth <= 768 ? 3 : 10);
+  // detect initial cols
+  const getCols = () => {
+    if (window.innerWidth <= 480) return 3;   // small phones
+    if (window.innerWidth <= 768) return 4;   // larger phones / tablets
+    return 10;                                // desktop
+  };
+
+  const [cols, setCols] = useState(getCols());
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 768px)");
-    const update = () => setCols(mq.matches ? 3 : 10);
-    mq.addEventListener ? mq.addEventListener("change", update) : mq.addListener(update);
-    update();
-    return () => {
-      mq.removeEventListener ? mq.removeEventListener("change", update) : mq.removeListener(update);
-    };
+    const update = () => setCols(getCols());
+
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   const items = Array.from({ length: 60 });
 
   // Photo area in grid lines:
   // desktop: rows 3–5 (3/6), cols 4–6 (4/7)
-  // phone:   rows 3–5 (3/6), cols 1–3 (1/4)
-  const imgArea = cols <= 3
-    ? { r1: 3, r2: 6, c1: 1, c2: 4 }   // phone 3x3
-    : { r1: 3, r2: 6, c1: 4, c2: 7 };  // desktop 3x3
+  // phone 3 cols: rows 3–5 (3/6), cols 1–3 (1/4)
+  // phone 4 cols: rows 3–5 (3/6), cols 2–4 (2/5)
+  let imgArea;
+  if (cols === 3) {
+    imgArea = { r1: 3, r2: 6, c1: 1, c2: 4 };
+  } else if (cols === 4) {
+    imgArea = { r1: 3, r2: 6, c1: 2, c2: 5 };
+  } else {
+    imgArea = { r1: 3, r2: 6, c1: 4, c2: 7 };
+  }
 
   const spanRows = imgArea.r2 - imgArea.r1; // 3
   const spanCols = imgArea.c2 - imgArea.c1; // 3
@@ -36,7 +46,7 @@ export default function ResponsiveGrid({ children }) {
           row >= imgArea.r1 && row < imgArea.r2 &&
           col >= imgArea.c1 && col < imgArea.c2;
 
-        // offsets inside the photo block (0..2)
+        // offsets inside the photo block
         const ix = col - imgArea.c1;
         const iy = row - imgArea.r1;
 
@@ -48,7 +58,6 @@ export default function ResponsiveGrid({ children }) {
               gridColumn: `${col} / ${col + 1}`,
               gridRow: `${row} / ${row + 1}`,
               ...(overPhoto && {
-                // pass offsets + the overall span to CSS
                 '--ix': ix,
                 '--iy': iy,
                 '--photo-cols': spanCols,
@@ -56,7 +65,7 @@ export default function ResponsiveGrid({ children }) {
               })
             }}
           >
-            {/*Item {i + 1}*/}
+            {/* Item {i + 1} */}
           </div>
         );
       })}

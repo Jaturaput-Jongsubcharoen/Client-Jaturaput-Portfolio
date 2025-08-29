@@ -66,69 +66,68 @@
   object-fit: cover;
 }
 
+.title1-box--p { grid-area: 2 / 2 / 3 / 3; } /* P */
+.title2-box--p { grid-area: 3 / 3 / 4 / 4; } /* O */
+.title3-box--p { grid-area: 4 / 4 / 5 / 5; } /* R */
+.title4-box--p { grid-area: 5 / 5 / 6 / 6; } /* T */
+
+/* Make sure the cubes sit above the tiles */
+.title1-box { z-index: 500; }
+
 /* Phone: 3 columns; keep overlap using grid lines only */
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* was 3 */
     grid-template-rows: none;
-    grid-auto-rows: 16.66vh;   /* keeps row height consistent */
-    height: auto;              /* allow scroll */
+    grid-auto-rows: 16.66vh;
+    height: auto;
     overflow-y: auto;
   }
 
-  /* photo stays responsive */
-  .profile-img-box {
-    grid-row: 3 / 6;         /* rows 3–5 */
-    grid-column: 4 / 7;      /* cols 4–6 */
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* REMOVE the old phone block that said:
+     .profile-img-box { grid-column: 4 / 7; ... }  <- this conflicts on mobile
+     Keep just this single override: */
+  .grid-container > .profile-img-box {
+    grid-area: 2 / 1 / 6 / 5;  /* rows 3–5, ALL 4 columns */
+    min-width: 0;
+    min-height: 0;
   }
 
-  /* project panel on phone: rows 6–9, all columns */
+  /* project panel: rows 6–8 (6/9), ALL 4 columns */
   .grid-container > .project-panel {
-    grid-area: 6 / 1 / 9 / 4; /* row-start / col-start / row-end / col-end */
+    grid-area: 6 / 1 / 9 / 5;  /* was ... / 4 */
     align-self: stretch;
     justify-self: stretch;
     width: 100%;
     height: 100%;
-    border-radius: 12px;       /* keep your glass curve */
-    min-width: 0;              /* prevent overflow from blowing out the grid */
+    border-radius: 12px;
+    min-width: 0;
     min-height: 0;
-    z-index: 12;               /* above .grid-item cells */
+    z-index: 12;
   }
 
-  /* optional: slightly tighter padding inside the panel on small screens */
   .project-panel__layout { padding: .75rem; }
 
-  /* detail panel on phone: rows 6–9, all 3 columns */
+  /* details panel under it */
   .grid-container > .detail-panel {
-    grid-area: 9 / 1 / 12 / 4;
+    grid-area: 9 / 1 / 12 / 5; /* was ... / 4 */
     align-self: stretch;
     justify-self: stretch;
     min-width: 0;
     min-height: 0;
     z-index: 14;
   }
-
-  /* optional tighter padding on small screens */
   .detail-panel .detail-panel__box { inset: 0.5rem; padding: .75rem; }
 
-  .grid-container > .profile-img-box {
-    /* rows 3–5 (3/6), cols 1–3 (1/4) */
-    grid-area: 3 / 1 / 6 / 4 !important; /* ensure we beat earlier rules */
-    min-width: 0;
-    min-height: 0;
-  }
+  /* Diagonal letters across 4 columns now */
+  .title1-box--p { grid-area: 2 / 1 / 3 / 2; } /* P = row1 col1 */
+  .title2-box--p { grid-area: 3 / 2 / 4 / 3; } /* O = row2 col2 */
+  .title3-box--p { grid-area: 4 / 3 / 5 / 4; } /* R = row3 col3 */
+  .title4-box--p { grid-area: 5 / 4 / 6 / 5; } /* T = row4 col4 */
 
-  /* Phones/Tablets: reveal color only on the tapped tile */
+  /* (Optional) touch behavior for the color-slice tiles */
   @media (hover: none), (pointer: coarse) {
-    .grid-container .profile-hit::after { opacity: 0; }      /* default hidden */
-    .grid-container .profile-hit:active::after {             /* on tap */
-      opacity: 1;
-      filter: none;
-    }
+    .grid-container .profile-hit::after { opacity: 0; }
+    .grid-container .profile-hit:active::after { opacity: 1; filter: none; }
   }
 }

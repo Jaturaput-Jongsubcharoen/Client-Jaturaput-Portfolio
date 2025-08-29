@@ -1,41 +1,98 @@
-/* ===== 3D title boxes: identical angle/depth all the time ===== */
+/* ===== Main Section Grid (3D title boxes) ===== */
 
-/* 3D container driven by --angle (set by the hook) */
-.title1-box {
+.title1-box,
+.font2-title1-box {
   width: 100%;
   height: 100%;
+  transition: all 0.1s;
   transform-style: preserve-3d;
-  /* perspective + steady tilt + live angle (no keyframe animation here) */
+  /* perspective applied inside the animated transform so it works while spinning */
   --persp: 900px;
-  --tilt-x: var(--tilt-x, 0deg);
-  --tilt-z: var(--tilt-z, 0deg);
-  --angle: var(--angle, 0deg);
-  z-index: 500; /* above everything as requested */
-
-  transform: perspective(var(--persp))
-             rotateX(var(--tilt-x))
-             rotateY(var(--angle))
-             rotateZ(var(--tilt-z));
+  --spin-duration: 6s;        /* same speed for all */
+  animation: title-spin var(--spin-duration) linear infinite;
 }
 
-/* The 4 faces (re-use your existing face styling) */
-.title1-box span {
+/* Remove hover-only spin. (Leave here if you want a visual effect, but NOT speed change.) */
+.title1-box:hover,
+.font2-title1-box:hover {
+  --spin-duration: 3s; /* was 6s by default, now 2x faster */
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
+/* 3D faces (4 spans) */
+.title1-box span,
+.font2-title1-box span {
   position: absolute;
   inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.10));
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  box-shadow: inset 0 8px 32px rgba(0,0,0,.10);
-  transition: all .5s;
-  backface-visibility: hidden;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.10));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 8px 32px rgba(0,0,0,0.10);
 
-  /* place each face around the Y axis */
-  transform: rotateY(calc(90deg * var(--i))) translateZ(var(--depth, 92px));
+  /* face placement */
+  /* title1 uses a depth variable; font2 was fixed at 92px */
+  --depth: 95px;                     /* you can tweak this */
+  transform: rotateY(calc(90deg * var(--i))) translateZ(var(--depth));
+  backface-visibility: hidden;        /* avoids mirror flicker while spinning */
+  transition: all 0.5s;
 }
 
+/* per-component depth (keeps your original 92px for the second style) */
+.font2-title1-box span { --depth: 92px; }
+
+/* Headings */
 .title1-box h2 {
   font-size: 18vh;
-  margin: 0;
-  color: rgba(0,0,0,0.8);
-  transform: translateZ(1px);
+  transition: 0.5s;
+  color: var(--letter-color, rgba(0,0,0,0.8)); /* fallback if not set */
 }
+
+.font2-title1-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+.font2-title1-box h2 {
+  font-size: 20vh;
+  color: rgba(0,0,0,0.8);
+}
+
+/* Continuous spin with perspective baked in */
+@keyframes title-spin {
+  from { transform: perspective(var(--persp)) rotateY(0deg); }
+  to   { transform: perspective(var(--persp)) rotateY(360deg); }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .title1-box,
+  .font2-title1-box {
+    animation: none;
+  }
+}
+
+@media (max-width: 1880px) {
+  .title1-box span,
+  .font2-title1-box span {
+    --depth: 77px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title1-box span,
+  .font2-title1-box span {
+    --depth: 80px;
+  }
+}
+
+/* Letter-specific colors */
+.title1-box--p { --letter-color: #FFB3BA; }  /* P → pastel pink */
+.title2-box--p { --letter-color: #FFF1B5; }  /* O → pastel yellow */
+.title3-box--p { --letter-color: #B5EAD7; }  /* R → pastel green */
+.title4-box--p { --letter-color: #A7C7E7; }  /* T → pastel blue */
