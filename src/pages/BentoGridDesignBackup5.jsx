@@ -6,6 +6,7 @@ import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProf
 import HamburgerNav from "../components/nav/HamburgerNav";
 import DisplayProjectDetail from "../components/projects/DisplayProjectDetail.jsx";
 import DisplayProjectFunction from "../components/projects/DisplayProject.jsx";
+import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
 
 import projects from '../data/JaturaputProject.js';
 
@@ -62,7 +63,7 @@ export default function BentoGridDesignBackup5() {
       <DisplayMyPictureProfile />
 
       {/* Project viewer (use your existing CSS to place it where you want) */}
-      <DisplayProjectFunction
+      <DisplayProjectPanel
         selectedProject={selectedProject}
         filteredProjects={filteredProjects}
         showDetails={showDetails}

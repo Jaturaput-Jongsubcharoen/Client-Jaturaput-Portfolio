@@ -1,0 +1,129 @@
+/* src/components/projects/DisplayProjectPanel.css */
+
+/* Position inside your main grid (6-row layout) */
+.project-panel {
+  grid-row: 3 / 6;      /* bottom three rows: 4–6 */
+  grid-column: 7 / 10;   /* columns 2–4 */
+  position: relative;   /* allow z-index to layer above tiles */
+  z-index: 12;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Arrows */
+.project-panel__arrow {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.project-panel__arrow:hover,
+.project-panel__arrow:focus {
+  background: rgba(0,0,0,0.35);
+  outline: none;
+  transform: translateY(-1px);
+}
+.project-panel__arrow--left { justify-self: start; }
+.project-panel__arrow--right { justify-self: end; }
+
+/* Content column */
+.project-panel__content {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* Heading */
+.project-panel__title {
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* Image / link */
+.project-panel__image-wrap {
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+}
+.project-panel__image-link {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.project-panel__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.project-panel__image-hover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.project-panel__image-link:hover .project-panel__image-hover,
+.project-panel__image-link:focus .project-panel__image-hover {
+  opacity: 1;
+}
+
+/* Texts */
+.project-panel__hint {
+  color: #eaeaea;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+.project-panel__project-title {
+  color: #ffffff;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+
+/* Details button */
+.project-panel__details-btn {
+  background: rgba(0,0,0,0.35);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.project-panel__details-btn:hover,
+.project-panel__details-btn:focus {
+  background: rgba(0,0,0,0.5);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Pager */
+.project-panel__pager {
+  color: #ffffff;
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+
+/* Phone tweak — span full width if needed */
+@media (max-width: 768px) {
+  .project-panel {
+    grid-column: 1 / -1; /* span all 3 cols in phone grid */
+    grid-row: auto;      /* let it flow */
+  }
+}
