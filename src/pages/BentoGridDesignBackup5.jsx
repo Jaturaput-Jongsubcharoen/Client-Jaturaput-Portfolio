@@ -7,6 +7,9 @@ import HamburgerNav from "../components/nav/HamburgerNav";
 import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
 import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
 
+import DiagonalPortTitle from "../components/letters/DiagonalPortTitle.jsx";
+
+
 import projects from "../data/JaturaputProject.js";
 
 const CATEGORY_TO_TYPE = {
@@ -79,6 +82,8 @@ export default function BentoGridDesignBackup5() {
           calculateDuration={calculateDuration}
         />
       )}
+
+      <DiagonalPortTitle />
     </ResponsiveGrid>
   );
 }

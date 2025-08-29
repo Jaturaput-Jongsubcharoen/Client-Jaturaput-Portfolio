@@ -56,7 +56,7 @@ export default function ResponsiveGrid({ children }) {
               })
             }}
           >
-            Item {i + 1}
+            {/*Item {i + 1}*/}
           </div>
         );
       })}

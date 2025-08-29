@@ -1,0 +1,41 @@
+/* ===== 3D title boxes: identical angle/depth all the time ===== */
+
+/* 3D container driven by --angle (set by the hook) */
+.title1-box {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* perspective + steady tilt + live angle (no keyframe animation here) */
+  --persp: 900px;
+  --tilt-x: var(--tilt-x, 0deg);
+  --tilt-z: var(--tilt-z, 0deg);
+  --angle: var(--angle, 0deg);
+  z-index: 500; /* above everything as requested */
+
+  transform: perspective(var(--persp))
+             rotateX(var(--tilt-x))
+             rotateY(var(--angle))
+             rotateZ(var(--tilt-z));
+}
+
+/* The 4 faces (re-use your existing face styling) */
+.title1-box span {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.10));
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 8px 32px rgba(0,0,0,.10);
+  transition: all .5s;
+  backface-visibility: hidden;
+
+  /* place each face around the Y axis */
+  transform: rotateY(calc(90deg * var(--i))) translateZ(var(--depth, 92px));
+}
+
+.title1-box h2 {
+  font-size: 18vh;
+  margin: 0;
+  color: rgba(0,0,0,0.8);
+  transform: translateZ(1px);
+}
