@@ -3,7 +3,7 @@ import "../../styles/BentoGridDesignCSS.css";
 function PortLetters() {
     return(
         <>
-                <div className="title1-box r1-c2-location">
+              <div className="title1-box r1-c2-location">
                 <span style={{ "--i": 0 }}>
                   <h2>P</h2>
                 </span>

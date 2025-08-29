@@ -199,7 +199,7 @@
   display: grid;
   grid-column: 2;
   grid-row: 4;
-  color: #ffffff;
+  color: rgba(0,0,0,0.50);
   margin: 0.25rem 0;
   text-align: center;
 }
@@ -289,4 +289,11 @@
 }
 /* If you don't have --side-col yet, add this once: */
 .project-panel__layout { grid-template-columns: var(--side-col, 64px) 1fr var(--side-col, 64px); }
+
+
+
+
+
+
+
 

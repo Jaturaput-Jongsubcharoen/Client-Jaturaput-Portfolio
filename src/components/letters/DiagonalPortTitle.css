@@ -62,6 +62,7 @@
 .font2-title1-box h2 {
   font-size: 20vh;
   color: rgba(0,0,0,0.8);
+  
 }
 
 /* Continuous spin with perspective baked in */
@@ -97,7 +98,34 @@
 }
 
 /* Letter-specific colors */
-.title1-box--p { --letter-color: #FFB3BA; }  /* P → pastel pink */
-.title2-box--p { --letter-color: #FFF1B5; }  /* O → pastel yellow */
-.title3-box--p { --letter-color: #B5EAD7; }  /* R → pastel green */
-.title4-box--p { --letter-color: #A7C7E7; }  /* T → pastel blue */
+/*
+.title1-box--p { --letter-color: #FFB3BA; }  
+.title2-box--p { --letter-color: #FFF1B5; } 
+.title3-box--p { --letter-color: #B5EAD7; } 
+.title4-box--p { --letter-color: #A7C7E7; } 
+*/
+
+
+/* P */
+.title1-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* bright coral */
+.title1-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel pink */
+.title1-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* deep red */
+.title1-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* light rose */
+
+/* O */
+.title2-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* sunflower */
+.title2-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel yellow */
+.title2-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* warm amber */
+.title2-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* soft gold */
+
+/* R */
+.title3-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* teal green */
+.title3-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel green */
+.title3-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* dark jade */
+.title3-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* mint */
+
+/* T */
+.title4-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* dodger blue */
+.title4-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel blue */
+.title4-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* navy */
+.title4-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* sky */
