@@ -1,0 +1,47 @@
+/* Keep the base photo grayscale behind the grid */
+.profile-img-box img {
+  filter: grayscale(100%) saturate(70%) contrast(1.05);
+  transition: filter .35s ease-in-out;
+  opacity: 20%;
+}
+
+/* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
+.grid-container .profile-hit {
+  position: relative;
+  overflow: hidden; /* clip the slice inside the tile */
+}
+
+/* Draw the color slice using the same photo, aligned to the full 3x3 area */
+.grid-container .profile-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;                 /* above tile content */
+  pointer-events: none;
+  background-image: url("../../images/my_picture2(800x800).png");
+  background-repeat: no-repeat;
+
+  /* Size the background to the whole photo area (3x3 of the tile size) */
+  background-size: calc(var(--photo-cols) * 100%) calc(var(--photo-rows) * 100%);
+
+  /* Offset the slice so it lines up with the underlying big photo */
+  background-position:
+    calc(var(--ix) * -100%)
+    calc(var(--iy) * -100%);
+
+  /* Hidden (and gray) by default */
+  filter: grayscale(100%) saturate(70%) contrast(1.05);
+  opacity: 0;
+  transition: opacity .25s ease, filter .25s ease;
+}
+
+/* Reveal color only for the hovered tile */
+.grid-container .profile-hit:hover::after {
+  opacity: 0.50;
+  filter: none;
+}
+
+/* Touch devices (no hover) — keep the underlying image full color if you prefer */
+@media (hover: none) and (pointer: coarse) {
+  .profile-img-box img { filter: none; }
+}

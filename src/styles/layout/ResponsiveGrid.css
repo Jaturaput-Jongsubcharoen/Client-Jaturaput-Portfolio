@@ -49,6 +49,23 @@
   object-fit: cover;
 }
 
+.grid-container > .profile-img-box {
+  grid-area: 3 / 4 / 6 / 7;         /* rows 3–5, cols 4–6 */
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+.grid-container > .profile-img-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* Phone: 3 columns; keep overlap using grid lines only */
 @media (max-width: 768px) {
   .grid-container {
@@ -61,16 +78,18 @@
 
   /* photo stays responsive */
   .profile-img-box {
-    grid-row: 3 / 6;           /* rows 3–5 */
-    grid-column: 1 / 4;        /* all 3 columns */
+    grid-row: 3 / 6;         /* rows 3–5 */
+    grid-column: 4 / 7;      /* cols 4–6 */
+    position: relative;
     z-index: 5;
-    min-width: 0;
-    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* project panel on phone: rows 6–9, all columns */
   .grid-container > .project-panel {
-    grid-area: 6 / 1 / 10 / 4; /* row-start / col-start / row-end / col-end */
+    grid-area: 6 / 1 / 9 / 4; /* row-start / col-start / row-end / col-end */
     align-self: stretch;
     justify-self: stretch;
     width: 100%;
@@ -83,4 +102,24 @@
 
   /* optional: slightly tighter padding inside the panel on small screens */
   .project-panel__layout { padding: .75rem; }
+
+  /* detail panel on phone: rows 6–9, all 3 columns */
+  .grid-container > .detail-panel {
+    grid-area: 9 / 1 / 12 / 4;
+    align-self: stretch;
+    justify-self: stretch;
+    min-width: 0;
+    min-height: 0;
+    z-index: 14;
+  }
+
+  /* optional tighter padding on small screens */
+  .detail-panel .detail-panel__box { inset: 0.5rem; padding: .75rem; }
+
+  .grid-container > .profile-img-box {
+    /* rows 3–5 (3/6), cols 1–3 (1/4) */
+    grid-area: 3 / 1 / 6 / 4 !important; /* ensure we beat earlier rules */
+    min-width: 0;
+    min-height: 0;
+  }
 }

@@ -5,7 +5,7 @@ import ResponsiveGrid from "../components/layout/ResponsiveGrid";
 import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProfile";
 import HamburgerNav from "../components/nav/HamburgerNav";
 import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
-import DisplayProjectDetail from "../components/projects/DisplayProjectDetail";
+import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
 
 import projects from "../data/JaturaputProject.js";
 
@@ -73,7 +73,7 @@ export default function BentoGridDesignBackup5() {
 
       {/* Mount details ONLY when open to avoid layout push on mobile */}
       {showDetails && selectedProject && (
-        <DisplayProjectDetail
+        <DisplayProjectDetailPanel
           selectedProject={selectedProject}
           showDetails={showDetails}
           calculateDuration={calculateDuration}
