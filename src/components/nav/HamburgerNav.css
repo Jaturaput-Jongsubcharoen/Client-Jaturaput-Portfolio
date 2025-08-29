@@ -1,4 +1,5 @@
 /* Button wrapper in (row1,col1), centered */
+/*
 .hamburger-cell {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -7,6 +8,7 @@
   justify-content: center;
   z-index: 1003;
 }
+*/
 
 /* Button */
 .hamburger { 
@@ -45,41 +47,6 @@
   pointer-events: auto; 
 }
 
-/* LEFT COLUMN (col 1) — gradient + grid rows */
-.nav-background {
-  grid-row: 1 / 5;
-  grid-column: 1 / 2;
-  background: linear-gradient(454deg, #363636, #ffffff);
-  z-index: 30;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  align-items: stretch;
-  justify-items: stretch;
-  position: relative;
-
-  /* Fade */
-  opacity: 0; 
-  pointer-events: none; 
-  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
-  transform: translateX(-6px);
-  border-inline: 1px solid #000;      /* single 1px vertical edges */
-}
-.nav-background.is-open { 
-  opacity: 1; 
-  pointer-events: auto; 
-  transform: translateX(0); }
-
-/* Horizontal separators per row (avoid double-thick) */
-.nav-background > li { 
-  display:flex; 
-  align-items:center; 
-  justify-content:center;
-  border-block-start: 1px solid #000; 
-}
-.nav-background > li:last-child { 
-  border-block-end: 1px solid #000; 
-}
-
 /* Left nav item placement (rows 2–4, col 1) */
 .nav-projects       { 
   grid-row: 2 / 3; 
@@ -101,6 +68,7 @@
   font-size:.95rem; 
   cursor:pointer;
   transition: background .2s ease, transform .2s ease;
+
 }
 .nav-btn:hover, .nav-btn:focus { 
   background: rgba(0,0,0,.5); 
@@ -120,6 +88,7 @@
   transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
   transform: translateX(-6px);
   border-inline: 1px solid #000;
+  z-index: 1002;
 }
 .projects-col-bg.is-open { 
   opacity: 1; 
@@ -140,6 +109,7 @@
   pointer-events: none;
   transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
   transform: translateX(-6px);
+  z-index: 1002;
 }
 .projects-col.is-open { 
   opacity: 1; 
@@ -178,8 +148,3 @@
   background: rgba(0,0,0,.5); 
   outline:none; 
   transform: translateY(-1px); }
-
-/* Keep the rest of your media queries as-is */
-@media (max-width: 768px) {
-  .hamburger-cell { }
-}

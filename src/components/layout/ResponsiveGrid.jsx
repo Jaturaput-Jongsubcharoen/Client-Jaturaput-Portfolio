@@ -5,7 +5,6 @@ import "../../styles/layout/ResponsiveGrid.css";
 export default function ResponsiveGrid({ children }) {
   // detect initial cols
   const getCols = () => {
-    if (window.innerWidth <= 480) return 3;   // small phones
     if (window.innerWidth <= 768) return 4;   // larger phones / tablets
     return 10;                                // desktop
   };
@@ -26,9 +25,7 @@ export default function ResponsiveGrid({ children }) {
   // phone 3 cols: rows 3–5 (3/6), cols 1–3 (1/4)
   // phone 4 cols: rows 3–5 (3/6), cols 2–4 (2/5)
   let imgArea;
-  if (cols === 3) {
-    imgArea = { r1: 3, r2: 6, c1: 1, c2: 4 };
-  } else if (cols === 4) {
+  if (cols === 4) {
     imgArea = { r1: 3, r2: 6, c1: 2, c2: 5 };
   } else {
     imgArea = { r1: 3, r2: 6, c1: 4, c2: 7 };

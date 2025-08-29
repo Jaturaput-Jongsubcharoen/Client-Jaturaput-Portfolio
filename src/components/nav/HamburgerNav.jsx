@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./HamburgerNav.css";
+import "../../styles/layout/ResponsiveGrid.css";
 
 export default function HamburgerNav({ onPickCategory }) {
   const [open, setOpen] = useState(false);
