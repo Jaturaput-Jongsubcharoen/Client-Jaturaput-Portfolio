@@ -122,4 +122,13 @@
     min-width: 0;
     min-height: 0;
   }
+
+  /* Phones/Tablets: reveal color only on the tapped tile */
+  @media (hover: none), (pointer: coarse) {
+    .grid-container .profile-hit::after { opacity: 0; }      /* default hidden */
+    .grid-container .profile-hit:active::after {             /* on tap */
+      opacity: 1;
+      filter: none;
+    }
+  }
 }
