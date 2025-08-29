@@ -1,0 +1,129 @@
+/* src/components/letters/PaintTitle.css */
+/* Common box */
+.paint-title__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.5s;
+  z-index: 50;
+}
+
+.paint-title__box:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* Both stacked glyphs */
+.paint-title__box h2 {
+  position: absolute;
+  font-size: 8vh;
+  color: rgba(255,255,255,0.10);
+}
+
+/* ---------- P (from your .font1-painting-box) ---------- */
+.paint-title__box--p:hover { transform: rotateZ(5deg); }
+.paint-title__box--p h2:nth-child(2) {
+  color: #708c51;
+  text-shadow:
+    2px 2px 0 #303c23,
+    2px 2px 0 #5c7242,
+    3px 3px 0 #5c7242,
+    4px 4px 0 #5c7242,
+    5px 5px 0 #5c7242,
+    6px 6px 0 #5c7242,
+    7px 7px 15px #9d9d9d,
+    8px 8px 20px #222,
+    9px 9px 40px #222,
+    10px 10px 80px #222;
+  clip-path: circle(20% at 50% 70%);
+  transition: clip-path 1s;
+}
+.paint-title__box--p h2:nth-child(2):hover {
+  clip-path: circle(70% at 50% 80%);
+  cursor: grab;
+}
+
+/* ---------- A (from your .font2-painting-box) ---------- */
+.paint-title__box--a:hover { transform: rotateZ(-5deg); }
+.paint-title__box--a h2:nth-child(2) {
+  color: #ffd364;
+  text-shadow:
+    2px 2px 0 #685628,
+    2px 2px 0 #ceaa51,
+    3px 3px 0 #ceaa51,
+    4px 4px 0 #ceaa51,
+    5px 5px 0 #ceaa51,
+    6px 6px 0 #ceaa51,
+    7px 7px 15px #9d9d9d,
+    8px 8px 20px #222,
+    9px 9px 40px #222,
+    10px 10px 80px #222;
+  clip-path: polygon(50% 25%, 75% 50%, 50% 75%, 25% 50%);
+  transition: clip-path 1s;
+}
+.paint-title__box--a h2:nth-child(2):hover {
+  clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%);
+  cursor: grab;
+}
+
+/* ---------- i (new, styled similar to the others) ---------- */
+.paint-title__box--i:hover { transform: rotateZ(3deg); }
+.paint-title__box--i h2:nth-child(2) {
+  color: #9fd3ff; /* soft blue */
+  text-shadow:
+    1px 1px 0 #35546a,
+    2px 2px 0 #6fa3c5,
+    3px 3px 0 #6fa3c5,
+    4px 4px 0 #6fa3c5,
+    5px 5px 0 #6fa3c5,
+    6px 6px 0 #6fa3c5,
+    7px 7px 15px #9d9d9d,
+    8px 8px 20px #222,
+    9px 9px 40px #222,
+    10px 10px 80px #222;
+  clip-path: circle(18% at 50% 55%);
+  transition: clip-path 1s;
+}
+.paint-title__box--i h2:nth-child(2):hover {
+  clip-path: circle(65% at 50% 60%);
+  cursor: grab;
+}
+
+/* ---------- N (from your .font4-painting-box) ---------- */
+.paint-title__box--n:hover { transform: rotateZ(-5deg); }
+.paint-title__box--n h2:nth-child(2) {
+  color: #d19666;
+  text-shadow:
+    1px 1px 0 #6f4f36,
+    2px 2px 0 #a57751,
+    3px 3px 0 #a57751,
+    4px 4px 0 #a57751,
+    5px 5px 0 #a57751,
+    6px 6px 0 #a57751,
+    7px 7px 15px #9d9d9d,
+    8px 8px 20px #222,
+    9px 9px 40px #222,
+    10px 10px 80px #222;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  transition: clip-path 1s;
+}
+.paint-title__box--n h2:nth-child(2):hover {
+  clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%);
+  cursor: grab;
+}
+
+/* -------- Grid placement helpers (row 4, cols 1–4) -------- */
+.pt-r4-c1 { grid-area: 5 / 1 / 6 / 2; }
+.pt-r4-c2 { grid-area: 5 / 2 / 6 / 3; }
+.pt-r4-c3 { grid-area: 5 / 3 / 6 / 4; }
+.pt-r4-c4 { grid-area: 5 / 4 / 6 / 5; }
+
+
+@media (max-width: 768px) {
+  .pt-r4-c1 { grid-area: 1 / 4 / 2 / 5; }
+  .pt-r4-c2 { grid-area: 2 / 4 / 3 / 5; }
+  .pt-r4-c3 { grid-area: 3 / 4 / 4 / 5; }
+  .pt-r4-c4 { grid-area: 4 / 4 / 5 / 5; }
+}
