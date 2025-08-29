@@ -1,0 +1,35 @@
+/* src/components/letters/FolioTitle.css */
+
+.folio-letter {
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 28;
+}
+
+.folio-letter h2 {
+  margin: 0;
+  color: #ffffff;
+  /*font-weight: 800;*/
+  /*letter-spacing: .06em;*/
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+  font-size: 500%;
+}
+
+/* Desktop (10×6 grid): column 3, rows 1,2,3,5 */
+.folio-letter--f  { grid-area: 2 / 3 / 3 / 4; }
+.folio-letter--o1 { grid-area: 3 / 3 / 4 / 4; }
+.folio-letter--l  { grid-area: 4 / 3 / 5 / 4; }
+.folio-letter--o2 { grid-area: 6 / 3 / 7 / 4; }
+
+/* Phone (≤768px): center column (2), rows 1,2,3,5 */
+@media (max-width: 768px) {
+  .folio-letter--f  { grid-area: 2 / 2 / 3 / 3; }
+  .folio-letter--o1 { grid-area: 3 / 2 / 4 / 3; }
+  .folio-letter--l  { grid-area: 4 / 2 / 5 / 3; }
+  .folio-letter--o2 { grid-area: 6 / 2 / 7 / 3; }
+
+  .folio-letter h2 {
+    font-size: 400%;
+  }
+}

@@ -8,7 +8,7 @@ import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
 import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
 
 import DiagonalPortTitle from "../components/letters/DiagonalPortTitle.jsx";
-
+import FolioTitle from "../components/letters/FolioTitle.jsx";
 
 import projects from "../data/JaturaputProject.js";
 
@@ -84,6 +84,7 @@ export default function BentoGridDesignBackup5() {
       )}
 
       <DiagonalPortTitle />
+      <FolioTitle />
     </ResponsiveGrid>
   );
 }

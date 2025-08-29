@@ -126,7 +126,7 @@
   .grid-container {
     grid-template-columns: repeat(4, minmax(0, 1fr)); /* was 3 */
     grid-template-rows: none;
-    grid-auto-rows: 16.66vh;
+    grid-auto-rows: 1fr;
     height: auto;
     overflow-y: auto;
   }
@@ -153,7 +153,7 @@
 
   /* project panel: rows 6–8 (6/9), ALL 4 columns */
   .grid-container > .project-panel {
-    grid-area: 6 / 1 / 9 / 5;  /* was ... / 4 */
+    grid-area: 7 / 1 / 11 / 5;  /* was ... / 4 */
     align-self: stretch;
     justify-self: stretch;
     width: 100%;
@@ -168,7 +168,7 @@
 
   /* details panel under it */
   .grid-container > .detail-panel {
-    grid-area: 9 / 1 / 12 / 5; /* was ... / 4 */
+    grid-area: 11 / 1 / 15 / 5; /* was ... / 4 */
     align-self: stretch;
     justify-self: stretch;
     min-width: 0;
