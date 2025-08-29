@@ -1,17 +1,64 @@
 /* src/components/projects/DisplayProjectPanel.css */
 
-/* Position inside your main grid (6-row layout) */
+/* OUTER: sits in the grid and fills the area exactly */
 .project-panel {
-  grid-row: 3 / 6;      /* bottom three rows: 4–6 */
-  grid-column: 7 / 10;   /* columns 2–4 */
-  position: relative;   /* allow z-index to layer above tiles */
-  z-index: 12;
+  /* exact grid placement */
+  grid-area: 3 / 7 / 6 / 10;   /* row-start / col-start / row-end / col-end */
+  align-self: stretch;
+  justify-self: stretch;
 
+  /* fill the area fully */
+  width: 100%;
+  height: 100%;
+  position: relative;          /* anchor for the glass layer */
+  z-index: 12;                 /* above tiles */
+  overflow: hidden;            /* clip rounded glass */
+}
+
+/* liquid-glass background that fills the whole grid area */
+.project-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+
+  background:
+    radial-gradient(1200px 600px at -10% -20%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border: 1px solid rgba(255,255,255,0.28);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.28),
+    inset 0 1px rgba(255,255,255,0.25),
+    inset 0 -1px rgba(0,0,0,0.18);
+
+  z-index: 0;  /* behind inner content */
+}
+
+/* INNER: your existing layout lives here */
+.project-panel__layout {
+  position: absolute;          /* fill the panel */
+  inset: 0;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 48px 1fr 48px;
   align-items: center;
   gap: 0.75rem;
+  min-width: 0;
+  min-height: 0;
+  z-index: 1;                  /* above the glass */
 }
+
+
+/* ensure panel content sits above the glass */
+.project-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- the rest of your styles can stay as-is ----- */
 
 /* Arrows */
 .project-panel__arrow {
@@ -20,7 +67,7 @@
   color: #ffffff;
   font-size: 1.25rem;
   padding: 0.35rem 0.6rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -40,7 +87,7 @@
   align-items: center;
   justify-items: center;
   gap: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 /* Heading */
@@ -118,12 +165,4 @@
   color: #ffffff;
   margin: 0.2rem 0 0;
   font-weight: 600;
-}
-
-/* Phone tweak — span full width if needed */
-@media (max-width: 768px) {
-  .project-panel {
-    grid-column: 1 / -1; /* span all 3 cols in phone grid */
-    grid-row: auto;      /* let it flow */
-  }
 }

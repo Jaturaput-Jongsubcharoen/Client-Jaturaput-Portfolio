@@ -1,38 +1,39 @@
-import { useEffect, useState } from "react";
+// src/pages/BentoGridDesignBackup5.jsx
+import { useEffect, useMemo, useState } from "react";
 
 import ResponsiveGrid from "../components/layout/ResponsiveGrid";
-
 import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProfile";
 import HamburgerNav from "../components/nav/HamburgerNav";
-import DisplayProjectDetail from "../components/projects/DisplayProjectDetail.jsx";
-import DisplayProjectFunction from "../components/projects/DisplayProject.jsx";
 import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
+import DisplayProjectDetail from "../components/projects/DisplayProjectDetail";
 
-import projects from '../data/JaturaputProject.js';
+import projects from "../data/JaturaputProject.js";
 
+const CATEGORY_TO_TYPE = {
+  web: "WEB & MOBILE DESIGN",
+  magazine: "MAGAZINE DESIGN",
+  architectural: "ARCHITECTURAL DESIGN",
+};
 
 export default function BentoGridDesignBackup5() {
-  const [selectedCategory, setSelectedCategory] = useState("web"); // "web" | "magazine" | "architectural"
-  const [filteredProjects, setFilteredProjects] = useState(
-    projects.filter(p => p.type === "WEB & MOBILE DESIGN")
-  );
-  const [selectedProject, setSelectedProject] = useState(filteredProjects[0] || null);
+  const [selectedCategory, setSelectedCategory] = useState("web");
+  const [selectedProject, setSelectedProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
 
-  // Re-filter whenever the category changes
-  useEffect(() => {
-    const filtered = projects.filter(project => {
-      if (selectedCategory === "web") return project.type === "WEB & MOBILE DESIGN";
-      if (selectedCategory === "magazine") return project.type === "MAGAZINE DESIGN";
-      if (selectedCategory === "architectural") return project.type === "ARCHITECTURAL DESIGN";
-      return false;
-    });
-    setFilteredProjects(filtered);
-    setSelectedProject(filtered[0] || null);
-    setShowDetails(false);
+  const filteredProjects = useMemo(() => {
+    const type = CATEGORY_TO_TYPE[selectedCategory];
+    return projects.filter((p) => p.type === type);
   }, [selectedCategory]);
 
-  const handleCategoryChange = (category) => setSelectedCategory(category);
+  useEffect(() => {
+    setSelectedProject(filteredProjects[0] ?? null);
+    setShowDetails(false); // close details when switching category
+  }, [filteredProjects]);
+
+  const handleCategoryChange = (cat) => {
+    setSelectedCategory(cat);
+    setShowDetails(false);
+  };
 
   const handlePrev = () => {
     if (!filteredProjects.length || !selectedProject) return;
@@ -49,35 +50,35 @@ export default function BentoGridDesignBackup5() {
   };
 
   const calculateDuration = (start, end) => {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
-    return (endDate - startDate) / (1000 * 60 * 60 * 24);
+    const s = new Date(start);
+    const e = new Date(end);
+    return (e - s) / (1000 * 60 * 60 * 24);
   };
 
   return (
     <ResponsiveGrid>
-      {/* Hover menu; when a category is chosen it calls this */}
       <HamburgerNav onPickCategory={handleCategoryChange} />
-
-      {/* Your overlapping image (already positioned by its own CSS) */}
       <DisplayMyPictureProfile />
 
-      {/* Project viewer (use your existing CSS to place it where you want) */}
-      <DisplayProjectPanel
-        selectedProject={selectedProject}
-        filteredProjects={filteredProjects}
-        showDetails={showDetails}
-        setShowDetails={setShowDetails}
-        handlePrev={handlePrev}
-        handleNext={handleNext}
-      />
+      {selectedProject && (
+        <DisplayProjectPanel
+          selectedProject={selectedProject}
+          filteredProjects={filteredProjects}
+          showDetails={showDetails}
+          setShowDetails={setShowDetails}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
+      )}
 
-      {/* Project details panel */}
-      <DisplayProjectDetail
-        selectedProject={selectedProject}
-        showDetails={showDetails}
-        calculateDuration={calculateDuration}
-      />
+      {/* Mount details ONLY when open to avoid layout push on mobile */}
+      {showDetails && selectedProject && (
+        <DisplayProjectDetail
+          selectedProject={selectedProject}
+          showDetails={showDetails}
+          calculateDuration={calculateDuration}
+        />
+      )}
     </ResponsiveGrid>
   );
 }
