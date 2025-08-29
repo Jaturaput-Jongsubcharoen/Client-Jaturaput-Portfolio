@@ -23,36 +23,35 @@ export default function HamburgerNav() {
   }, [open]);
 
   return (
-    <>
-        <button
-            className={`hamburger ${open ? "is-open" : ""}`}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="site-vertical-nav"
-            onClick={() => setOpen((o) => !o)}
-            ref={buttonRef}
-        >
-            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-            <FontAwesomeIcon icon={open ? faXmark : faBars} size="lg" />
-        </button>
+    <div className="hamburger-cell">{/* ← this is the grid child */}
+      <button
+        className={`hamburger ${open ? "is-open" : ""}`}
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        aria-controls="site-vertical-nav"
+        onClick={() => setOpen(o => !o)}
+        ref={buttonRef}
+      >
+        <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+        <FontAwesomeIcon icon={open ? faXmark : faBars} size="lg" />
+      </button>
 
-
-        {open && (
-            <div className="backdrop" onClick={() => setOpen(false)}>
-            <nav
-                id="site-vertical-nav"
-                className="drawer"
-                aria-label="Primary"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <ul>
-                <li><a href="#projects" ref={firstLinkRef} onClick={() => setOpen(false)}>Projects</a></li>
-                <li><a href="#qualifications" onClick={() => setOpen(false)}>Qualifications</a></li>
-                <li><a href="#contacts" onClick={() => setOpen(false)}>Contacts</a></li>
-                </ul>
-            </nav>
+      {open && (
+        <div className="backdrop" onClick={() => setOpen(false)}>
+          <nav
+            id="site-vertical-nav"
+            className="drawer"
+            aria-label="Primary"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul>
+              <li><a href="#projects" ref={firstLinkRef} onClick={() => setOpen(false)}>Projects</a></li>
+              <li><a href="#qualifications" onClick={() => setOpen(false)}>Qualifications</a></li>
+              <li><a href="#contacts" onClick={() => setOpen(false)}>Contacts</a></li>
+            </ul>
+          </nav>
         </div>
       )}
-    </>
+    </div>
   );
 }
