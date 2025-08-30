@@ -164,18 +164,25 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: rgba(255, 255, 255);
   opacity: 0;
   transition: opacity 0.25s ease;
   border-radius: inherit;
 }
 
+.project-panel__image-hover p {
+    border: 0.3rem inset rgb(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: inherit;
+}
+
 /* Hover only *visual* shrink; layout remains fixed */
 .project-panel__image-link:hover .project-panel__image,
 .project-panel__image-link:focus .project-panel__image {
-  transform: scale(0.92);
-  filter: grayscale(70%)
-  
+  /*transform: scale(0.92);*/
+  filter: grayscale(70%);
+  opacity: 0.5;
+  transition: opacity 1s ease;
 }
 
 .project-panel__image-link:hover .project-panel__image-hover,

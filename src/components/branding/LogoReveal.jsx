@@ -1,6 +1,6 @@
 // src/components/branding/LogoReveal.jsx
 import "./LogoReveal.css";
-import logoSrc from "../images/logos/jaturaput-logo1.png";
+import logoSrc from "../../images/logos/jaturaput-logo1.png";
 
 export default function LogoReveal({ className = "" }) {
   return (

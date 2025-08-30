@@ -55,7 +55,7 @@ export default function HamburgerNav({ onPickCategory }) {
           onClick={() => setOpen(o => !o)}
           ref={buttonRef}
         >
-          <span className="hamburger-text">{open ? "Close" : "Menu"}</span>
+          <span className="hamburger-text">{open ? "Close" : "Profile"}</span>
         </button>
       </div>
 

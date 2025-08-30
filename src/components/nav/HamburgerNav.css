@@ -33,11 +33,12 @@
   border:1px solid #fff; 
   padding:1rem; 
   border-radius:6px; 
-  transition:.3s; 
+  transition: 0.3s; 
 }
 .hamburger-text:hover { 
   background: rgba(0,0,0,.5); 
-  outline: none; 
+  outline: none;
+  padding: 10px;
 }
 
 
@@ -131,14 +132,17 @@
   padding:1rem; 
   font-size:0.8rem; 
   cursor:pointer;
-  transition: background .2s ease, transform .2s ease;
+  /*transition: background .2s ease, transform .2s ease;*/
+  transition: 0.3s; 
 
 }
 .nav-btn:hover { 
   background: rgba(0,0,0,.5); 
   outline:none; 
-  transform: translateY(-1px); }
-
+  transform: translateY(-1px); 
+  padding: 10px;
+}
+  
 
 
 /* Respect reduced-motion */
