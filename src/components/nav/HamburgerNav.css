@@ -62,27 +62,34 @@
   opacity: 0; 
   pointer-events: none; 
   transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
-  transform: translateX(-6px);
+  transform: translateY(-10px);
   border-inline: 1px solid #000;      /* single 1px vertical edges */
 }
 .nav-background.is-open { 
   opacity: 1; 
   pointer-events: auto; 
-  transform: translateX(0); 
+  transform: translateY(0); 
 }
 
 /* Horizontal separators per row (avoid double-thick) */
 .nav-background > li { 
-  display:flex; 
-  align-items:center; 
-  justify-content:center;
-  border-block-start: 1px solid #000; 
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-block-start: 1px solid #000;
+
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 220ms ease-in-out,
+              transform 300ms cubic-bezier(.2,.7,.2,1);
 }
 .nav-background > li:last-child { 
   border-block-end: 1px solid #000; 
 }
 
+.nav-background.is-open > .nav-projects       { opacity: 1; transform: none; transition-delay: 60ms; }
+.nav-background.is-open > .nav-qualifications { opacity: 1; transform: none; transition-delay: 120ms; }
+.nav-background.is-open > .nav-contacts       { opacity: 1; transform: none; transition-delay: 180ms; }
 
 
 
@@ -134,3 +141,20 @@
 
 
 
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav-background, .nav-background > li {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Remove link underlines on all states */
+.nav-btn,
+.nav-btn:link,
+.nav-btn:visited,
+.nav-btn:hover,
+.nav-btn:focus,
+.nav-btn:active {
+  text-decoration: none;
+}
