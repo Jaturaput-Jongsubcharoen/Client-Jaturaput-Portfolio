@@ -6,6 +6,7 @@ import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProf
 import HamburgerNav from "../components/nav/HamburgerNav";
 import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
 import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
+import SocialLinksPanel from "../components/social/SocialLinksPanel.jsx";
 
 import DiagonalPortTitle from "../components/letters/DiagonalPortTitle.jsx";
 import FolioTitle from "../components/letters/FolioTitle.jsx";
@@ -85,6 +86,15 @@ export default function BentoGridDesignBackup5() {
           calculateDuration={calculateDuration}
         />
       )}
+
+      <SocialLinksPanel   
+        links={{
+          github: "https://github.com/yourname",
+          linkedin: "https://linkedin.com/in/yourname",
+          instagram: "https://instagram.com/yourname",
+          youtube: "https://youtube.com/@yourname",
+        }}
+      />
 
       <DiagonalPortTitle />
       <FolioTitle />

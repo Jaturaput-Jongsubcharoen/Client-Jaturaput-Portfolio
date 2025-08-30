@@ -50,6 +50,7 @@
   grid-row: 1 / 5;
   grid-column: 3 / 4;
   background: linear-gradient(454deg, #363636, #ffffff);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(10, 10, 10, 0.7);
   z-index: 30;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
