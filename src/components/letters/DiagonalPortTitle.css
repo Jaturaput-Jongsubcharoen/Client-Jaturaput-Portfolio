@@ -10,7 +10,7 @@
   --persp: 900px;
   --spin-duration: 6s;        /* same speed for all */
   animation: title-spin var(--spin-duration) linear infinite;
-  z-index: 30;
+  z-index: 55;
 }
 
 /* Remove hover-only spin. (Leave here if you want a visual effect, but NOT speed change.) */

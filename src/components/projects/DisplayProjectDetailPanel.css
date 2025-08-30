@@ -6,7 +6,7 @@
   align-self: stretch;
   justify-self: stretch;
   position: relative;
-  z-index: 55; 
+  z-index: 60; 
   pointer-events: none;     /* default: don’t catch clicks while closed */
   min-width: 0;
   min-height: 0;

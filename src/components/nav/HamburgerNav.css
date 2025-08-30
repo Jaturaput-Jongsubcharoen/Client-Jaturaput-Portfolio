@@ -6,11 +6,17 @@
   display: flex; 
   align-items: center; 
   justify-content: center;
-  z-index: 1003;
+  z-index: 53;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(10, 10, 10, 0.7);
 }
 
 
 
+.hamburger-cell.is-open {
+  z-index: 1003;
+}
+.hamburger.is-open { position: relative; z-index: 1004; }
+.hamburger-cell:has(.hamburger.is-open) { z-index: 1003; }
 
 
 /* Button */

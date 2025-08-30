@@ -43,7 +43,7 @@ export default function HamburgerNav({ onPickCategory }) {
   return (
     <>
       {/* Button centered in grid cell (1,1) */}
-      <div className="hamburger-cell">
+      <div className={`hamburger-cell ${open ? "is-open" : ""}`}>
         <button
           className={`hamburger ${open ? "is-open" : ""}`}
           aria-label={open ? "Close menu" : "Open menu"}
