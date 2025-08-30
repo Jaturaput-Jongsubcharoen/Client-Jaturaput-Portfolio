@@ -21,7 +21,7 @@
   isolation: isolate;
   overflow: hidden;   /* keeps shadows/effects tidy in the cell */
   z-index: 50;
-  box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem rgba(10, 10, 10, 0.7);
+  box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem rgb(40, 40, 40);
 
   --gap: clamp(10px, 1.5vmin, 20px);
 }
@@ -57,7 +57,7 @@
 .logo-reveal__img--front {
   transition: clip-path 1s ease, filter .35s ease;
   filter:
-    brightness(1)
+    brightness(0.4)
     drop-shadow(2px 2px 0 rgb(65 65 65 / .8))
     drop-shadow(2px 2px 0 rgb(65 65 65 / .7))
     drop-shadow(3px 3px 0 rgb(65 65 65 / .6))

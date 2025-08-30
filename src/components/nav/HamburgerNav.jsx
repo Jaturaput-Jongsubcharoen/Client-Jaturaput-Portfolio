@@ -5,6 +5,9 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./HamburgerNav.css";
 import "../../styles/layout/ResponsiveGrid.css";
 
+import SubProjectsNav from "./SubProjectsNav"
+import SubQualificationsNav from "./SubQualificationsNav";
+
 export default function HamburgerNav({ onPickCategory }) {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // "projects" | "qualifications" | "contacts" | null
@@ -117,32 +120,19 @@ export default function HamburgerNav({ onPickCategory }) {
         onMouseLeave={() => setActiveMenu(null)}
       />
 
-      {/* submenu list */}
-      <ul
-        className={`projects-col ${
-          open && activeMenu === "projects" ? "is-open" : ""
-        }`}
-        aria-label="Project categories"
-        aria-hidden={!(open && activeMenu === "projects")}
-        onMouseEnter={() => setActiveMenu("projects")}
-        onMouseLeave={() => setActiveMenu(null)}
-      >
-        <li className="proj-web">
-          <button className="proj-btn" type="button" onClick={() => pick("web")}>
-            WEB &amp; MOBILE DESIGN
-          </button>
-        </li>
-        <li className="proj-mag">
-          <button className="proj-btn" type="button" onClick={() => pick("magazine")}>
-            MAGAZINE DESIGN
-          </button>
-        </li>
-        <li className="proj-arch">
-          <button className="proj-btn" type="button" onClick={() => pick("architectural")}>
-            ARCHITECTURAL DESIGN
-          </button>
-        </li>
-      </ul>
+      <SubProjectsNav
+        isOpen={open && activeMenu === "projects"}
+        onHoverIn={() => setActiveMenu("projects")}
+        onHoverOut={() => setActiveMenu(null)}
+        onPick={pick}
+      />
+
+      <SubQualificationsNav
+        isOpen={open && activeMenu === "qualifications"}
+        onHoverIn={() => setActiveMenu("qualifications")}
+        onHoverOut={() => setActiveMenu(null)}
+        onPick={pick}
+      />
     </>
   );
 }

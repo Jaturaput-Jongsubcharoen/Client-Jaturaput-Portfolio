@@ -2,7 +2,7 @@
 .profile-img-box img {
   filter: grayscale(100%) saturate(70%) contrast(1.05);
   transition: filter .35s ease-in-out;
-  opacity: 15%;
+  opacity: 0.10;
 }
 
 /* Each grid tile that overlaps the photo gets a perfectly aligned color slice */

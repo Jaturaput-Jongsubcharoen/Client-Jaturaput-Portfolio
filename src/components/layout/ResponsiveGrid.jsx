@@ -35,7 +35,7 @@ export default function ResponsiveGrid({ children }) {
   const spanCols = imgArea.c2 - imgArea.c1; // 3
 
   return (
-    <div className="grid-container">
+    <div className="grid-container fade">
       {items.map((_, i) => {
         const col = (i % cols) + 1;           // 1-based
         const row = Math.floor(i / cols) + 1; // 1-based
@@ -50,7 +50,7 @@ export default function ResponsiveGrid({ children }) {
         return (
           <div
             key={i}
-            className={`grid-item${overPhoto ? " profile-hit" : ""}`}
+            className={`fade grid-item${overPhoto ? " profile-hit" : ""}`} 
             style={{
               gridColumn: `${col} / ${col + 1}`,
               gridRow: `${row} / ${row + 1}`,

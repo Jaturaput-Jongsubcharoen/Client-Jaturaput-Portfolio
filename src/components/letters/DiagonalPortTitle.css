@@ -107,25 +107,25 @@
 
 
 /* P */
-.title1-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* bright coral */
-.title1-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel pink */
-.title1-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* deep red */
-.title1-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* light rose */
+.title1-box--p span:nth-child(1) h2 { color: rgb(0, 0, 0, 0.8); } /* bright coral */
+.title1-box--p span:nth-child(2) h2 { color: rgba(88, 88, 70, 0.8); } /* pastel pink */
+.title1-box--p span:nth-child(3) h2 { color: rgba(124, 124, 105, 0.8); } /* deep red */
+.title1-box--p span:nth-child(4) h2 { color: rgba(43, 43, 43, 0.8); } /* light rose */
 
 /* O */
-.title2-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* sunflower */
-.title2-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel yellow */
-.title2-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* warm amber */
-.title2-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* soft gold */
+.title2-box--p span:nth-child(1) h2 { color: rgba(43, 43, 43, 0.8); } /* sunflower */
+.title2-box--p span:nth-child(2) h2 { color: rgba(0, 0, 0, 0.8); } /* pastel yellow */
+.title2-box--p span:nth-child(3) h2 { color: rgba(88, 88, 70, 0.8); } /* warm amber */
+.title2-box--p span:nth-child(4) h2 { color: rgba(124, 124, 105, 0.8); } /* soft gold */
 
 /* R */
-.title3-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* teal green */
-.title3-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel green */
-.title3-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* dark jade */
-.title3-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* mint */
+.title3-box--p span:nth-child(1) h2 { color: rgb(124, 124, 105, 0.8); } /* teal green */
+.title3-box--p span:nth-child(2) h2 { color: rgba(43, 43, 43, 0.8); } /* pastel green */
+.title3-box--p span:nth-child(3) h2 { color: rgba(0, 0, 0, 0.8); } /* dark jade */
+.title3-box--p span:nth-child(4) h2 { color: rgba(88, 88, 70, 0.8); } /* mint */
 
 /* T */
-.title4-box--p span:nth-child(1) h2 { color: rgb(50, 50, 42, 1); } /* dodger blue */
-.title4-box--p span:nth-child(2) h2 { color: rgba(60, 60, 50, 0.70); } /* pastel blue */
-.title4-box--p span:nth-child(3) h2 { color: rgba(60, 60, 50, 0.40); } /* navy */
-.title4-box--p span:nth-child(4) h2 { color: rgba(60, 60, 50, 0.70); } /* sky */
+.title4-box--p span:nth-child(1) h2 { color: rgb(88, 88, 70, 0.8); } /* dodger blue */
+.title4-box--p span:nth-child(2) h2 { color: rgba(124, 124, 105, 0.8); } /* pastel blue */
+.title4-box--p span:nth-child(3) h2 { color: rgba(43, 43, 43, 0.8); } /* navy */
+.title4-box--p span:nth-child(4) h2 { color: rgba(0, 0, 0, 0.8); } /* sky */

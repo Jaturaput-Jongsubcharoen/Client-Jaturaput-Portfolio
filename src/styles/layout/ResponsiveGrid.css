@@ -14,13 +14,13 @@
   grid-template-rows: repeat(6, 1fr);
   height: 100dvh;
   position: relative;
-  background: linear-gradient(454deg, #363636, #ffffff);
+  background: linear-gradient(90deg, #000000, #ffffff); /*454deg*/
   z-index: 0;
 }
 
 /* Each cell explicit, sits below the photo */
 .grid-item {
-  border: 1px solid #000;
+  border: 0.5px solid rgb(70, 70, 70);
   background: none;
   color: #fff;
   display: flex; 
@@ -165,4 +165,10 @@
     .grid-container .profile-hit::after { opacity: 0; }
     .grid-container .profile-hit:active::after { opacity: 1; filter: none; }
   }
+}
+
+
+.fade {
+	opacity: 0; 
+	animation: fadeIn 1.5s ease-in-out forwards; 
 }
