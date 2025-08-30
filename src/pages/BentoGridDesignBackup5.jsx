@@ -11,6 +11,8 @@ import DiagonalPortTitle from "../components/letters/DiagonalPortTitle.jsx";
 import FolioTitle from "../components/letters/FolioTitle.jsx";
 import PaintTitle from "../components/letters/PaintTitle.jsx";
 
+import LogoReveal from "../branding/LogoReveal.jsx";
+
 import projects from "../data/JaturaputProject.js";
 
 const CATEGORY_TO_TYPE = {
@@ -87,6 +89,8 @@ export default function BentoGridDesignBackup5() {
       <DiagonalPortTitle />
       <FolioTitle />
       <PaintTitle />
+
+      <LogoReveal />
 
     </ResponsiveGrid>
   );

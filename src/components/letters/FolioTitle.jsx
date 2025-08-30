@@ -13,6 +13,9 @@ export default function FolioTitle() {
       <div className="folio-letter folio-letter--l">
         <h2>L</h2>
       </div>
+      <div className="folio-letter folio-letter--i">
+        <h2>i</h2>
+      </div>
       <div className="folio-letter folio-letter--o2">
         <h2>O</h2>
       </div>
