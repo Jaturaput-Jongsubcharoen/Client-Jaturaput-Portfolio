@@ -74,30 +74,33 @@ export default function DisplayProjectPanel({
             {(github_frontend || github_backend) && (
               <div className="project-panel__code">
                 {github_frontend && (
-                  <a
+                <a
                     className="project-panel__codebtn"
                     href={github_frontend}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${githubLabel} Frontend`}
-                    data-label={`${githubLabel} Frontend`}
+                    data-label={`${githubLabel} Frontend`}  // tooltip
+                    data-badge="FE"                          // NEW: corner badge
                     title={`${githubLabel} Frontend`}
-                  >
+                >
                     <FaGithub className="project-panel__codeicon" />
-                  </a>
+                </a>
                 )}
+
                 {github_backend && (
-                  <a
+                <a
                     className="project-panel__codebtn"
                     href={github_backend}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${githubLabel} Backend`}
-                    data-label={`${githubLabel} Backend`}
+                    data-label={`${githubLabel} Backend`}   // tooltip
+                    data-badge="BE"                         // NEW: corner badge
                     title={`${githubLabel} Backend`}
-                  >
+                >
                     <FaGithub className="project-panel__codeicon" />
-                  </a>
+                </a>
                 )}
               </div>
             )}

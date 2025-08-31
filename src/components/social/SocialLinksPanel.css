@@ -159,7 +159,8 @@
 
 /* Default (still white) */
 .social-panel__item--github .social-panel__icon, .social-panel__item--linkedin .social-panel__icon,
-.social-panel__item--instagram .social-panel__icon, .social-panel__item--youtube .social-panel__icon {
+.social-panel__item--instagram .social-panel__icon, .social-panel__item--youtube .social-panel__icon,
+.social-panel__item--facebook .social-panel__icon {
   color: #fff;
   transition: color 0.35s ease; /* smooth fade */
 }
@@ -183,6 +184,11 @@
 .social-panel__item--youtube:hover .social-panel__icon {
   /*color: rgb(0, 0, 0);*/
   color: #ff0000;
+}
+/* Facebook blue */
+.social-panel__item--facebook:hover .social-panel__icon {
+  /*color: rgb(0, 0, 0);*/
+  color: #1877F2;
 }
 
 
