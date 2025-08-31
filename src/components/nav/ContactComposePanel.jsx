@@ -29,35 +29,37 @@ export default function ContactComposePanel({
     if (e.key === "Escape") onClose?.();
   };
 
-  const handleSend = async (e) => {
+    const handleSend = async (e) => {
     e.preventDefault();
     if (sending) return;
-    const to = (toValue || "").trim();
-    if (!to) return alert("Please enter a recipient email.");
     setSending(true);
+
     try {
-      await sendPortfolioEmail({
-        to,
-        subject: subject || "",
-        body: body || "",
-        fromName: "Portfolio Compose Panel",
-      });
-      setSending(false);
-      onClose?.();
-      alert("✅ Sent!");
+        const r = await fetch("/api/contact/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            to: toValue.trim(),
+            subject: subject || "",
+            body: body || ""
+            // optionally: replyTo: visitorEmail
+        }),
+        });
+
+        if (!r.ok) {
+        const err = await r.json().catch(() => ({}));
+        throw new Error(err.error || "Send failed");
+        }
+
+        setSending(false);
+        onClose?.();
+        alert("✅ Sent!");
     } catch (err) {
-      console.error("Email send failed:", err);
-      setSending(false);
-      // Fallback to Gmail compose in a new tab
-      const su = encodeURIComponent(subject || "");
-      const bo = encodeURIComponent(body || "");
-      window.open(
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${su}&body=${bo}`,
-        "_blank",
-        "noopener"
-      );
+        console.error("Send failed:", err);
+        setSending(false);
+        alert("Couldn't send right now. Please try again.");
     }
-  };
+    };
 
   return (
     <>
