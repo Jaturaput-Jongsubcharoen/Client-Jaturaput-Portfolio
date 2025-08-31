@@ -1,7 +1,14 @@
 // components/nav/ContactComposePanel.jsx
 import { useEffect, useRef, useState } from "react";
 import "./ContactComposePanel.css";
-import { sendPortfolioEmail } from "../../lib/email/sendEmail";
+// remove EmailJS — we're using the server route now
+// import { sendPortfolioEmail } from "../../lib/email/sendEmail";
+
+// Read the server base URL from Vite env.
+// Dev: leave VITE_API_BASE empty and rely on Vite proxy.
+// Prod: set VITE_API_BASE to your server URL, e.g. https://server-jaturaput-portfolio.onrender.com
+const API_BASE = import.meta.env.VITE_API_BASE?.trim() || "";
+// console.log("API_BASE =", API_BASE); // uncomment for debugging
 
 export default function ContactComposePanel({
   isOpen,
@@ -13,7 +20,7 @@ export default function ContactComposePanel({
   const [toValue, setToValue] = useState(toProp);
   const [subject, setSubject] = useState(defaultSubject);
   const [body, setBody] = useState(defaultBody);
-  const [sending, setSending] = useState(false);          // <-- ADD THIS
+  const [sending, setSending] = useState(false);
   const subjRef = useRef(null);
 
   useEffect(() => {
@@ -29,37 +36,37 @@ export default function ContactComposePanel({
     if (e.key === "Escape") onClose?.();
   };
 
-    const handleSend = async (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (sending) return;
     setSending(true);
 
     try {
-        const r = await fetch("/api/contact/send", {
+      const r = await fetch(`${API_BASE}/api/contact/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            to: toValue.trim(),
-            subject: subject || "",
-            body: body || ""
-            // optionally: replyTo: visitorEmail
+          to: toValue.trim(),
+          subject: subject || "",
+          body: body || "",
+          // optionally: replyTo: visitorEmail
         }),
-        });
+      });
 
-        if (!r.ok) {
+      if (!r.ok) {
         const err = await r.json().catch(() => ({}));
         throw new Error(err.error || "Send failed");
-        }
+      }
 
-        setSending(false);
-        onClose?.();
-        alert("✅ Sent!");
+      setSending(false);
+      onClose?.();
+      alert(" Sent!");
     } catch (err) {
-        console.error("Send failed:", err);
-        setSending(false);
-        alert("Couldn't send right now. Please try again.");
+      console.error("Send failed:", err);
+      setSending(false);
+      alert("Couldn't send right now. Please try again.");
     }
-    };
+  };
 
   return (
     <>
@@ -133,7 +140,12 @@ export default function ContactComposePanel({
             <button type="submit" className="send-btn" disabled={sending}>
               {sending ? "Sending…" : "Send"}
             </button>
-            <button type="button" className="ghost-btn" onClick={onClose} disabled={sending}>
+            <button
+              type="button"
+              className="ghost-btn"
+              onClick={onClose}
+              disabled={sending}
+            >
               Cancel
             </button>
           </div>
