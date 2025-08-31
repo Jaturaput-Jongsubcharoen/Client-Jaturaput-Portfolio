@@ -1,0 +1,136 @@
+/* ===== Compose panel (grid: rows 2–5, cols 3–6) ===== */
+
+.compose-panel-bg {
+  grid-row: 2 / 6;
+  grid-column: 3 / 7;
+  background: rgba(0, 0, 0, 0.35);
+  border-inline: 1px solid rgba(255,255,255,0.15);
+  border-block: 1px solid rgba(255,255,255,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 1004; /* above submenu bg/list (1002/1003), below panel (1006) */
+}
+.compose-panel-bg.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.compose-panel {
+  grid-row: 2 / 6;
+  grid-column: 3 / 7;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: linear-gradient(180deg, rgba(20,20,20,0.85), rgba(5,5,5,0.85));
+  backdrop-filter: blur(4px);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.55);
+  padding: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.985);
+  transition: opacity 220ms ease, transform 220ms ease;
+  z-index: 1006;
+}
+.compose-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* header */
+.compose-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.25rem 0.5rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.compose-header h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* form layout */
+.compose-form {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+.field label {
+  font-size: .85rem;
+  color: rgba(255,255,255,.9);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  outline: none;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+
+/* actions */
+.compose-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.send-btn,
+.ghost-btn,
+.icon-btn {
+  appearance: none;
+  font: inherit;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #fff;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.send-btn:hover,
+.ghost-btn:hover,
+.icon-btn:hover { transform: translateY(-1px); background: rgba(0,0,0,.55); }
+
+.send-btn { font-weight: 600; }
+.ghost-btn { opacity: .85; }
+
+.close-btn {
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+/* Mobile: let it breathe but keep roughly the same slot */
+@media (max-width: 768px) {
+  .compose-panel-bg,
+  .compose-panel {
+    grid-row: 2 / 5;
+    grid-column: 2 / 5; /* nudge inwards on small screens */
+  }
+}

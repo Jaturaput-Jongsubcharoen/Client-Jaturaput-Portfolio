@@ -1,0 +1,88 @@
+/* ===== CONTACTS SUBMENU (col 2) ===== */
+
+/* Background panel (matching your other submenus) */
+.contacts-col-bg {
+  grid-row: 3 / 5;
+  grid-column: 4 / 5;
+  background: linear-gradient(454deg, #000000, #ffffff);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
+  transform: translateX(-6px);
+  border-inline: 1px solid #000;
+  z-index: 1002;
+}
+.contacts-col-bg.is-open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* List container: 4 rows like others (close/header row + 2 items) */
+.contacts-col {
+  grid-row: 1 / 5;
+  grid-column: 4 / 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(4, 1fr);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease-in-out, transform 220ms ease-in-out;
+  transform: translateX(-6px);
+  z-index: 1003;
+}
+.contacts-col.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Row separators + centering */
+.contacts-col > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-block-start: 1px solid #000;
+  inline-size: min(100%, 22rem);
+  text-align: center;
+}
+.contacts-col > li:last-child {
+  border-block-end: 1px solid #000;
+}
+
+/* Place items on rows 3 and 4 (row 1 often used by header spacing) */
+.contact-centennial { grid-row: 3; }
+.contact-gmail      { grid-row: 4; }
+
+/* Buttons (match your .qual-btn / .proj-btn look) */
+.contact-btn {
+  color: #fff;
+  background: rgba(0,0,0,.35);
+  border: 1px solid #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.contact-btn:hover,
+.contact-btn:focus-visible {
+  background: rgba(0,0,0,.5);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Mobile layout shift parallels your other submenus */
+@media (max-width: 768px) {
+  .contacts-col-bg {
+    grid-row: 2 / 5;
+    grid-column: 3 / 4;
+  }
+  .contacts-col {
+    grid-row: 1 / 5;
+    grid-column: 3 / 4;
+  }
+}
