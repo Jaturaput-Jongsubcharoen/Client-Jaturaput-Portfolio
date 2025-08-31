@@ -1,124 +1,106 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useMemo, useState } from "react";
 
-import "../styles/BentoGridDesignCSS.css";
-import '../index.css';
+import ResponsiveGrid from "../components/layout/ResponsiveGrid";
+import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProfile";
+import HamburgerNav from "../components/nav/HamburgerNav";
+import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
+import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
+import SocialLinksPanel from "../components/social/SocialLinksPanel.jsx";
 
-import GridBackground from '../components/layout/GridBackground.jsx';
-import PortLetters from '../components/letters/PortLetters.jsx';
-import FolioLetters from '../components/letters/FolioLetters.jsx';
-import PaintLetters from '../components/letters/PaintLetters.jsx';
+import DiagonalPortTitle from "../components/letters/DiagonalPortTitle.jsx";
+import FolioTitle from "../components/letters/FolioTitle.jsx";
+import PaintTitle from "../components/letters/PaintTitle.jsx";
 
-import ProjectCategoryNav from '../components/nav/ProjectCategoryNav.jsx';
-import ContactsButton from "../components/buttons/ContactsButton.jsx";
-import ContactsMenu from '../components/buttons/ContactsMenu.jsx';
+import LogoReveal from "../components/branding/LogoReveal.jsx";
 
-import DisplayMyPicture from '../components/projects/DisplayMyPicture.jsx';
-import DisplayProject from '../components/projects/DisplayProject.jsx';
-import DisplayProjectDetail from '../components/projects/DisplayProjectDetail.jsx';
+import projects from "../data/JaturaputProject.js";
 
-import projects from '../data/JaturaputProject.js';
+const CATEGORY_TO_TYPE = {
+  web: "WEB & MOBILE DESIGN",
+  magazine: "MAGAZINE DESIGN",
+  architectural: "ARCHITECTURAL DESIGN",
+};
 
-function BentoGridDesignPage() {
-
-  const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
-  const [filteredProjects, setFilteredProjects] = useState(projects.filter((project) => project.type === "WEB & MOBILE DESIGN"));
-  const [selectedProject, setSelectedProject] = useState(filteredProjects[0]);
-  
+export default function BentoGridDesignPage() {
+  const [selectedCategory, setSelectedCategory] = useState("web");
+  const [selectedProject, setSelectedProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
 
-  useEffect(() => {
-    const filtered = projects.filter((project) => {
-      if (selectedCategory === "web") {
-        return project.type === "WEB & MOBILE DESIGN";
-      } else if (selectedCategory === "magazine") {
-        return project.type === "MAGAZINE DESIGN";
-      } else if (selectedCategory === "architectural") {
-        return project.type === "ARCHITECTURAL DESIGN";
-      }
-      return false;
-    });
-
-    setFilteredProjects(filtered);
-    setSelectedProject(filtered[0]);
+  const filteredProjects = useMemo(() => {
+    const type = CATEGORY_TO_TYPE[selectedCategory];
+    return projects.filter((p) => p.type === type);
   }, [selectedCategory]);
 
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
+  useEffect(() => {
+    setSelectedProject(filteredProjects[0] ?? null);
+    setShowDetails(false); // close details when switching category
+  }, [filteredProjects]);
+
+  const handleCategoryChange = (cat) => {
+    setSelectedCategory(cat);
+    setShowDetails(false);
   };
 
   const handlePrev = () => {
-    const currentIndex = filteredProjects.indexOf(selectedProject);
-    const newIndex =
-      currentIndex === 0 ? filteredProjects.length - 1 : currentIndex - 1;
+    if (!filteredProjects.length || !selectedProject) return;
+    const i = filteredProjects.indexOf(selectedProject);
+    const newIndex = i === 0 ? filteredProjects.length - 1 : i - 1;
     setSelectedProject(filteredProjects[newIndex]);
   };
 
   const handleNext = () => {
-    const currentIndex = filteredProjects.indexOf(selectedProject);
-    const newIndex =
-      currentIndex === filteredProjects.length - 1 ? 0 : currentIndex + 1;
+    if (!filteredProjects.length || !selectedProject) return;
+    const i = filteredProjects.indexOf(selectedProject);
+    const newIndex = i === filteredProjects.length - 1 ? 0 : i + 1;
     setSelectedProject(filteredProjects[newIndex]);
   };
 
   const calculateDuration = (start, end) => {
-    const startDate = new Date(start);
-    const endDate = new Date(end);
-    const timeDifference = endDate - startDate;
-    const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
-    return daysDifference;
+    const s = new Date(start);
+    const e = new Date(end);
+    return (e - s) / (1000 * 60 * 60 * 24);
   };
-  
+
   return (
-    <>
-      {
-        /* Portfolio by Jaturaput Jongsubcharoen | AI - Software engineering */
-      }
-      {
-        /* ______________________________________________________________________________________________________________________________________________________ */
-      }
-      {
-        /* >Live Server:Open with Live Server */
-      }
-      <div className="body-bento-grid-design">
-        <div className="container">
-          <div className="scrolling-slides">
-            <div className="Grid-container">
+    <ResponsiveGrid>
+      <HamburgerNav onPickCategory={handleCategoryChange} />
+      <DisplayMyPictureProfile />
 
-              <ProjectCategoryNav handleCategoryChange={handleCategoryChange} />
+      {selectedProject && (
+        <DisplayProjectPanel
+          selectedProject={selectedProject}
+          filteredProjects={filteredProjects}
+          showDetails={showDetails}
+          setShowDetails={setShowDetails}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
+      )}
 
-              <ContactsButton />
+      {/* Mount details when only open to avoid layout push on mobile */}
+      {selectedProject && (
+        <DisplayProjectDetailPanel
+          selectedProject={selectedProject}
+          showDetails={showDetails}
+          calculateDuration={calculateDuration}
+        />
+      )}
 
-              <GridBackground />
+      <SocialLinksPanel   
+        links={{
+          github: "https://github.com/yourname",
+          linkedin: "https://linkedin.com/in/yourname",
+          instagram: "https://instagram.com/yourname",
+          youtube: "https://youtube.com/@yourname",
+        }}
+      />
 
-              <PortLetters />
+      <DiagonalPortTitle />
+      <FolioTitle />
+      <PaintTitle />
 
-              <FolioLetters />
+      <LogoReveal />
 
-              <PaintLetters />
-
-              <DisplayMyPicture />
-
-              <DisplayProject
-                selectedProject={selectedProject}
-                filteredProjects={filteredProjects}
-                showDetails={showDetails}
-                setShowDetails={setShowDetails}
-                handlePrev={handlePrev}
-                handleNext={handleNext}
-              />
-
-              <DisplayProjectDetail
-                selectedProject={selectedProject}
-                showDetails={showDetails}
-                calculateDuration={calculateDuration}
-              />
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </ResponsiveGrid>
   );
 }
-
-export default BentoGridDesignPage;

@@ -114,14 +114,14 @@ const projects = [
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
       work_types: "Group of 3",
       project_duration: {
-        start: "2024-07-15",
-        end: "2024-08-05",
+        start: "2024-12-09",
+        end: "2024-12-23",
       },
       detail: "This is Version 1 of Bento Grid Design, created to enhance CSS skills by experimenting with cursor interactions that make the design more attractive and user-friendly. Users can hover over elements, including text titles, to experience interactive CSS effects. This version is optimized for desktop screens and does not fully support phone screens. The project also serves as a portfolio showcase.",
     },
     {
       image: BentoGridDesignV2,
-      link: "https://client-jaturaput-portfolio.onrender.com/bento-grid-design-backup5",
+      link: "https://client-jaturaput-portfolio.onrender.com",
       github_frontend: null,
       github_backend: null,      
       title: "Bento Grid Design (Website) Project - Version 2.0",
@@ -129,8 +129,8 @@ const projects = [
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
       work_types: "Group of 3",
       project_duration: {
-        start: "2024-07-15",
-        end: "2024-08-05",
+        start: "2025-08-07",
+        end: "2025-08-31",
       },
       detail: "This Bento Grid Design website (Version 2) enhances CSS skill further by playing with a cursor to make the website more attractive and userfriendly design. Users can hover over any element, including text titles, to experience interactive CSS effects. This website also serves as a portfolio. It also strengthened my React skills by learning how to structure files effectively and manage data flow between child and parent components. The project doubles as a portfolio showcase. The website is fully responsive, ensuring smooth usability on phone screens as well. This project further serves as a portfolio showcase.",
     },
