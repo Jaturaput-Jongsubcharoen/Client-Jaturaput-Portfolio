@@ -37,6 +37,7 @@ export default function HamburgerNav({ onPickCategory }) {
 
   // ---- compose helpers ----
   const openCompose = (email) => {
+    console.log("openCompose →", email);
     setCompose({ to: email, subject: "", body: "" });
     setActiveMenu(null);
     setOpen(false);
