@@ -1,14 +1,7 @@
 // components/nav/ContactComposePanel.jsx
 import { useEffect, useRef, useState } from "react";
 import "./ContactComposePanel.css";
-// remove EmailJS — we're using the server route now
-// import { sendPortfolioEmail } from "../../lib/email/sendEmail";
-
-// Read the server base URL from Vite env.
-// Dev: leave VITE_API_BASE empty and rely on Vite proxy.
-// Prod: set VITE_API_BASE to your server URL, e.g. https://server-jaturaput-portfolio.onrender.com
-const API_BASE = import.meta.env.VITE_API_BASE?.trim() || "";
-// console.log("API_BASE =", API_BASE); // uncomment for debugging
+import { sendPortfolioEmail } from "../../lib/email/sendEmail";
 
 export default function ContactComposePanel({
   isOpen,
@@ -20,7 +13,7 @@ export default function ContactComposePanel({
   const [toValue, setToValue] = useState(toProp);
   const [subject, setSubject] = useState(defaultSubject);
   const [body, setBody] = useState(defaultBody);
-  const [sending, setSending] = useState(false);
+  const [sending, setSending] = useState(false);          // <-- ADD THIS
   const subjRef = useRef(null);
 
   useEffect(() => {
@@ -39,32 +32,30 @@ export default function ContactComposePanel({
   const handleSend = async (e) => {
     e.preventDefault();
     if (sending) return;
+    const to = (toValue || "").trim();
+    if (!to) return alert("Please enter a recipient email.");
     setSending(true);
-
     try {
-      const r = await fetch(`${API_BASE}/api/contact/send`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          to: toValue.trim(),
-          subject: subject || "",
-          body: body || "",
-          // optionally: replyTo: visitorEmail
-        }),
+      await sendPortfolioEmail({
+        to,
+        subject: subject || "",
+        body: body || "",
+        fromName: "Portfolio Compose Panel",
       });
-
-      if (!r.ok) {
-        const err = await r.json().catch(() => ({}));
-        throw new Error(err.error || "Send failed");
-      }
-
       setSending(false);
       onClose?.();
-      alert(" Sent!");
+      alert("✅ Sent!");
     } catch (err) {
-      console.error("Send failed:", err);
+      console.error("Email send failed:", err);
       setSending(false);
-      alert("Couldn't send right now. Please try again.");
+      // Fallback to Gmail compose in a new tab
+      const su = encodeURIComponent(subject || "");
+      const bo = encodeURIComponent(body || "");
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${su}&body=${bo}`,
+        "_blank",
+        "noopener"
+      );
     }
   };
 
@@ -140,12 +131,7 @@ export default function ContactComposePanel({
             <button type="submit" className="send-btn" disabled={sending}>
               {sending ? "Sending…" : "Send"}
             </button>
-            <button
-              type="button"
-              className="ghost-btn"
-              onClick={onClose}
-              disabled={sending}
-            >
+            <button type="button" className="ghost-btn" onClick={onClose} disabled={sending}>
               Cancel
             </button>
           </div>
