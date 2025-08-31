@@ -1,9 +1,11 @@
 import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
 import Tesla from "../images/screenshots/Tesla(1900x1080).png";
 import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
+import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
 import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
-import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
+import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
+import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -103,11 +105,11 @@ const projects = [
       detail: "This database system provides a comprehensive framework for managing an amusement park's operations. It ensures data integrity while tracking visitors, ticket sales, attraction management, staff schedules, and seasonal variations. Key tables include Visitor, Ticket, SeasonDate, Attraction, Staff, WorkShift, TicketPurchased, Recording, and TicketAccess, facilitating seamless record-keeping and operational efficiency.",
     },
     {
-      image: HeavenLandOracleSQLDeveloper,
-      link: "/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
+      image: BentoGridDesignV1,
+      link: "https://client-jaturaput-portfolio.onrender.com/bento-Grid-design-backup4",
       github_frontend: null,
       github_backend: null,      
-      title: "Bento Grid Design (Website) Project",
+      title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
       work_types: "Group of 3",
@@ -115,7 +117,22 @@ const projects = [
         start: "2024-07-15",
         end: "2024-08-05",
       },
-      detail: "This website (Version 2) enhances CSS skill further by playing with a cursor to make the website more attractive and userfriendly design. Users can hover over any element, including text titles, to experience interactive CSS effects. This website also serves as a portfolio. It also strengthened my React skills by learning how to structure files effectively and manage data flow between child and parent components. The project doubles as a portfolio showcase. The website is fully responsive, ensuring smooth usability on phone screens as well. This project further serves as a portfolio showcase.",
+      detail: "This is Version 1 of Bento Grid Design, created to enhance CSS skills by experimenting with cursor interactions that make the design more attractive and user-friendly. Users can hover over elements, including text titles, to experience interactive CSS effects. This version is optimized for desktop screens and does not fully support phone screens. The project also serves as a portfolio showcase.",
+    },
+    {
+      image: BentoGridDesignV2,
+      link: "https://client-jaturaput-portfolio.onrender.com/bento-grid-design-backup5",
+      github_frontend: null,
+      github_backend: null,      
+      title: "Bento Grid Design (Website) Project - Version 2.0",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
+      work_types: "Group of 3",
+      project_duration: {
+        start: "2024-07-15",
+        end: "2024-08-05",
+      },
+      detail: "This Bento Grid Design website (Version 2) enhances CSS skill further by playing with a cursor to make the website more attractive and userfriendly design. Users can hover over any element, including text titles, to experience interactive CSS effects. This website also serves as a portfolio. It also strengthened my React skills by learning how to structure files effectively and manage data flow between child and parent components. The project doubles as a portfolio showcase. The website is fully responsive, ensuring smooth usability on phone screens as well. This project further serves as a portfolio showcase.",
     },
     {
       image: MagazineDesign2,
