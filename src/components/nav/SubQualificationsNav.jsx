@@ -1,23 +1,28 @@
-// components/nav/SubProject.jsx
+// components/nav/SubQualificationsNav.jsx
+import "./SubQualificationsNav.css";
+import certs from "../../data/JaturaputCertificates";
+import resumeDocs from "../../data/JaturaputResume";
+import transcripts from "../../data/JaturaputTranscripts";
 
-import "./SubQualificationsNav.css"
+export default function SubQualificationsNav({
+  qualOpen, onHoverIn, onHoverOut, onPick, onOpenDoc, onOpenDocs
+}) {
+  const resumeDoc = resumeDocs?.[0];
+  const certDoc = certs?.[0]; 
 
-export default function SubQualificationsNav({ isOpen, onHoverIn, onHoverOut, onPick }) {
   return (
     <>
-      {/* background for col2 */}
       <div
-        className={`qualifications-col-bg ${isOpen ? "is-open" : ""}`}
-        aria-hidden={!isOpen}
+        className={`qualifications-col-bg ${qualOpen ? "is-open" : ""}`}
+        aria-hidden={!qualOpen}
         onMouseEnter={onHoverIn}
         onMouseLeave={onHoverOut}
       />
 
-      {/* submenu list */}
       <ul
-        className={`qualifications-col ${isOpen ? "is-open" : ""}`}
-        aria-label="Project categories"
-        aria-hidden={!isOpen}
+        className={`qualifications-col ${qualOpen ? "is-open" : ""}`}
+        aria-label="Qualifications"
+        aria-hidden={!qualOpen}
         onMouseEnter={onHoverIn}
         onMouseLeave={onHoverOut}
       >
@@ -25,10 +30,10 @@ export default function SubQualificationsNav({ isOpen, onHoverIn, onHoverOut, on
           <button
             className="qual-btn"
             type="button"
-            onClick={() => onPick("web")}
-            aria-label="Web and mobile design"
+            onClick={() => certDoc && onOpenDoc?.(certDoc.title, certDoc.src)}
+            aria-label={`Open ${certDoc?.title ?? "certificate"} PDF`}
           >
-            CERTIFICATE
+            Certificate
           </button>
         </li>
 
@@ -36,10 +41,10 @@ export default function SubQualificationsNav({ isOpen, onHoverIn, onHoverOut, on
           <button
             className="qual-btn"
             type="button"
-            onClick={() => onPick("magazine")}
-            aria-label="Magazine design"
+            onClick={() => resumeDoc && onOpenDoc?.(resumeDoc.title, resumeDoc.src)}
+            aria-label="Open résumé PDF"
           >
-            RÉSUMÉ
+            Résumé
           </button>
         </li>
 
@@ -47,10 +52,15 @@ export default function SubQualificationsNav({ isOpen, onHoverIn, onHoverOut, on
           <button
             className="qual-btn"
             type="button"
-            onClick={() => onPick("architectural")}
-            aria-label="Architectural design"
+            onClick={() =>
+              onOpenDocs?.(
+                "Transcript",
+                transcripts.map(t => t.src)
+              )
+            }
+            aria-label="Open transcripts"
           >
-            TRANSCRIPT
+            Transcript
           </button>
         </li>
       </ul>
