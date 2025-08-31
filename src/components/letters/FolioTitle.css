@@ -4,7 +4,7 @@
   display: grid;
   place-items: center;
   pointer-events: none;
-  z-index: 28;
+  z-index: 10;
 
 }
 

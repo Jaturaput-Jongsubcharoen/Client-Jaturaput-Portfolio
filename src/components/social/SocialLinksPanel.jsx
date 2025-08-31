@@ -1,6 +1,6 @@
 // src/components/social/SocialLinksPanel.jsx
 // src/components/social/SocialLinksPanel.jsx
-import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import links from "../../data/JaturaputSocialLink";
 import "./SocialLinksPanel.css";
 
@@ -9,6 +9,7 @@ const ICONS = {
   linkedin: FaLinkedin,
   instagram: FaInstagram,
   youtube: FaYoutube,
+  facebook: FaFacebook,
 };
 
 export default function SocialLinksPanel() {

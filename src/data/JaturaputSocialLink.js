@@ -21,6 +21,11 @@ const JaturaputSocialLink = [
     label: "Instagram",
     url: "https://www.instagram.com/mackerale/",
   },
+  {
+    id: "facebook",
+    label: "Facebook",
+    url: "https://www.facebook.com/mackeral",
+  },
 ];
 
 export default JaturaputSocialLink;

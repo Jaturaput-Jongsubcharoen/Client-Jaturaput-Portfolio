@@ -107,8 +107,8 @@ const projects = [
     {
       image: BentoGridDesignV1,
       link: "https://client-jaturaput-portfolio.onrender.com/bento-Grid-design-backup4",
-      github_frontend: null,
-      github_backend: null,      
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio",      
       title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
@@ -122,8 +122,8 @@ const projects = [
     {
       image: BentoGridDesignV2,
       link: "https://client-jaturaput-portfolio.onrender.com",
-      github_frontend: null,
-      github_backend: null,      
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio",      
       title: "Bento Grid Design (Website) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
