@@ -166,23 +166,23 @@
 
 /* Hover → GitHub purple */
 .social-panel__item--github:hover .social-panel__icon {
-  color: rgb(0, 0, 0);
-  /*color: #6e40c9;*/
+  /*color: rgb(0, 0, 0);*/
+  color: #6e40c9;
 }
 /* LinkedIn blue */
 .social-panel__item--linkedin:hover .social-panel__icon {
-  color: rgb(0, 0, 0);
-  /*color: #0a66c2;*/
+  /*color: rgb(0, 0, 0);*/
+  color: #0a66c2;
 }
 /* Instagram gradient can’t be applied directly, but pick a close pink */
 .social-panel__item--instagram:hover .social-panel__icon {
-  color: rgb(0, 0, 0);
-  /*color: #e1306c;*/
+  /*color: rgb(0, 0, 0);*/
+  color: #e1306c;
 }
 /* YouTube red */
 .social-panel__item--youtube:hover .social-panel__icon {
-  color: rgb(0, 0, 0);
-  /*color: #ff0000;*/
+  /*color: rgb(0, 0, 0);*/
+  color: #ff0000;
 }
 
 

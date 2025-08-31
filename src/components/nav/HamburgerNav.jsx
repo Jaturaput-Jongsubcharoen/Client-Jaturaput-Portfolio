@@ -17,16 +17,21 @@ export default function HamburgerNav({ onPickCategory }) {
   const firstLinkRef = useRef(null);
 
   // Helpers to open docs
-  const openDocuments = (title, srcList) => {
-    const items = (srcList || []).map(src => ({
-      src,
-      fileName: src.split("/").pop() || src
-    }));
-    setDocPanel({ title, items, index: 0 });
-    setActiveMenu(null);
-    setOpen(false); // close hamburger so button shows "Profile"
-  };
-  const openDocument = (title, src) => openDocuments(title, [src]);
+// Helpers to open docs (supports strings or {src,name} objects)
+const openDocuments = (title, list) => {
+  const items = (list || []).map(item => {
+    const src  = typeof item === "string" ? item : item.src;
+    const name = typeof item === "string" ? undefined : item.name;
+    return { src, name, fileName: src.split("/").pop() || src };
+  });
+  setDocPanel({ title, items, index: 0 });
+  setActiveMenu(null);
+  setOpen(false);
+};
+
+  // Single-doc convenience wrapper
+  const openDocument = (title, src, name) =>
+    openDocuments(title, [{ src, name }]);
   const closeDocument = () => setDocPanel(null);
 
   // Nav within docs
@@ -73,6 +78,7 @@ export default function HamburgerNav({ onPickCategory }) {
     onPickCategory?.(category);
     closeAll();
   };
+  
 
   return (
     <>
@@ -155,7 +161,10 @@ export default function HamburgerNav({ onPickCategory }) {
             <div className="doc-panel__titles">
               <h3 className="doc-panel__title">{docPanel.title}</h3>
               <p className="doc-panel__filename">
-                {docPanel.items[docPanel.index]?.fileName}
+                {
+                  docPanel.items?.[docPanel.index]?.name
+                  ?? docPanel.items?.[docPanel.index]?.fileName
+                }
               </p>
             </div>
             <button
@@ -170,13 +179,12 @@ export default function HamburgerNav({ onPickCategory }) {
 
           <iframe
             className="doc-panel__frame"
-            src={docPanel.items[docPanel.index]?.src}
+            src={docPanel.items?.[docPanel.index]?.src}
             title={`${docPanel.title} ${docPanel.index + 1}`}
           />
 
-          {/* bottom overlay nav */}
           <div className="docnav">
-            {docPanel.items.length > 1 && (
+            {docPanel.items?.length > 1 && (
               <button
                 onClick={goToPrevDoc}
                 className="docnav__arrow docnav__arrow--left"
@@ -187,10 +195,10 @@ export default function HamburgerNav({ onPickCategory }) {
             )}
 
             <p className="docnav__pager">
-              {docPanel.index + 1} / {docPanel.items.length}
+              {docPanel.index + 1} / {docPanel.items?.length}
             </p>
 
-            {docPanel.items.length > 1 && (
+            {docPanel.items?.length > 1 && (
               <button
                 onClick={goToNextDoc}
                 className="docnav__arrow docnav__arrow--right"
