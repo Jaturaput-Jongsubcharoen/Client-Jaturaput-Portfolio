@@ -59,6 +59,7 @@
   --r6: clamp(20px, 2.4vh, 28px);  /* pager   */
   /* row 2 (image) gets the rest and NEVER changes on hover */
   grid-template-rows: var(--r1) 1fr var(--r3) var(--r4) var(--r5) var(--r6);
+  grid-template-columns: var(--side-col, 64px) 1fr var(--side-col, 64px);
 
   align-items: center;
   gap: 2rem;
@@ -377,13 +378,23 @@
     flex-wrap: wrap;
   }
 }
-/* If you don't have --side-col yet, add this once: */
-.project-panel__layout { grid-template-columns: var(--side-col, 64px) 1fr var(--side-col, 64px); }
 
 
+/* Show code button tooltip on touch devices (no hover) */
+@media (hover: none) and (pointer: coarse) {
+  .project-panel__codebtn::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
 
-
-
+/* Show code button tooltip on touch devices (no hover) */
+@media (hover: none) and (pointer: coarse) {
+  .project-panel__codebtn::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
 
 
 
