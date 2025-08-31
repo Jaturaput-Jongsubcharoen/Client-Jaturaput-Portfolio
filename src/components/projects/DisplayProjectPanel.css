@@ -134,8 +134,18 @@
   color: #ffffff;
   margin: 0;
   font-weight: 700;
-  letter-spacing: .02em;
+  letter-spacing: .1em;
   text-align: center;
+
+  border-radius: 18px;
+  background: rgba(12,12,12,0.10);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+  /* tiny brightness boost + mild blur on the backdrop */
+  backdrop-filter: brightness(1.06) blur(2px);
+  -webkit-backdrop-filter: brightness(1.06) blur(2px);
 }
 
 /* Image: row 2, col 2 — fills the available row height */
@@ -274,12 +284,25 @@
 
 /* Pager: row 6, col 2 */
 .project-panel__pager {
-  grid-column: 2;
-  grid-row: 6;
+
   color: #ffffff;
-  margin: 0.2rem 0 0;
+  margin: 0.2rem;
   font-weight: 600;
   text-align: center;
+
+  /*
+  border-radius: 18px;
+  background: rgba(12,12,12,0.10);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+  */
+  /* tiny brightness boost + mild blur on the backdrop */
+  /*
+  backdrop-filter: brightness(1.06) blur(2px);
+  -webkit-backdrop-filter: brightness(1.06) blur(2px);
+  */
 }
 
 /* Keep everything above the glass */
