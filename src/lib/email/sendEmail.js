@@ -5,7 +5,7 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim();
 
-/*console.log("[EmailJS] PUBLIC_KEY =", PUBLIC_KEY);*/
+console.log("[EmailJS] PUBLIC_KEY =", PUBLIC_KEY);
 
 let initialized = false;
 function initEmailJS() {
