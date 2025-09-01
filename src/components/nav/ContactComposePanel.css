@@ -47,6 +47,9 @@
   transform: translateY(10px) scale(0.985);
   transition: opacity 220ms ease, transform 220ms ease;
   z-index: 1006;
+  max-height: 90vh; 
+  overflow-y: auto;   /* enable vertical scrolling if content too tall */
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 .compose-panel.is-open { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
 
@@ -93,10 +96,7 @@
 /* form — ensure children can shrink inside the grid cell */
 .compose-form {
   display: grid;
-  grid-template-rows: auto auto 1fr auto; /* message grows */
-  gap: 0.75rem;
-  padding: 0.75rem;
-  min-width: 0; min-height: 0; overflow: hidden;
+  grid-template-rows: auto auto auto 1fr auto; /* header fields | name/email | subject | message scroll | actions fixed */
 }
 
 .field { display: grid; gap: 0.35rem; min-width: 0; }
@@ -121,9 +121,18 @@
 }
 
 /* message area fills remaining space; no manual resize */
-.field--body { display: grid; grid-template-rows: auto 1fr; min-height: 0; overflow: hidden; }
-.field--body textarea { resize: none; block-size: 100%; overflow: auto; }
-
+.field--body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* allow flex child to shrink */
+}
+.field--body textarea {
+  flex: 1;
+  min-height: 150px;          /* base height */
+  max-height: 200px;          /* cap */
+  overflow-y: auto !important; /* scrollbar inside textarea */
+  resize: vertical;           /* allow drag resize if you want */
+}
 /* actions */
 .compose-actions {
   display: flex; gap: 0.5rem; justify-content: flex-end; align-items: center;
@@ -140,8 +149,86 @@
 .ghost-btn { opacity: .9; }
 .close-btn { line-height: 1; width: 2rem; height: 2rem; padding: 0; }
 
+/* Two inputs side-by-side on wide screens */
+.field-row { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
+
+
+
+/* ===== centered notice overlay (above everything) ===== */
+.notice-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;               /* above all */
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  background: rgba(0,0,0,0.35); /* subtle dim of whole screen */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.notice-card {
+  position: relative;
+  width: min(92vw, 520px);
+  padding: 1.2rem 1.2rem 1rem;
+  border-radius: 14px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(15,15,15,0.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  text-align: center;
+}
+
+.notice-card.is-success { outline: 2px solid rgba(64, 255, 160, .35); }
+.notice-card.is-error   { outline: 2px solid rgba(255, 96, 96,  .35); }
+
+.notice-title {
+  margin: 0 0 .35rem 0;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.notice-message {
+  margin: 0 .25rem .25rem;
+  opacity: .95;
+}
+
+.notice-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  line-height: 1;
+  border: 1px solid #fff;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.notice-close:hover { transform: translateY(-1px); background: rgba(0,0,0,.55); }
+
+
+
+
+/* two inputs side-by-side for name/email */
+.field-row { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 768px) { .field-row { grid-template-columns: 1fr; } }
+
+
+
 /* Small screens — same slot but narrower if your grid changes */
 @media (max-width: 768px) {
   .compose-panel-bg,
   .compose-panel { grid-row: 2 / 7; grid-column: 1 / 5; }
+  .field-row { grid-template-columns: 1fr; }
 }
+
+
+
