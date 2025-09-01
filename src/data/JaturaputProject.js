@@ -126,7 +126,7 @@ const projects = [
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio",      
       title: "Bento Grid Design (Website-Mobile) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
-      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, EmailJS, Photoshop",
       work_types: "Group of 3",
       project_duration: {
         start: "2025-08-07",
