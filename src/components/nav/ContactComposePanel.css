@@ -12,8 +12,6 @@
   pointer-events: none;
   transform: translateY(6px);
   transition: opacity 220ms ease, transform 220ms ease;
-  margin: 2%;
-  border-radius: 14px;
   z-index: 1004;  /* above submenu bg/list, below the panel */
 }
 .compose-panel-bg.is-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
@@ -31,7 +29,7 @@
   grid-template-rows: auto 1fr;
 
   /* Liquid glass base */
-  background: rgba(12, 12, 12, 0.10);
+  background: rgba(12, 12, 12, 0.15);
   border: 1px solid rgba(255,255,255,0.35);
   border-radius: 14px;
   box-shadow:
@@ -41,7 +39,6 @@
   -webkit-backdrop-filter: blur(10px) saturate(160%);
 
   padding: 0.75rem;
-  margin: 2%;
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px) scale(0.985);
@@ -227,7 +224,6 @@
 @media (max-width: 768px) {
   .compose-panel-bg,
   .compose-panel { grid-row: 2 / 7; grid-column: 1 / 5; }
-  .field-row { grid-template-columns: 1fr; }
 }
 
 
