@@ -57,9 +57,9 @@ export default function DisplayProjectPanel({
             Please click the image above to view the project.
           </p>
 
-          <h4 className="project-panel__project-title">
+          <h5 className="project-panel__project-title">
             PROJECT TITLE:&nbsp; {selectedProject.title}
-          </h4>
+          </h5>
 
           {/* Actions row: Details button + optional GitHub icons on the right */}
           <div className="project-panel__actions">

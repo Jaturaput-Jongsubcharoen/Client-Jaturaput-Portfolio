@@ -10,6 +10,7 @@
   position: relative;
   z-index: 12;
   overflow: hidden;
+
 }
 
 /* keep content above the effects */
@@ -235,7 +236,7 @@
   grid-row: 3;
   color: #eaeaea;
   margin: 0.25rem 0;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   text-align: center;
 }
 
@@ -284,7 +285,8 @@
 
 /* Pager: row 6, col 2 */
 .project-panel__pager {
-
+  grid-column: 2; 
+  grid-row: 6;
   color: #ffffff;
   margin: 0.2rem;
   font-weight: 600;
