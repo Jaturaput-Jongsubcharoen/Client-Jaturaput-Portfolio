@@ -370,6 +370,26 @@
   height: 20px;
 }
 
+/* Corner badge for FE/BE */
+.project-panel__codebtn::before {
+  content: attr(data-badge);
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: grid;
+  place-items: center;
+  font-size: 0.65rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0,0,0,.40);
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
 /* Tooltip from data-label (no layout shift) */
 .project-panel__codebtn::after {
   content: attr(data-label);
@@ -438,32 +458,11 @@
 
 
 /* Show code button tooltip on touch devices (no hover) */
+/*
 @media (hover: none) and (pointer: coarse) {
   .project-panel__codebtn::after {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
 }
-
-/* Corner badge for FE/BE */
-.project-panel__codebtn::before {
-  content: attr(data-badge);
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 4px;
-  display: grid;
-  place-items: center;
-  font-size: 0.65rem;
-  line-height: 1;
-  color: #fff;
-  background: rgba(0,0,0,.40);
-  border: 1px solid rgba(255,255,255,.55);
-  border-radius: 999px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.35);
-}
-
-
-
+*/
