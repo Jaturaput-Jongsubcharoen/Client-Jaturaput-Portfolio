@@ -47,7 +47,7 @@
   transform: translateY(10px) scale(0.985);
   transition: opacity 220ms ease, transform 220ms ease;
   z-index: 1006;
-  max-height: 90vh; 
+  height: auto; /*max-height: 90vh; */
   overflow-y: auto;   /* enable vertical scrolling if content too tall */
   overflow-x: hidden; /* prevent horizontal scroll */
 }
@@ -97,6 +97,7 @@
 .compose-form {
   display: grid;
   grid-template-rows: auto auto auto 1fr auto; /* header fields | name/email | subject | message scroll | actions fixed */
+  /*border: 1px solid black;*/
 }
 
 .field { display: grid; gap: 0.35rem; min-width: 0; }

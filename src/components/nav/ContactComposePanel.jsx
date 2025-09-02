@@ -170,7 +170,7 @@ export default function ContactComposePanel({
                 type="text"
                 value={visitorName}
                 onChange={(e) => setVisitorName(e.target.value)}
-                placeholder="Jane Doe"
+                placeholder="Mona Kulis"
                 disabled={sending}
               />
               {/* keep an empty slot so both columns stay aligned */}

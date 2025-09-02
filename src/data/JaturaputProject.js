@@ -112,7 +112,7 @@ const projects = [
       title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
-      work_types: "Group of 3",
+      work_types: "Individual Project",
       project_duration: {
         start: "2024-12-09",
         end: "2024-12-23",
@@ -127,7 +127,7 @@ const projects = [
       title: "Bento Grid Design (Website-Mobile) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, EmailJS, Photoshop",
-      work_types: "Group of 3",
+      work_types: "Individual Project",
       project_duration: {
         start: "2025-08-07",
         end: "2025-08-31",

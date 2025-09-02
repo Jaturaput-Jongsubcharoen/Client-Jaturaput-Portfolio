@@ -15,6 +15,13 @@
   --depth: calc(92px);
 }
 
+html {
+  font-size: 16px;   /* lock baseline font */
+}
+body {
+  zoom: 100%;        /* force reset zoom */
+}
+
 @media (min-width: 1536px) {
   .container-media {
     max-width: 1536px;
