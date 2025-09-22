@@ -2,7 +2,7 @@
 .profile-img-box2 img {
   filter: grayscale(100%) saturate(70%) contrast(1.05);
   transition: filter .35s ease-in-out;
-  opacity: 1;  /* force visible on iPhone */
+  opacity: 0.1;  /* force visible on iPhone */
 }
 
 /* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
