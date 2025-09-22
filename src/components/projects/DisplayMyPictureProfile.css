@@ -2,7 +2,7 @@
 .profile-img-box img {
   filter: grayscale(100%) saturate(70%) contrast(1.05);
   transition: filter .35s ease-in-out;
-  opacity: 0.10;
+  opacity: 0.20;
 }
 
 /* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
@@ -23,7 +23,9 @@
   left: calc(var(--ix) * -100%);
   top:  calc(var(--iy) * -100%);
 
-  background: url("../../images/my_picture2(800x800).png") no-repeat 0 0 / 100% 100%;
+  /* use a CSS variable for the background image (set in JSX) */
+  background: var(--profile-slice) no-repeat 0 0 / 100% 100%;
+  
   z-index: 20;
   pointer-events: none;
 
