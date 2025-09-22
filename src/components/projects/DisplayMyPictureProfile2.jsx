@@ -1,6 +1,6 @@
-import myPicture2 from "../../images/my_picture1(500x750).png";
+import myPicture2 from "../../images/my_picture1_500x750.png";
 import "../../styles/layout/ResponsiveGrid.css";
-import "./DisplayMyPictureProfile2.css"
+import "./DisplayMyPictureProfile2.css";
 
 function DisplayMyPictureProfile2() {
   return (
