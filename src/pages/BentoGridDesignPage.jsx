@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 
 import ResponsiveGrid from "../components/layout/ResponsiveGrid";
+
 import DisplayMyPictureProfile from "../components/projects/DisplayMyPictureProfile";
+import DisplayMyPictureProfile2 from "../components/projects/DisplayMyPictureProfile2.jsx";
+
 import HamburgerNav from "../components/nav/HamburgerNav";
 import DisplayProjectPanel from "../components/projects/DisplayProjectPanel";
 import DisplayProjectDetailPanel from "../components/projects/DisplayProjectDetailPanel";
@@ -65,6 +68,7 @@ export default function BentoGridDesignPage() {
     <ResponsiveGrid>
       <HamburgerNav onPickCategory={handleCategoryChange} />
       <DisplayMyPictureProfile />
+      <DisplayMyPictureProfile2 />
 
       {selectedProject && (
         <DisplayProjectPanel

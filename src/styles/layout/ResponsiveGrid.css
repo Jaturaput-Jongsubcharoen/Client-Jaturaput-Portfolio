@@ -100,6 +100,19 @@
   object-fit: cover;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .title1-box--p { grid-area: 2 / 2 / 3 / 3; } /* P */
 .title2-box--p { grid-area: 3 / 3 / 4 / 4; } /* O */
 .title3-box--p { grid-area: 4 / 4 / 5 / 5; } /* R */

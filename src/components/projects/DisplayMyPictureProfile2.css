@@ -1,0 +1,92 @@
+/* Keep the base photo grayscale behind the grid */
+.profile-img-box2 img {
+  filter: grayscale(100%) saturate(70%) contrast(1.05);
+  transition: filter .35s ease-in-out;
+  opacity: 0.10;
+}
+
+/* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
+.grid-container .profile-hit {
+  position: relative;
+  overflow: hidden; /* clip the slice inside the tile */
+}
+
+/* make a big sheet (3x3 tiles) and slide it so the right slice shows */
+.grid-container .profile-hit::after {
+  content: "";
+  position: absolute;
+  /* size equals the whole 3×3 photo area */
+  width:  calc(var(--photo-cols) * 100%);
+  height: calc(var(--photo-rows) * 100%);
+
+  /* shift so the correct slice sits inside this tile */
+  left: calc(var(--ix) * -100%);
+  top:  calc(var(--iy) * -100%);
+
+  background: url("../../images/my_picture2(800x800).png") no-repeat 0 0 / 100% 100%;
+  z-index: 20;
+  pointer-events: none;
+
+  /* hidden & gray by default */
+  filter: grayscale(100%) saturate(70%) contrast(1.05);
+  opacity: 0;
+  transition: opacity .25s ease, filter .25s ease;
+}
+
+/* reveal color on the hovered tile only */
+.grid-container .profile-hit:hover::after,
+.grid-container .profile-hit:focus-within::after {
+  opacity: 0.50;
+  filter: grayscale(40%) saturate(100%) contrast(1.05);
+}
+
+/* (optional) touch devices – keep base image color */
+/*
+@media (hover: none) and (pointer: coarse) {
+  .profile-img-box img { filter: none; }
+}
+*/
+
+
+
+/* Photo overlaps the cells it sits on */
+.profile-img-box2 {
+  grid-row: 2 / 6;          /* rows 3–5 */
+  grid-column: 3 / 7;       /* cols 4–6 */
+  position: relative;
+  z-index: 5;              /* above .grid-item */
+  display: flex; align-items: center; justify-content: center;
+}
+.profile-img-box2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-container > .profile-img-box2 {
+  grid-area: 2 / 1 / 6 / 5;         /* rows 3–5, cols 4–6 */
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+.grid-container > .profile-img-box2 img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  /* REMOVE the old phone block that said:
+  .profile-img-box { grid-column: 4 / 7; ... }  <- this conflicts on mobile
+  Keep just this single override: */
+  .grid-container > .profile-img-box2 {
+    grid-area: 11 / 1 / 15 / 5;  /* rows 3–5, ALL 4 columns */
+    min-width: 0;
+    min-height: 0;
+  }
+}
