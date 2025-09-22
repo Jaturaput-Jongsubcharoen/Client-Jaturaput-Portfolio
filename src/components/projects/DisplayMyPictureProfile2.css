@@ -23,7 +23,7 @@
   left: calc(var(--ix) * -100%);
   top:  calc(var(--iy) * -100%);
 
-  background: url("../../images/my_picture2(800x800).png") no-repeat 0 0 / 100% 100%;
+  background: url("../../images/my_picture2_800x800.png") no-repeat 0 0 / 100% 100%;
   z-index: 20;
   pointer-events: none;
 
