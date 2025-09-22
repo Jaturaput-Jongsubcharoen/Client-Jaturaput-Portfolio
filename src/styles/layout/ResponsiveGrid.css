@@ -71,6 +71,8 @@
 
 /* Photo overlaps the cells it sits on */
 .profile-img-box {
+  grid-row: 2 / 6;          /* rows 3–5 */
+  grid-column: 3 / 7;       /* cols 4–6 */
   position: relative;
   z-index: 5;              /* above .grid-item */
   display: flex; align-items: center; justify-content: center;
@@ -97,19 +99,6 @@
   display: block;
   object-fit: cover;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .title1-box--p { grid-area: 2 / 2 / 3 / 3; } /* P */
 .title2-box--p { grid-area: 3 / 3 / 4 / 4; } /* O */
