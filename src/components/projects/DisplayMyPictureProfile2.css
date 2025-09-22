@@ -25,7 +25,7 @@
   top:  calc(var(--iy) * -100%);
 
   /* use a CSS variable for the background image (set in JSX) */
-  background: var(--profile-slice) no-repeat 0 0 / 100% 100%;
+  background: url("../../images/my_picture1_500x750.png") no-repeat 0 0 / 100% 100%;
 
   z-index: 20;
   pointer-events: none;
@@ -39,8 +39,8 @@
 /* reveal color on the hovered tile only */
 .grid-container .profile-hit:hover::after,
 .grid-container .profile-hit:focus-within::after {
-  opacity: 0.50;
-  filter: grayscale(40%) saturate(100%) contrast(1.05);
+  opacity: 1; /* fully visible */
+  filter: none; /* remove grayscale */
 }
 
 /* Photo overlaps the cells it sits on */

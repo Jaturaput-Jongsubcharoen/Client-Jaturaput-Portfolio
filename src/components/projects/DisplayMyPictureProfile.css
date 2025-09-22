@@ -58,7 +58,7 @@
 }
 
 .grid-container > .profile-img-box {
-  grid-area: 2 / 1 / 6 / 5; /* rows 3–5, cols 4–6 */
+  grid-area: 2 / 3 / 6 / 7; /* rows 3–5, cols 4–6 */
   position: relative;
   z-index: 5;
   display: flex;
