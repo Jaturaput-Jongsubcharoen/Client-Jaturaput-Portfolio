@@ -2,7 +2,7 @@
 .profile-img-box2 img {
   filter: grayscale(100%) saturate(70%) contrast(1.05);
   transition: filter .35s ease-in-out;
-  opacity: 1;  /* set full opacity so it’s visible on iPhone */
+  opacity: 1;  /* force visible on iPhone */
 }
 
 /* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
@@ -15,6 +15,7 @@
 .grid-container .profile-hit::after {
   content: "";
   position: absolute;
+
   /* size equals the whole 3×3 photo area */
   width:  calc(var(--photo-cols) * 100%);
   height: calc(var(--photo-rows) * 100%);
@@ -23,7 +24,9 @@
   left: calc(var(--ix) * -100%);
   top:  calc(var(--iy) * -100%);
 
-  background: url("../../images/my_picture2_800x800.png") no-repeat 0 0 / 100% 100%;  /* renamed file */
+  /* ✅ use a CSS variable for the background image (set in JSX) */
+  background: var(--profile-slice) no-repeat 0 0 / 100% 100%;
+
   z-index: 20;
   pointer-events: none;
 
@@ -43,7 +46,7 @@
 /* Photo overlaps the cells it sits on */
 .profile-img-box2 {
   position: relative;
-  z-index: 5;              /* above .grid-item */
+  z-index: 5; /* above .grid-item */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +58,7 @@
 }
 
 .grid-container > .profile-img-box2 {
-  grid-area: 2 / 1 / 6 / 5;         /* rows 3–5, cols 4–6 */
+  grid-area: 2 / 1 / 6 / 5; /* rows 3–5, cols 4–6 */
   position: relative;
   z-index: 5;
   display: flex;
@@ -73,7 +76,7 @@
 
 @media (max-width: 768px) {
   .grid-container > .profile-img-box2 {
-    grid-area: 11 / 1 / 15 / 5;  /* rows 11–15, ALL 4 columns */
+    grid-area: 11 / 1 / 15 / 5; /* rows 11–15, all 4 columns */
     min-width: 0;
     min-height: 0;
   }
