@@ -2,7 +2,7 @@
 .profile-img-box2 img {
   filter: grayscale(100%) saturate(70%) contrast(1.05);
   transition: filter .35s ease-in-out;
-  opacity: 0.10;
+  opacity: 0.1;  /* set full opacity so it’s visible on iPhone */
 }
 
 /* Each grid tile that overlaps the photo gets a perfectly aligned color slice */
@@ -23,7 +23,7 @@
   left: calc(var(--ix) * -100%);
   top:  calc(var(--iy) * -100%);
 
-  background: url("../../images/my_picture2_800x800.png") no-repeat 0 0 / 100% 100%;
+  background: url("../../images/my_picture2_800x800.png") no-repeat 0 0 / 100% 100%;  /* renamed file */
   z-index: 20;
   pointer-events: none;
 
@@ -40,20 +40,13 @@
   filter: grayscale(40%) saturate(100%) contrast(1.05);
 }
 
-/* (optional) touch devices – keep base image color */
-/*
-@media (hover: none) and (pointer: coarse) {
-  .profile-img-box img { filter: none; }
-}
-*/
-
-
-
 /* Photo overlaps the cells it sits on */
 .profile-img-box2 {
   position: relative;
   z-index: 5;              /* above .grid-item */
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .profile-img-box2 img {
   width: 100%;
@@ -79,11 +72,8 @@
 }
 
 @media (max-width: 768px) {
-  /* REMOVE the old phone block that said:
-  .profile-img-box { grid-column: 4 / 7; ... }  <- this conflicts on mobile
-  Keep just this single override: */
   .grid-container > .profile-img-box2 {
-    grid-area: 11 / 1 / 15 / 5;  /* rows 3–5, ALL 4 columns */
+    grid-area: 11 / 1 / 15 / 5;  /* rows 11–15, ALL 4 columns */
     min-width: 0;
     min-height: 0;
   }
