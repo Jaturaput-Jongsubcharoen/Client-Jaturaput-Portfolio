@@ -51,8 +51,6 @@
 
 /* Photo overlaps the cells it sits on */
 .profile-img-box2 {
-  grid-row: 2 / 6;          /* rows 3–5 */
-  grid-column: 3 / 7;       /* cols 4–6 */
   position: relative;
   z-index: 5;              /* above .grid-item */
   display: flex; align-items: center; justify-content: center;
