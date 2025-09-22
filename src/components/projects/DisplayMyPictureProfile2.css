@@ -12,10 +12,11 @@
 }
 
 /* make a big sheet (3x3 tiles) and slide it so the right slice shows */
-.grid-container .profile-hit::after {
+.grid-container .profile-hit.photo1::after {
   content: "";
   position: absolute;
-
+  inset: 0;
+  
   /* size equals the whole 3×3 photo area */
   width:  calc(var(--photo-cols) * 100%);
   height: calc(var(--photo-rows) * 100%);
@@ -39,8 +40,8 @@
 /* reveal color on the hovered tile only */
 .grid-container .profile-hit:hover::after,
 .grid-container .profile-hit:focus-within::after {
-  opacity: 1; /* fully visible */
-  filter: none; /* remove grayscale */
+  opacity: 0.70;
+  filter: grayscale(40%) saturate(100%) contrast(1.05);
 }
 
 /* Photo overlaps the cells it sits on */

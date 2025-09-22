@@ -13,56 +13,76 @@ export default function ResponsiveGrid({ children }) {
 
   useEffect(() => {
     const update = () => setCols(getCols());
-
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
   const items = Array.from({ length: 60 });
 
-  // Photo area in grid lines:
-  // desktop: rows 3–5 (3/6), cols 4–6 (4/7)
-  // phone 3 cols: rows 3–5 (3/6), cols 1–3 (1/4)
-  // phone 4 cols: rows 3–5 (3/6), cols 2–4 (2/5)
-  let imgArea;
+  // Define two separate photo areas (desktop vs mobile)
+  let imgArea1, imgArea2;
+
   if (cols === 4) {
-    imgArea = { r1: 2, r2: 6, c1: 1, c2: 5 };
+    // mobile: 4 columns
+    imgArea1 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile2
+    imgArea2 = { r1: 11, r2: 15, c1: 1, c2: 5 }; // Profile (stacked lower)
   } else {
-    imgArea = { r1: 2, r2: 6, c1: 3, c2: 7 };
+    // desktop: 10 columns
+    imgArea1 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile2 (left)
+    imgArea2 = { r1: 2, r2: 6, c1: 3, c2: 7 }; // Profile (right overlap)
   }
 
-  const spanRows = imgArea.r2 - imgArea.r1; // 3
-  const spanCols = imgArea.c2 - imgArea.c1; // 3
+  const spanRows1 = imgArea1.r2 - imgArea1.r1;
+  const spanCols1 = imgArea1.c2 - imgArea1.c1;
+  const spanRows2 = imgArea2.r2 - imgArea2.r1;
+  const spanCols2 = imgArea2.c2 - imgArea2.c1;
 
   return (
     <div className="grid-container fade">
       {items.map((_, i) => {
         const col = (i % cols) + 1;           // 1-based
         const row = Math.floor(i / cols) + 1; // 1-based
-        const overPhoto =
-          row >= imgArea.r1 && row < imgArea.r2 &&
-          col >= imgArea.c1 && col < imgArea.c2;
+
+        // check if this cell is inside photo area 1 or 2
+        const overPhoto1 =
+          row >= imgArea1.r1 && row < imgArea1.r2 &&
+          col >= imgArea1.c1 && col < imgArea1.c2;
+
+        const overPhoto2 =
+          row >= imgArea2.r1 && row < imgArea2.r2 &&
+          col >= imgArea2.c1 && col < imgArea2.c2;
 
         // offsets inside the photo block
-        const ix = col - imgArea.c1;
-        const iy = row - imgArea.r1;
+        const ix1 = col - imgArea1.c1;
+        const iy1 = row - imgArea1.r1;
+        const ix2 = col - imgArea2.c1;
+        const iy2 = row - imgArea2.r1;
 
         return (
           <div
             key={i}
-            className={`fade grid-item${overPhoto ? " profile-hit" : ""}`} 
+            className={`fade grid-item${
+              overPhoto1 ? " profile-hit photo1" :
+              overPhoto2 ? " profile-hit photo2" : ""
+            }`} 
             style={{
               gridColumn: `${col} / ${col + 1}`,
               gridRow: `${row} / ${row + 1}`,
-              ...(overPhoto && {
-                '--ix': ix,
-                '--iy': iy,
-                '--photo-cols': spanCols,
-                '--photo-rows': spanRows,
-              })
+              ...(overPhoto1 && {
+                '--ix': ix1,
+                '--iy': iy1,
+                '--photo-cols': spanCols1,
+                '--photo-rows': spanRows1,
+              }),
+              ...(overPhoto2 && {
+                '--ix': ix2,
+                '--iy': iy2,
+                '--photo-cols': spanCols2,
+                '--photo-rows': spanRows2,
+              }),
             }}
           >
-            {/* Item {i + 1} */}
+            {/* optionally debug: Item {i + 1} */}
           </div>
         );
       })}

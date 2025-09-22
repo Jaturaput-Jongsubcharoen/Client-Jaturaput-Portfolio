@@ -12,7 +12,7 @@
 }
 
 /* make a big sheet (3x3 tiles) and slide it so the right slice shows */
-.grid-container .profile-hit::after {
+.grid-container .profile-hit.photo2::after {
   content: "";
   position: absolute;
 
@@ -25,7 +25,7 @@
   top:  calc(var(--iy) * -100%);
 
   /* use a CSS variable for the background image (set in JSX) */
-  background: var(--profile-slice) no-repeat 0 0 / 100% 100%;
+  background: url("../../images/my_picture2_800x800.png") no-repeat 0 0 / 100% 100%;
 
   z-index: 20;
   pointer-events: none;
