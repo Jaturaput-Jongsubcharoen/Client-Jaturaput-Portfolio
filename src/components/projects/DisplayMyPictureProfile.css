@@ -25,7 +25,7 @@
 
   /* use a CSS variable for the background image (set in JSX) */
   background: var(--profile-slice) no-repeat 0 0 / 100% 100%;
-  
+
   z-index: 20;
   pointer-events: none;
 
