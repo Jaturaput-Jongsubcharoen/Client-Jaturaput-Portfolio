@@ -15,6 +15,7 @@
 .grid-container .profile-hit::after {
   content: "";
   position: absolute;
+
   /* size equals the whole 3×3 photo area */
   width:  calc(var(--photo-cols) * 100%);
   height: calc(var(--photo-rows) * 100%);
@@ -31,7 +32,7 @@
 
   /* hidden & gray by default */
   filter: grayscale(100%) saturate(70%) contrast(1.05);
-  opacity: 0;
+  opacity: 0.50;
   transition: opacity .25s ease, filter .25s ease;
 }
 
@@ -42,9 +43,56 @@
   filter: grayscale(40%) saturate(100%) contrast(1.05);
 }
 
+/* Photo overlaps the cells it sits on */
+.profile-img-box {
+  position: relative;
+  z-index: 6; /* above .grid-item */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.grid-container > .profile-img-box {
+  grid-area: 2 / 3 / 6 / 7; /* rows 3–5, cols 4–6 */
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+.grid-container > .profile-img-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .grid-container > .profile-img-box {
+    grid-area: 2 / 1 / 6 / 5; /* rows 11–15, all 4 columns */
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .profile-img-box2 img {
+    opacity: 0.4;
+  }
+}
+
+
 /* (optional) touch devices – keep base image color */
 /*
 @media (hover: none) and (pointer: coarse) {
   .profile-img-box img { filter: none; }
 }
 */
+

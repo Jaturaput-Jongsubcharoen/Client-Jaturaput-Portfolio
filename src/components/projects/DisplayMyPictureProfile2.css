@@ -82,6 +82,6 @@
   }
 
   .profile-img-box2 img {
-    opacity: 0.5;  /* force visible on iPhone */
+    opacity: 0.4;
   }
 }
