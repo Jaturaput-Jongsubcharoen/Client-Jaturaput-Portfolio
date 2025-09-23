@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import "../../styles/layout/ResponsiveGrid.css";
 
 export default function ResponsiveGrid({ children }) {
-  // detect initial cols
-  const getCols = () => {
-    if (window.innerWidth <= 768) return 4;   // larger phones / tablets
-    return 10;                                // desktop
-  };
-
+  const getCols = () => (window.innerWidth <= 768 ? 4 : 10);
   const [cols, setCols] = useState(getCols());
 
   useEffect(() => {
@@ -19,72 +14,55 @@ export default function ResponsiveGrid({ children }) {
 
   const items = Array.from({ length: 60 });
 
-  // Define two separate photo areas (desktop vs mobile)
+  // Keep YOUR areas exactly as requested
   let imgArea1, imgArea2;
-
   if (cols === 4) {
-    // mobile: 4 columns
-    imgArea1 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile2
-    imgArea2 = { r1: 11, r2: 15, c1: 1, c2: 5 }; // Profile (stacked lower)
+    // mobile stack (no overlap on phone)
+    imgArea1 = { r1: 7, r2: 11, c1: 1, c2: 5 }; // Profile2
+    imgArea2 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile below
   } else {
-    // desktop: 10 columns
+    // desktop with overlap on cols 3–5
     imgArea1 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile2 (left)
     imgArea2 = { r1: 2, r2: 6, c1: 3, c2: 7 }; // Profile (right overlap)
   }
 
-  const spanRows1 = imgArea1.r2 - imgArea1.r1;
-  const spanCols1 = imgArea1.c2 - imgArea1.c1;
-  const spanRows2 = imgArea2.r2 - imgArea2.r1;
-  const spanCols2 = imgArea2.c2 - imgArea2.c1;
-
   return (
     <div className="grid-container fade">
       {items.map((_, i) => {
-        const col = (i % cols) + 1;           // 1-based
-        const row = Math.floor(i / cols) + 1; // 1-based
+        const col = (i % cols) + 1;            // 1-based
+        const row = Math.floor(i / cols) + 1;  // 1-based
 
-        // check if this cell is inside photo area 1 or 2
-        const overPhoto1 =
+        const in1 =
           row >= imgArea1.r1 && row < imgArea1.r2 &&
           col >= imgArea1.c1 && col < imgArea1.c2;
 
-        const overPhoto2 =
+        const in2 =
           row >= imgArea2.r1 && row < imgArea2.r2 &&
           col >= imgArea2.c1 && col < imgArea2.c2;
 
-        // offsets inside the photo block
-        const ix1 = col - imgArea1.c1;
-        const iy1 = row - imgArea1.r1;
-        const ix2 = col - imgArea2.c1;
-        const iy2 = row - imgArea2.r1;
+        // 🔑 Overlap rule: if a cell belongs to both, prefer photo2
+        let cls = "fade grid-item";
+        const style = {
+          gridColumn: `${col} / ${col + 1}`,
+          gridRow: `${row} / ${row + 1}`,
+        };
 
-        return (
-          <div
-            key={i}
-            className={`fade grid-item${
-              overPhoto1 ? " profile-hit photo1" :
-              overPhoto2 ? " profile-hit photo2" : ""
-            }`} 
-            style={{
-              gridColumn: `${col} / ${col + 1}`,
-              gridRow: `${row} / ${row + 1}`,
-              ...(overPhoto1 && {
-                '--ix': ix1,
-                '--iy': iy1,
-                '--photo-cols': spanCols1,
-                '--photo-rows': spanRows1,
-              }),
-              ...(overPhoto2 && {
-                '--ix': ix2,
-                '--iy': iy2,
-                '--photo-cols': spanCols2,
-                '--photo-rows': spanRows2,
-              }),
-            }}
-          >
-            {/* optionally debug: Item {i + 1} */}
-          </div>
-        );
+        if (in1 || in2) {
+          const use2 = in2;                 // prefer photo2 on overlap
+          const area = use2 ? imgArea2 : imgArea1;
+          const ix = col - area.c1;
+          const iy = row - area.r1;
+          const spanCols = area.c2 - area.c1;
+          const spanRows = area.r2 - area.r1;
+
+          cls += use2 ? " profile-hit photo2" : " profile-hit photo1";
+          style["--ix"] = ix;
+          style["--iy"] = iy;
+          style["--photo-cols"] = spanCols;
+          style["--photo-rows"] = spanRows;
+        }
+
+        return <div key={i} className={cls} style={style} />;
       })}
 
       {children}
