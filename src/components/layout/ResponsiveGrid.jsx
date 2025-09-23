@@ -18,7 +18,7 @@ export default function ResponsiveGrid({ children }) {
   let imgArea1, imgArea2;
   if (cols === 4) {
     // mobile stack (no overlap on phone)
-    imgArea1 = { r1: 7, r2: 11, c1: 1, c2: 5 }; // Profile2
+    imgArea1 = { r1: 11, r2: 15, c1: 1, c2: 5 }; // Profile2
     imgArea2 = { r1: 2, r2: 6, c1: 1, c2: 5 }; // Profile below
   } else {
     // desktop with overlap on cols 3–5
