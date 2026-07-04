@@ -8,6 +8,7 @@ import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
 import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
+import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -150,6 +151,21 @@ const projects = [
         end: "2026-04-27",
       },
       detail: "Developed a demo fleet management dashboard simulating real-time vehicle status tracking across multiple facilities. Built with Angular and integrated with C# .NET REST APIs to demonstrate interactive UI components, drag-and-drop features, and live data handling. This is a non-production mockup created for demonstration purposes and does not represent or expose any proprietary systems or data.",
+    },
+    {
+      image: KiddoLandPlatform,
+      link: "https://kiddoland-platform-ui.onrender.com",
+      github_frontend: "https://github.com/premporiya/KiddoLand-Platform-UI",
+      github_backend: "https://github.com/premporiya/KiddoLand-Platform-API",
+      title: "KiddoLand - AI Storytelling Platform for Children",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "React, TypeScript, Material-UI, Python, FastAPI, Hugging Face AI, REST API, Vite, GitHub, Render",
+      work_types: "Group Project",
+      project_duration: {
+        start: "2026-01-20",
+        end: "2026-02-17",
+      },
+      detail: "Built a privacy-first AI storytelling web platform for children aged 1–18 as a COMP 385 Capstone group project. The React + TypeScript frontend supports text, voice, and image-based story creation with age-appropriate preferences. The Python FastAPI backend integrates Hugging Face AI models for story generation, rewriting, and optional text-to-speech. Includes child safety filtering, favorites and history management, and is designed with COPPA & GDPR compliance — no personal child data stored.",
     },
     {
       image: DeepLearningChestXRayPneumoniaDetection,
