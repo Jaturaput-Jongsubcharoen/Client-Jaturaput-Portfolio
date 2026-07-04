@@ -39,11 +39,13 @@
     10px 10px 80px #222;
   clip-path: circle(20% at 50% 70%);
   transition: clip-path 1s ease, color 1s ease;
+  animation: paint-p-breathe 3s linear infinite 0s;
 }
 .paint-title__box--p h2:nth-child(2):hover {
   color: #708c51;
   clip-path: circle(70% at 50% 80%);
   cursor: grab;
+  animation: none;
 }
 
 /* ---------- A (from your .font2-painting-box) ---------- */
@@ -63,11 +65,13 @@
     10px 10px 80px #222;
   clip-path: polygon(50% 25%, 75% 50%, 50% 75%, 25% 50%);
   transition: clip-path 1s ease, color 1s ease;
+  animation: paint-a-breathe 3s linear infinite 0.75s;
 }
 .paint-title__box--a h2:nth-child(2):hover {
   color: #ffd364;
   clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%);
   cursor: grab;
+  animation: none;
 }
 
 /* ---------- i (new, styled similar to the others) ---------- */
@@ -87,11 +91,13 @@
     10px 10px 80px #222;
   clip-path: circle(22% at 50% 30%);
   transition: clip-path 1s ease, color 1s ease;
+  animation: paint-i-breathe 3s linear infinite 1.5s;
 }
 .paint-title__box--i h2:nth-child(2):hover {
   color: #ff956b;
   clip-path: circle(65% at 50% 60%);
   cursor: grab;
+  animation: none;
 }
 
 /* ---------- N (from your .font4-painting-box) ---------- */
@@ -111,11 +117,35 @@
     10px 10px 80px #222;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   transition: clip-path 1s ease, color 1s ease;
+  animation: paint-n-breathe 3s linear infinite 2.25s;
 }
 .paint-title__box--n h2:nth-child(2):hover {
   color: #d19666;
   clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%);
   cursor: grab;
+  animation: none;
+}
+
+/* -------- Auto breathe animations -------- */
+@keyframes paint-p-breathe {
+  0%        { clip-path: circle(20% at 50% 70%); animation-timing-function: ease-in-out; }
+  33%       { clip-path: circle(70% at 50% 80%); animation-timing-function: ease-in-out; }
+  66%, 100% { clip-path: circle(20% at 50% 70%); }
+}
+@keyframes paint-a-breathe {
+  0%        { clip-path: polygon(50% 25%, 75% 50%, 50% 75%, 25% 50%); animation-timing-function: ease-in-out; }
+  33%       { clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%); animation-timing-function: ease-in-out; }
+  66%, 100% { clip-path: polygon(50% 25%, 75% 50%, 50% 75%, 25% 50%); }
+}
+@keyframes paint-i-breathe {
+  0%        { clip-path: circle(22% at 50% 30%); animation-timing-function: ease-in-out; }
+  33%       { clip-path: circle(65% at 50% 60%); animation-timing-function: ease-in-out; }
+  66%, 100% { clip-path: circle(22% at 50% 30%); }
+}
+@keyframes paint-n-breathe {
+  0%        { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); animation-timing-function: ease-in-out; }
+  33%       { clip-path: polygon(200% -100%, 200% 200%, -100% 200%, -100% -100%); animation-timing-function: ease-in-out; }
+  66%, 100% { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
 }
 
 /* -------- Grid placement helpers (row 4, cols 1–4) -------- */
