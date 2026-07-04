@@ -7,6 +7,7 @@ import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-Oracl
 import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
+import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Chest-X-Ray-Pneumonia-Detection(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -149,6 +150,21 @@ const projects = [
         end: "2026-04-27",
       },
       detail: "Developed a demo fleet management dashboard simulating real-time vehicle status tracking across multiple facilities. Built with Angular and integrated with C# .NET REST APIs to demonstrate interactive UI components, drag-and-drop features, and live data handling. This is a non-production mockup created for demonstration purposes and does not represent or expose any proprietary systems or data.",
+    },
+    {
+      image: DeepLearningChestXRayPneumoniaDetection,
+      link: "https://final-groupproject-deeplearning-comp263.onrender.com/",
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Final_GroupProject_DeepLearning_COMP263_001_frontend",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Final_GroupProject_DeepLearning_COMP263_001_backend",
+      title: "Deep Learning - Chest X-Ray Pneumonia Detection System",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "Python, TensorFlow, Keras, React, Flask, REST API, GitHub",
+      work_types: "Group Project",
+      project_duration: {
+        start: "2026-04-20",
+        end: "2026-05-02",
+      },
+      detail: "Developed an end-to-end deep learning system for pneumonia detection using chest X-ray images. Built and compared multiple models including Baseline CNN, Deep CNN, Wide CNN, Autoencoder Transfer Learning, ResNet50 Transfer Learning, and ResNet50 From Scratch. Created an interactive web application where users can upload X-ray images, select a model, view predictions and confidence scores, and compare performance metrics such as Accuracy, Precision, Recall, and F1-Score.",
     },
     {
       image: MagazineDesign2,
