@@ -76,6 +76,9 @@
 
 /* ---------- i (new, styled similar to the others) ---------- */
 .paint-title__box--i:hover { transform: rotateZ(3deg); }
+.paint-title__box--i h2 {
+  animation: paint-i-font-cycle 3s ease-in-out infinite 1.5s;
+}
 .paint-title__box--i h2:nth-child(2) {
   color: rgba(0, 0, 0, 0.3);
 	text-shadow: 
@@ -91,7 +94,7 @@
     10px 10px 80px #222;
   clip-path: circle(22% at 50% 30%);
   transition: clip-path 1s ease, color 1s ease;
-  animation: paint-i-breathe 3s linear infinite 1.5s;
+  animation: paint-i-breathe 3s linear infinite 1.5s, paint-i-font-cycle 3s ease-in-out infinite 1.5s;
 }
 .paint-title__box--i h2:nth-child(2):hover {
   color: #ff956b;
@@ -141,6 +144,11 @@
   0%        { clip-path: circle(22% at 50% 30%); animation-timing-function: ease-in-out; }
   33%       { clip-path: circle(65% at 50% 60%); animation-timing-function: ease-in-out; }
   66%, 100% { clip-path: circle(22% at 50% 30%); }
+}
+@keyframes paint-i-font-cycle {
+  0%   { font-weight: 300; }
+  50%  { font-weight: 700; }
+  100% { font-weight: 300; }
 }
 @keyframes paint-n-breathe {
   0%        { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); animation-timing-function: ease-in-out; }

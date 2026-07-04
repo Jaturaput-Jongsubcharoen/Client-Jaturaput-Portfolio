@@ -11,10 +11,22 @@
 .folio-letter h2 {
   margin: 0;
   color: #ffffff;
-  /*font-weight: 800;*/
-  /*letter-spacing: .06em;*/
   text-shadow: 0 2px 6px rgba(0,0,0,.35);
   font-size: 8vh;
+  animation: folio-font-cycle 3s ease-in-out infinite;
+}
+
+/* Staggered delays: F → O → L → i → O, 0.6s apart */
+.folio-letter--f  h2 { animation-delay: 0s; }
+.folio-letter--o1 h2 { animation-delay: 0.6s; }
+.folio-letter--l  h2 { animation-delay: 1.2s; }
+.folio-letter--i  h2 { animation-delay: 1.8s; }
+.folio-letter--o2 h2 { animation-delay: 2.4s; }
+
+@keyframes folio-font-cycle {
+  0%   { font-weight: 300; }
+  50%  { font-weight: 700; }
+  100% { font-weight: 300; }
 }
 
 /* Desktop (10×6 grid): column 3, rows 1,2,3,5 */
