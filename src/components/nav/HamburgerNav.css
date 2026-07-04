@@ -23,20 +23,21 @@
   display:flex; 
   align-items:center; 
   justify-content:center;
-  background: rgb(0, 0, 0, 0.5); 
-  border: 0; color:#fff; 
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), rgba(238, 238, 238, 0.05));
+  border: 0.5px solid #696969;
+  color:#fff;
   cursor:pointer; 
   font-weight:600; 
+  box-shadow: inset 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
 }
 .hamburger-text { 
   font-size:1rem; 
-  border:1px solid #fff; 
   padding:1rem; 
   border-radius:6px; 
   transition: 0.3s; 
 }
 .hamburger-text:hover { 
-  background: rgba(0,0,0,.5); 
+  background: rgba(0,0,0,0); 
   outline: none;
   padding: 10px;
 }
@@ -78,6 +79,7 @@
   align-items: center;
   justify-content: center;
   border-block-start: 1px solid #000;
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), rgba(238, 238, 238, 0.05));
 
   opacity: 0;
   transform: translateY(-6px);
@@ -126,20 +128,22 @@
 /* Left nav buttons/links */
 .nav-btn {
   color:#fff; 
-  /*background: rgba(0,0,0,.35);*/
-  border:1px solid #fff;
-  border-radius:6px; 
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), rgba(238, 238, 238, 0.05));
+  border: 0.5px solid #696969;
+  color:#fff;
   padding:1rem; 
   font-size:0.8rem; 
   cursor:pointer;
+  white-space: nowrap;
   /*transition: background .2s ease, transform .2s ease;*/
   transition: 0.3s; 
-
+  box-shadow: inset 0.5em 0.5em 1em rgba(0, 0, 0, 0.5);
+  
 }
 .nav-btn:hover { 
-  background: rgba(0,0,0,.5); 
+  background: linear-gradient(100deg, rgba(0, 0, 0, 0.2), rgba(238, 238, 238, 0.05));
   outline:none; 
-  transform: translateY(-1px); 
+  transform: translateY(-0.5px); 
   padding: 10px;
 }
   
