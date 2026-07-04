@@ -165,7 +165,7 @@ const projects = [
         start: "2026-01-20",
         end: "2026-02-17",
       },
-      detail: "Built a privacy-first AI storytelling web platform for children aged 1–18 as a COMP 385 Capstone group project. The React + TypeScript frontend supports text, voice, and image-based story creation with age-appropriate preferences. The Python FastAPI backend integrates Hugging Face AI models for story generation, rewriting, and optional text-to-speech. Includes child safety filtering, favorites and history management, and is designed with COPPA & GDPR compliance — no personal child data stored.",
+      detail: "Built a privacy-first AI storytelling web platform for children aged 3-10 as a COMP 385 Capstone group project. The React + TypeScript frontend supports text, voice, and image-based story creation with age-appropriate preferences. The Python FastAPI backend integrates Hugging Face AI models for story generation, rewriting, and optional text-to-speech. Includes child safety filtering, favorites and history management, and is designed with COPPA & GDPR compliance. Technically, there is no personal child data stored.",
     },
     {
       image: DeepLearningChestXRayPneumoniaDetection,
