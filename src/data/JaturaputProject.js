@@ -7,7 +7,7 @@ import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-Oracl
 import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
-import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Chest-X-Ray-Pneumonia-Detection(1900x1080).png";
+import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
