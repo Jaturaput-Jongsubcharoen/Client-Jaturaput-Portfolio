@@ -137,7 +137,7 @@ const projects = [
       },
       detail: "This Bento Grid Design website (Version 2) enhances CSS skill further by playing with a cursor to make the website more attractive and userfriendly design. Users can hover over any element, including text titles, to experience interactive CSS effects. This website also serves as a portfolio. It also strengthened my React skills by learning how to structure files effectively and manage data flow between child and parent components. The project doubles as a portfolio showcase. The website is fully responsive, ensuring smooth usability on phone screens as well. This project further serves as a portfolio showcase.",
     },
-    {
+    /*{
       image: FleetPulseDashboard,
       link: "https://fleet-zero-pulse-angular-mockup.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Fleet-Zero-Pulse-Angular",
@@ -151,7 +151,7 @@ const projects = [
         end: "2026-04-27",
       },
       detail: "Developed a demo fleet management dashboard simulating real-time vehicle status tracking across multiple facilities. Built with Angular and integrated with C# .NET REST APIs to demonstrate interactive UI components, drag-and-drop features, and live data handling. This is a non-production mockup created for demonstration purposes and does not represent or expose any proprietary systems or data.",
-    },
+    },*/
     {
       image: KiddoLandPlatform,
       link: "https://kiddoland-platform-ui.onrender.com",
