@@ -10,6 +10,7 @@ import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
 import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
+import FleetZeroHackathon from "../images/screenshots/frontend-hackathon-next-stop-station(1900x1080).png";
 import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
@@ -168,6 +169,21 @@ const projects = [
         end: "2025-08-31",
       },
       detail: "This Bento Grid Design website (Version 2) enhances CSS skill further by playing with a cursor to make the website more attractive and userfriendly design. Users can hover over any element, including text titles, to experience interactive CSS effects. This website also serves as a portfolio. It also strengthened my React skills by learning how to structure files effectively and manage data flow between child and parent components. The project doubles as a portfolio showcase. The website is fully responsive, ensuring smooth usability on phone screens as well. This project further serves as a portfolio showcase.",
+    },
+    {
+      image: FleetZeroHackathon,
+      link: "https://frontend-hackathon-next-stop-station.onrender.com/",
+      github_frontend: null,
+      github_backend: null,
+      title: "FleetZero Innovation Jam – Next Stop Station (1st Place Hackathon)",
+      type: "WEB & MOBILE DESIGN",
+      software_and_tools: "React, JavaScript, REST API, AI, Digital Twin, GitHub, Render",
+      work_types: "Group Project",
+      project_duration: {
+        start: "2025-10-06",
+        end: "2025-10-10",
+      },
+      detail: "Competed in the FleetZero Innovation Jam during Reading Week and won 1st place as a team of five. The challenge was to use AI and Digital Twin technology to predict and prevent failures in electric bus fleets. Serving as Full-Stack Developer, I was responsible for the backend logic, UI design, and dashboard development. The Fleet Operator Dashboard displays real-time fleet health status — Healthy, Warning, Critical, and Maintenance — with an automated alert banner that triggers based on set thresholds. Buses are colour-coded for instant readability, and selecting a bus reveals its AI Health Score, anomaly alerts, and a 7-day battery performance forecast. A companion Driver Vehicle Monitor was also built as a simplified mobile-friendly view showing only the essential information drivers need. The project was a fast-paced 4-day sprint involving late-night debugging, rapid learning, and strong teamwork.",
     },
     {
       image: KiddoLandPlatform,
