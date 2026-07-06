@@ -4,6 +4,8 @@ import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
 import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
 import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
 import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
+import MonalistChannel from "../images/screenshots/Monalist-Channel(1900x1080).png";
+import ThaiTeaAndCakeCafe from "../images/screenshots/Thai-Tea-and-Cake-Cafe(1900x1080).png";
 import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
 import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
