@@ -5,7 +5,7 @@ const JaturaputTranscripts = [
     id: "centennial",
     title: "Transcript",
     name: "Centennial College Transcript",
-    src: "/transcript/Centennial_College_Semester1-6_Transcript_Jaturaput_Jongsubcharoen.pdf",
+    src: "/transcript/Centennial_College_Transcript_Jaturaput_Jongsubcharoen.pdf",
   },
   {
     id: "kmutnb",

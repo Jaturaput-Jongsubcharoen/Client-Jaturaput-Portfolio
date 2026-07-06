@@ -7,9 +7,6 @@ import transcripts from "../../data/JaturaputTranscripts";
 export default function SubQualificationsNav({
   qualOpen, onHoverIn, onHoverOut, onPick, onOpenDoc, onOpenDocs
 }) {
-  const certDoc   = certs?.[0];
-  const resumeDoc = resumeDocs?.[0];
-
   return (
     <>
       <div className={`qualifications-col-bg ${qualOpen ? "is-open" : ""}`}
@@ -27,8 +24,13 @@ export default function SubQualificationsNav({
           <button
             className="qual-btn"
             type="button"
-            onClick={() => certDoc && onOpenDoc?.(certDoc.title, certDoc.src, certDoc.name)}
-            aria-label="Open certificate PDF">
+            onClick={() =>
+              onOpenDocs?.(
+                "Certificate",
+                certs.map(c => ({ src: c.src, name: c.name }))
+              )
+            }
+            aria-label="Open certificate PDFs">
             Certificate
           </button>
         </li>
@@ -37,7 +39,12 @@ export default function SubQualificationsNav({
           <button
             className="qual-btn"
             type="button"
-            onClick={() => resumeDoc && onOpenDoc?.(resumeDoc.title, resumeDoc.src, resumeDoc.name)}
+            onClick={() =>
+              onOpenDocs?.(
+                "Résumé",
+                resumeDocs.map(r => ({ src: r.src, name: r.name }))
+              )
+            }
             aria-label="Open résumé PDF">
             Résumé
           </button>
@@ -50,7 +57,7 @@ export default function SubQualificationsNav({
             onClick={() =>
               onOpenDocs?.(
                 "Transcript",
-                transcripts.map(t => ({ src: t.src, name: t.name })) // 👈 pass name per item
+                transcripts.map(t => ({ src: t.src, name: t.name }))
               )
             }
             aria-label="Open transcripts">
