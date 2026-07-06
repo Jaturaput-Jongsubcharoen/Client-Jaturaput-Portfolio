@@ -179,8 +179,8 @@ const projects = [
       software_and_tools: "React, TypeScript, Material-UI, Python, FastAPI, Hugging Face AI, REST API, Vite, GitHub, Render",
       work_types: "Group Project",
       project_duration: {
-        start: "2026-01-20",
-        end: "2026-02-17",
+        start: "2026-01-12",
+        end: "2026-04-20",
       },
       detail: "Built a privacy-first AI storytelling web platform for children aged 3-10 as a COMP 385 Capstone group project. The React + TypeScript frontend supports text, voice, and image-based story creation with age-appropriate preferences. The Python FastAPI backend integrates Hugging Face AI models for story generation, rewriting, and optional text-to-speech. Includes child safety filtering, favorites and history management, and is designed with COPPA & GDPR compliance. Technically, there is no personal child data stored.",
     },
@@ -194,8 +194,8 @@ const projects = [
       software_and_tools: "Python, TensorFlow, Keras, React, Flask, REST API, GitHub",
       work_types: "Group Project",
       project_duration: {
-        start: "2026-04-20",
-        end: "2026-05-02",
+        start: "2026-02-16",
+        end: "2026-04-20",
       },
       detail: "Developed an end-to-end deep learning system for pneumonia detection using chest X-ray images. Built and compared multiple models including Baseline CNN, Deep CNN, Wide CNN, Autoencoder Transfer Learning, ResNet50 Transfer Learning, and ResNet50 From Scratch. Created an interactive web application where users can upload X-ray images, select a model, view predictions and confidence scores, and compare performance metrics such as Accuracy, Precision, Recall, and F1-Score.",
     },
