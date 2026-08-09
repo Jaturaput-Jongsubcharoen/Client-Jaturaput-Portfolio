@@ -2,10 +2,10 @@
 
 const JaturaputResume = [
   {
-    id: "resume_data_analyst",
+    id: "resume_Software_Engineer",
     title: "Résumé",
     name: "Résumé – Jaturaput (Mac) Jongsubcharoen",                 
-    src: "/resume/Resume_Jaturaput(Mac)Jongsubcharoen_Data_Analyst.pdf",
+    src: "/resume/Jaturaput_Jongsubcharoen_Resume.pdf",
   },
 ];
 
