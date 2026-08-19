@@ -28,8 +28,8 @@ const projects = [
     {
       image: SearchRankingRecommenderSystem,
       link: "https://recommender-system-engine-frontend.onrender.com/",
-      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System",
-      github_backend: null,
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System/tree/main/frontend",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System/tree/main/backend",
       title: "Search Ranking & Recommender System",
       type: "WEB & MOBILE DESIGN",
       software_and_tools: "Python, FastAPI, React, Information Retrieval, Search Ranking, TF-IDF, Cosine Similarity, Apriori, REST API, GitHub",
