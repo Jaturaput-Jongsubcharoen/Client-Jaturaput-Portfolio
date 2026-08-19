@@ -12,6 +12,11 @@ import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeat
 import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
 import FleetZeroHackathon from "../images/screenshots/frontend-hackathon-next-stop-station(1900x1080).png";
 import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).png";
+import AstroTrack from "../images/screenshots/Astro-Track(1900x1080).png";
+import AmazonFashionDataset from "../images/screenshots/Amazon-Fashion-Dataset(1900x1080).png";
+import RoadSenseAI from "../images/screenshots/RoadSense-AI(1900x1080).png";
+import SearchRankingRecommenderSystem from "../images/screenshots/Search-Ranking-Recommender-System(1900x1080).png";
+import JavaJDBCPlayerRegistrationSystem from "../images/screenshots/Java-JDBC-Player-Registration-System(1900x1080).png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
 
@@ -20,6 +25,81 @@ import UndergraduateArchitectureProject from "../images/screenshots/Undergraduat
 
 
 const projects = [
+    {
+      image: SearchRankingRecommenderSystem,
+      link: "https://recommender-system-engine-frontend.onrender.com/",
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System",
+      github_backend: null,
+      title: "Search Ranking & Recommender System",
+      type: "MACHINE LEARNING & FULL-STACK AI",
+      software_and_tools: "Python, FastAPI, React, Information Retrieval, Search Ranking, TF-IDF, Cosine Similarity, Apriori, REST API, GitHub",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2026-03-25",
+        end: "2026-04-18",
+      },
+      detail: "Developed an interactive search ranking and recommendation system combining three machine learning and information retrieval approaches. Built a hybrid music search engine that retrieves and ranks catalog results using lexical and semantic signals, an Apriori association-rule engine for discovering cuisine and ingredient relationships, and a content-based music recommender using TF-IDF and cosine similarity. Integrated the models with a FastAPI backend and React frontend to demonstrate retrieval, ranking, recommendation, and similarity-based discovery through an interactive web application.",
+    },
+    {
+      image: RoadSenseAI,
+      link: null,
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Frontend",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Backend",
+      title: "RoadSense AI - Road Intelligence & Agentic RAG System",
+      type: "MACHINE LEARNING & GENERATIVE AI",
+      software_and_tools: "Python, TensorFlow, EfficientNetB0, Flask, React, Ollama, Llama 3.1, FAISS, Sentence Transformers, Agentic RAG, REST API, GitHub",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2025-10-02",
+        end: "2025-12-25",
+      },
+      detail: "Developed a full-stack AI road intelligence platform combining computer vision, conversational AI, and Agentic RAG. Built an EfficientNetB0 image-classification pipeline that identifies seven road issue categories from uploaded images. Integrated a local Llama 3.1 assistant through Ollama and developed a document-grounded RAG workflow that extracts uploaded PDF, TXT, DOC, and DOCX content, generates embeddings, retrieves relevant passages with FAISS, and uses them to answer user questions. The React interface also provides real road-image examples and bundled road-safety reports for immediate testing.",
+    },
+    {
+      image: AmazonFashionDataset,
+      link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Amazon_Fashion_Sentiment_Analysis_Machine_Learning_Report.pdf",
+      github_frontend: null,
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/AmazonFashion_Dataset",
+      title: "Amazon Fashion Sentiment & NLP Analysis",
+      type: "MACHINE LEARNING & NLP",
+      software_and_tools: "Python, Pandas, Scikit-learn, NLTK, VADER, TextBlob, NLP, GridSearchCV, Machine Learning, GitHub",
+      work_types: "Group Project",
+      project_duration: {
+        start: "2025-03-02",
+        end: "2025-04-20",
+      },
+      detail: "Developed a natural language processing and machine learning analysis pipeline using the Amazon Fashion dataset to evaluate customer-review sentiment. Applied text preprocessing and lexicon-based sentiment analysis using VADER and TextBlob, then evaluated and compared sentiment classification performance. Used supervised machine learning techniques and GridSearchCV for model development and hyperparameter optimization, demonstrating practical experience with NLP, sentiment analysis, model evaluation, and data-driven comparison.",
+    },
+    {
+      image: AstroTrack,
+      link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Astro_Track_Project.pdf",
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Frontend",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Backend",
+      title: "Astro Track - Astronomy Database Management System",
+      type: "FULL-STACK & DATABASE DEVELOPMENT",
+      software_and_tools: "Angular, TypeScript, ASP.NET Core, C#, REST API, Oracle SQL, PL/SQL, Docker, GitHub",
+      work_types: "Group Project",
+      project_duration: {
+        start: "2025-01-01",
+        end: "2025-04-01",
+      },
+      detail: "Developed a full-stack astronomy database management system using Angular, ASP.NET Core, C#, Oracle SQL, and PL/SQL. Designed a relational database for managing astronomical missions, observations, celestial objects, habitable planets, researchers, research papers, telescopes, affiliations, and events. Implemented REST API integration between the Angular frontend and ASP.NET Core backend while applying database normalization, relationships, stored database logic, and structured data management.",
+    },
+    {
+      image: JavaJDBCPlayerRegistrationSystem,
+      link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Java_Player_Registration_System_Report.pdf",
+      github_frontend: null,
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Java-JDBC-Player-Registration-System",
+      title: "Java JDBC Player Registration System",
+      type: "JAVA & DATABASE DEVELOPMENT",
+      software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, Docker, GitHub Actions, CI/CD, REST API",
+      work_types: "Individual Project",
+      project_duration: {
+        start: "2026-08-01",
+        end: "2026-08-12",
+      },
+      detail: "Developed a Java player and game registration system using JavaFX, Spring Boot, Spring Data JPA, JDBC, and relational databases. Implemented player and game management, database operations, transaction management, and layered Service/DAO architecture. Added JUnit 5 automated testing, Docker containerization, and CI/CD with GitHub Actions. The JavaFX interface allows users to create, update, and display player and game records while demonstrating successful database connectivity and automated test execution.",
+    },
     {
       image: DeepLearningChestXRayPneumoniaDetection,
       link: "https://final-groupproject-deeplearning-comp263.onrender.com/",
