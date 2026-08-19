@@ -31,7 +31,7 @@ const projects = [
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System",
       github_backend: null,
       title: "Search Ranking & Recommender System",
-      type: "MACHINE LEARNING & FULL-STACK AI",
+      type: "WEB & MOBILE DESIGN",
       software_and_tools: "Python, FastAPI, React, Information Retrieval, Search Ranking, TF-IDF, Cosine Similarity, Apriori, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -46,7 +46,7 @@ const projects = [
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Backend",
       title: "RoadSense AI - Road Intelligence & Agentic RAG System",
-      type: "MACHINE LEARNING & GENERATIVE AI",
+      type: "WEB & MOBILE DESIGN",
       software_and_tools: "Python, TensorFlow, EfficientNetB0, Flask, React, Ollama, Llama 3.1, FAISS, Sentence Transformers, Agentic RAG, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -61,7 +61,7 @@ const projects = [
       github_frontend: null,
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/AmazonFashion_Dataset",
       title: "Amazon Fashion Sentiment & NLP Analysis",
-      type: "MACHINE LEARNING & NLP",
+      type: "WEB & MOBILE DESIGN",
       software_and_tools: "Python, Pandas, Scikit-learn, NLTK, VADER, TextBlob, NLP, GridSearchCV, Machine Learning, GitHub",
       work_types: "Group Project",
       project_duration: {
@@ -76,7 +76,7 @@ const projects = [
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Backend",
       title: "Astro Track - Astronomy Database Management System",
-      type: "FULL-STACK & DATABASE DEVELOPMENT",
+      type: "WEB & MOBILE DESIGN",
       software_and_tools: "Angular, TypeScript, ASP.NET Core, C#, REST API, Oracle SQL, PL/SQL, Docker, GitHub",
       work_types: "Group Project",
       project_duration: {
@@ -91,7 +91,7 @@ const projects = [
       github_frontend: null,
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Java-JDBC-Player-Registration-System",
       title: "Java JDBC Player Registration System",
-      type: "JAVA & DATABASE DEVELOPMENT",
+      type: "WEB & MOBILE DESIGN",
       software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, Docker, GitHub Actions, CI/CD, REST API",
       work_types: "Individual Project",
       project_duration: {
