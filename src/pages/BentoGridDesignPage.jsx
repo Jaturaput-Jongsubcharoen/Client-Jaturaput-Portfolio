@@ -162,6 +162,7 @@ export default function BentoGridDesignPage() {
           selectedProjectCategory={activeProjectCategory}
           mainProjectCategory={selectedCategory}
           onProjectCategoryChange={handleProjectCategoryChange}
+          onSelectProject={setSelectedProject}
           showDetails={showDetails}
           setShowDetails={setShowDetails}
           handlePrev={handlePrev}

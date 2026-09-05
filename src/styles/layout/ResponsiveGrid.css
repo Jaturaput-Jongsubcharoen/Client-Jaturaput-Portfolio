@@ -105,10 +105,13 @@
     border-radius: 12px;
     min-width: 0;
     min-height: 0;
-    z-index: 12;
+    z-index: 600;
   }
 
-  .project-panel__layout { padding: .75rem; }
+  .project-panel__layout {
+    padding: var(--projects-gallery-padding, .75rem);
+    box-sizing: border-box;
+  }
 
   /* details panel under it */
   .grid-container > .detail-panel {
