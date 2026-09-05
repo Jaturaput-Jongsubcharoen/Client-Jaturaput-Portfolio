@@ -26,13 +26,14 @@ import UndergraduateArchitectureProject from "../images/screenshots/Undergraduat
 const projects = [
     {
       image: SearchRankingRecommenderSystem,
+      project_report: "/portfolio/Search_Recommender_Systems_report.pdf",
       link: "https://recommender-system-engine-frontend.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System/tree/main/frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Search-Ranking-Recommender-System/tree/main/backend",
       github_machine_learning: "",
       title: "Search Ranking & Recommender System",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics"],
+      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics", "Containerization"],
       software_and_tools: "Python, FastAPI, React, Information Retrieval, Search Ranking, TF-IDF, Cosine Similarity, Apriori, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -43,13 +44,14 @@ const projects = [
     },
     {
       image: RoadSenseAI,
-      link: null,
+      project_report: "",
+      link: "https://roadsense-ai-frontend.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-Backend",
       github_machine_learning: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-ML",
       title: "RoadSense AI - Road Intelligence & Agentic RAG System",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics"],
+      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics", "Containerization"],
       software_and_tools: "Python, TensorFlow, EfficientNetB0, Flask, React, Ollama, Llama 3.1, FAISS, Sentence Transformers, Agentic RAG, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -60,6 +62,7 @@ const projects = [
     },
     {
       image: AmazonFashionDataset,
+      project_report: "/portfolio/Amazon_Fashion_Sentiment_Analysis_Machine_Learning_Report.pdf",
       link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Amazon_Fashion_Sentiment_Analysis_Machine_Learning_Report.pdf",
       github_frontend: null,
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/AmazonFashion_Dataset",
@@ -77,6 +80,7 @@ const projects = [
     },
     {
       image: AstroTrack,
+      project_report: "/portfolio/Astro_Track_Project.pdf",
       link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Astro_Track_Project.pdf",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Astro-Track-Backend",
@@ -94,13 +98,14 @@ const projects = [
     },
     {
       image: JavaJDBCPlayerRegistrationSystem,
+      project_report: "/portfolio/Java_Player_Registration_System_Report.pdf",
       link: "https://client-jaturaput-portfolio.onrender.com/portfolio/Java_Player_Registration_System_Report.pdf",
       github_frontend: null,
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Java-JDBC-Player-Registration-System",
       github_machine_learning: "",
       title: "Java JDBC Player Registration System",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Backend & API","Database","Cloud & DevOps"],
+      project_categories: ["Backend & API","Database","Cloud & DevOps", "Containerization"],
       software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, Docker, GitHub Actions, CI/CD, REST API",
       work_types: "Individual Project",
       project_duration: {
@@ -111,6 +116,7 @@ const projects = [
     },
     {
       image: DeepLearningChestXRayPneumoniaDetection,
+      project_report: "/portfolio/Chest_X-Ray_Pneumonia_Detection_System_Report.pdf",
       link: "https://final-groupproject-deeplearning-comp263.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Final_GroupProject_DeepLearning_COMP263_001_frontend",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Final_GroupProject_DeepLearning_COMP263_001_backend",
@@ -128,13 +134,14 @@ const projects = [
     },
     {
       image: KiddoLandPlatform,
+      project_report: "/portfolio/KiddoLand_AI_Capstone_Project_Report.pdf",
       link: "https://kiddoland-platform-ui.onrender.com",
       github_frontend: "https://github.com/premporiya/KiddoLand-Platform-UI",
       github_backend: "https://github.com/premporiya/KiddoLand-Platform-API",
       github_machine_learning: "",
       title: "KiddoLand - AI Storytelling Platform for Children",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Cloud & DevOps"],
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API"],
       software_and_tools: "React, TypeScript, Material-UI, Python, FastAPI, Hugging Face AI, REST API, Vite, GitHub, Render",
       work_types: "Group Project",
       project_duration: {
@@ -145,6 +152,7 @@ const projects = [
     },
     {
       image: FleetZeroHackathon,
+      project_report: "/portfolio/Portfolio_Work_at_FleetZero_Jaturaput(Mac)Jongsubcharoen.pdf",
       link: "https://frontend-hackathon-next-stop-station.onrender.com/",
       github_frontend: null,
       github_backend: null,
@@ -162,13 +170,14 @@ const projects = [
     },
     {
       image: BentoGridDesignV2,
+      project_report: "",
       link: "https://client-jaturaput-portfolio.onrender.com",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio",      
       github_machine_learning: "",
       title: "Bento Grid Design (Website-Mobile) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps","Mobile"],
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, EmailJS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -179,13 +188,14 @@ const projects = [
     },
     {
       image: BentoGridDesignV1,
+      project_report: "",
       link: "https://client-jaturaput-portfolio.onrender.com/bento-Grid-design-backup4",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Server-Jaturaput-Portfolio",      
       github_machine_learning: "",
       title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps"],
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -196,6 +206,7 @@ const projects = [
     },
     {
       image: ThaiTeaAndCakeCafe,
+      project_report: "",
       link: "https://mackerjong.wixsite.com/home",
       github_frontend: null,
       github_backend: null,
@@ -213,6 +224,7 @@ const projects = [
     },
     {
       image: MonalistChannel,
+      project_report: "",
       link: "https://mackerjong.wixsite.com/monalist-channel",
       github_frontend: null,
       github_backend: null,
@@ -230,6 +242,7 @@ const projects = [
     },
     {
       image: HeavenLandOracleSQLDeveloper,
+      project_report: "",
       link: "/pdf/Powerpoint-PDF_Amusement-Park_Group%208_Group-Project.pdf",
       github_frontend: null,
       github_backend: null,      
@@ -247,13 +260,14 @@ const projects = [
     },
     {
       image: QueueMeMobileApp,
+      project_report: "",
       link: "https://bit.ly/ClinicMobileApp-Figma",
       github_frontend: null,
       github_backend: null,
       github_machine_learning: "",
       title: "Clinic Appointment (Mobile App) Design",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Frontend & UI","Mobile"],
+      project_categories: ["Frontend & UI"],
       software_and_tools: "Figma, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -264,13 +278,14 @@ const projects = [
     },
     {
       image: ColissionFatalityPrediction,
+      project_report: "/portfolio/Collision_Fatality_Prediction_Report.pdf",
       link: "https://machine-learning-collision-fatality.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/ML_client",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/ML_server2",      
       github_machine_learning: "",
       title: "Colission Fatality Prediction (Website & Machine Learning) Project",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics","Cloud & DevOps"],
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics"],
       software_and_tools: "HTML, CSS, JavaScript, Python, React, Trained ML Model (.pkl), Render",
       work_types: "Individual Project",
       project_duration: {
@@ -281,13 +296,14 @@ const projects = [
     },
     {
       image: NutriKcal,
+      project_report: "/portfolio/NUTRI-SNAP_Nutrition_Management_Application_Report.pdf",
       link: "https://comp229-nutrisnap-client1.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/COMP229-NutriSnap-Client1",
       github_backend: "https://github.com/Jaturaput-Jongsubcharoen/COM229-NutriSnap-Server1",      
       github_machine_learning: "",
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps"],
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, Photoshop",
       work_types: "Group of 5",
       project_duration: {
@@ -298,6 +314,7 @@ const projects = [
     },
     {
       image: Tesla,
+      project_report: "",
       link: "http://studentweb.cencol.ca/jjongsub/Assignment3/assignment3.html",
       github_frontend: null,
       github_backend: null,
@@ -315,6 +332,7 @@ const projects = [
     },
     {
       image: MovieAddict,
+      project_report: "",
       link: "http://studentweb.cencol.ca/jjongsub/Individual_Project/Individual_Project.html",
       github_frontend: null,
       github_backend: null,
@@ -332,13 +350,14 @@ const projects = [
     },
     {
       image: MagazineDesign2,
+      project_report: "",
       link: "https://online.fliphtml5.com/iikvd/lmou/?1639471606477#p=2",
       github_frontend: null,
       github_backend: null,       
       github_machine_learning: "",
       title: "Magazine Design",
       type: "MAGAZINE DESIGN",
-      project_categories: ["Publication Design","Editorial Design","Layout Design"],
+      project_categories: ["Art Direction"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -349,13 +368,14 @@ const projects = [
     },
     {
       image: AWIIHouseWorkExperience,
+      project_report: "",
       link: "https://online.fliphtml5.com/ukqkz/yexy/#p=2",
       github_frontend: null,
       github_backend: null,        
       github_machine_learning: "",
       title: "Wittawii Company Work Experience",
       type: "ARCHITECTURAL DESIGN",
-      project_categories: ["Residential Design","Commercial Design","3D Visualization","Architectural Presentation"],
+      project_categories: ["Real Work Experience"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -366,13 +386,14 @@ const projects = [
     },
     {
       image: UndergraduateArchitectureProject,
+      project_report: "",
       link: "https://online.fliphtml5.com/ukqkz/ybin/#p=1",
       github_frontend: null,
       github_backend: null,      
       github_machine_learning: "",
       title: "Undergraduate Architecture Project",
       type: "ARCHITECTURAL DESIGN",
-      project_categories: ["Concept Design","3D Visualization","Architectural Presentation"],
+      project_categories: ["Architectural Presentation"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
       work_types: "Individual Project",
       project_duration: {

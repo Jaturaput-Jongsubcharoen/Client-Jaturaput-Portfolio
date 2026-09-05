@@ -632,9 +632,9 @@
   margin-left: .5rem;               /* put icons to the right of the button */
 }
 
-/* Give the extra ML control room without changing button sizes or spacing. */
+/* Give any three-or-more optional controls room without changing button sizes. */
 @media (min-width: 769px) {
-  .project-panel__actions:has([data-badge="ML"]) {
+  .project-panel__actions:has(.project-panel__codebtn:nth-child(3)) {
     grid-column: 1 / -1;
   }
 
@@ -804,6 +804,12 @@
   
   .project-panel__actions {
     flex-wrap: wrap;
+    gap: .35rem;
+  }
+
+  .project-panel__code {
+    gap: .25rem;
+    margin-left: 0;
   }
 }
 

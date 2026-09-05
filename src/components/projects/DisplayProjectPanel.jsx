@@ -2,7 +2,7 @@
 import "./DisplayProjectPanel.css";
 import "../../styles/layout/ResponsiveGrid.css";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
-import { FaCompressAlt, FaExpandAlt, FaGithub } from "react-icons/fa";
+import { FaCompressAlt, FaExpandAlt, FaFilePdf, FaGithub } from "react-icons/fa";
 import SocialLinks from "../../data/JaturaputSocialLink"; // to get the readable label
 
 const githubLabel =
@@ -124,7 +124,12 @@ export default function DisplayProjectPanel({
 
   if (!selectedProject) return null;
 
-  const { github_frontend, github_backend, github_machine_learning } = selectedProject;
+  const {
+    project_report,
+    github_frontend,
+    github_backend,
+    github_machine_learning,
+  } = selectedProject;
   const galleryToggleLabel = galleryExpanded
     ? "Back to project view"
     : "Show all projects";
@@ -253,7 +258,7 @@ export default function DisplayProjectPanel({
             PROJECT TITLE:&nbsp; {selectedProject.title}
           </h4>
 
-          {/* Actions row: Details button + optional GitHub icons on the right */}
+          {/* Actions row: Details, optional report, then optional GitHub controls */}
           <div className="project-panel__actions">
             <button
               className="project-panel__details-btn"
@@ -263,8 +268,23 @@ export default function DisplayProjectPanel({
               <p>{showDetails ? "Hide Details" : "View Details"}</p>
             </button>
 
-            {(github_frontend || github_backend || github_machine_learning) && (
+            {(project_report || github_frontend || github_backend || github_machine_learning) && (
               <div className="project-panel__code">
+                {project_report && (
+                  <a
+                    className="project-panel__codebtn"
+                    href={project_report}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View project report"
+                    data-label="View Project Report"
+                    data-badge="RP"
+                    title="View Project Report"
+                  >
+                    <FaFilePdf className="project-panel__codeicon" />
+                  </a>
+                )}
+
                 {github_frontend && (
                 <a
                     className="project-panel__codebtn"
