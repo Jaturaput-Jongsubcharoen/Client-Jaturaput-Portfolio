@@ -97,7 +97,7 @@
 
   /* project panel: rows 6–8 (6/9), ALL 4 columns */
   .grid-container > .project-panel {
-    grid-area: 7 / 1 / 11 / 5;  /* was ... / 4 */
+    grid-area: 7 / 1 / 11 / 5;
     align-self: stretch;
     justify-self: stretch;
     width: 100%;
@@ -112,7 +112,7 @@
 
   /* details panel under it */
   .grid-container > .detail-panel {
-    grid-area: 11 / 1 / 15 / 5; /* was ... / 4 */
+    grid-area: 11 / 1 / 15 / 5;
     align-self: stretch;
     justify-self: stretch;
     min-width: 0;

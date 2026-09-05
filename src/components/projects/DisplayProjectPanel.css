@@ -2,7 +2,7 @@
 
 /* panel still fills the grid cell */
 .project-panel {
-  grid-area: 2 / 7 / 6 / 10;
+  grid-area: 2 / 7 / 7 / 10;
   align-self: stretch;
   justify-self: stretch;
   width: 100%;
@@ -65,9 +65,9 @@
 
 
 
-/* Inner layout: 3 columns × 6 rows
+/* Inner layout: 3 columns × 7 rows
    - Column 1: left arrow (single cell, vertically centered)
-   - Column 2: 6 stacked rows (header, image, hint, title, button, pager)
+   - Column 2: stacked rows (header, filters, image, hint, title, button, pager)
    - Column 3: right arrow (single cell, vertically centered)
 */
 .project-panel__layout {
@@ -80,17 +80,27 @@
 
   /* fixed heights for non-image rows (responsive with clamp) */
   --r1: clamp(28px, 3.2vh, 40px);  /* header */
+  --r2: clamp(40px, 5vh, 48px);     /* filters */
   --r3: clamp(18px, 2.4vh, 28px);  /* hint    */
   --r4: clamp(28px, 3.4vh, 44px);  /* title   */
   --r5: clamp(44px, 5.0vh, 56px);  /* button  */
   --r6: clamp(20px, 2.4vh, 28px);  /* pager   */
   /* row 2 (image) gets the rest and NEVER changes on hover */
-  grid-template-rows: var(--r1) 1fr var(--r3) var(--r4) var(--r5) var(--r6);
+  grid-template-rows: var(--r1) var(--r2) 1fr var(--r3) var(--r4) var(--r5) var(--r6);
   grid-template-columns: var(--side-col, 64px) 1fr var(--side-col, 64px);
 
   align-items: center;
   gap: 2rem;
   z-index: 1;
+}
+
+/* Fill the added desktop grid row; mobile keeps its existing flow layout. */
+@media (min-width: 769px) {
+  .project-panel > .project-panel__layout {
+    position: absolute;
+    inset: 0;
+    margin: clamp(1.25rem, 1.6vw, 2rem);
+  }
 }
 
 /* Let children adopt the parent grid directly */
@@ -112,7 +122,7 @@
   transition: background 0.2s ease, transform 0.2s ease;
   align-self: center;
   justify-self: center;
-  grid-row: 1 / -1;  /* spans rows 1..6 */
+  grid-row: 1 / -1;
   background: rgba(0,0,0,0.50);
 }
 .project-panel__arrow:hover {
@@ -120,8 +130,8 @@
   outline: none;
   transform: translateY(-1px);
 }
-.project-panel__arrow--left   { grid-column: 1; grid-row: 1 / 7; align-self: center; }
-.project-panel__arrow--right  { grid-column: 3; grid-row: 1 / 7; align-self: center; }
+.project-panel__arrow--left   { grid-column: 1; grid-row: 1 / 8; align-self: center; }
+.project-panel__arrow--right  { grid-column: 3; grid-row: 1 / 8; align-self: center; }
 
 /* Header: row 1, col 2 */
 .project-panel__header {
@@ -149,9 +159,100 @@
 }
 
 /* Image: row 2, col 2 — fills the available row height */
-.project-panel__image-wrap {
+.project-panel__filters {
   grid-column: 2;
   grid-row: 2;
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+}
+
+.project-panel__filter-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .4rem;
+  width: max-content;
+  min-width: calc(100% - .7rem);
+  min-height: 100%;
+  box-sizing: content-box;
+  padding: .2rem .35rem;
+}
+
+.project-panel__filters::-webkit-scrollbar {
+  height: 10px;
+}
+
+.project-panel__filters::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.project-panel__filters::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(125, 125, 125, 0.85), rgba(25, 25, 25, 0.9));
+  border-radius: 10px;
+  margin-block: 10px;
+  opacity: 0.5;
+}
+
+.project-panel__filters::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgb(183, 183, 183));
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: none !important;
+  filter: none;
+  transition: 0.5s;
+}
+
+.project-panel__filters:hover::-webkit-scrollbar-thumb,
+.project-panel__filters::-webkit-scrollbar-thumb:hover,
+.project-panel__filters::-webkit-scrollbar-thumb:active {
+  border: 1px solid rgb(0, 0, 0, 0.5);
+  box-shadow: none !important;
+  filter: none;
+}
+
+.project-panel__filter-btn {
+  flex: 0 0 auto;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 8px;
+  background: rgba(0,0,0,.28);
+  color: #fff;
+  cursor: pointer;
+  font-size: clamp(.65rem, 1.8vw, .78rem);
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1;
+  padding: .35rem .55rem;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  white-space: nowrap;
+}
+
+.project-panel__filter-btn:hover,
+.project-panel__filter-btn:focus-visible {
+  background: rgba(0,0,0,.45);
+  border-color: rgba(255,255,255,.9);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.project-panel__filter-btn[aria-pressed="true"] {
+  background: rgba(0,0,0,.70);
+  border-color: #fff;
+}
+
+.project-panel__image-wrap {
+  grid-column: 2;
+  grid-row: 3;
 
   /* fill the row and clip the scaled image */
   align-self: stretch;
@@ -232,7 +333,7 @@
 /* Hint: row 3, col 2 */
 .project-panel__hint {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 4;
   color: #eaeaea;
   margin: 0.25rem 0;
   font-size: 0.95rem;
@@ -243,7 +344,7 @@
 .project-panel__project-title {
   display: grid;
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 5;
   color: rgba(0,0,0,0.50);
   margin: 0.25rem 0;
   text-align: center;
@@ -252,7 +353,7 @@
 /* Details button: row 5, col 2 */
 .project-panel__details-btn {
   grid-column: 2;
-  grid-row: 5;
+  grid-row: 6;
   height: var(--r5);
   background: rgba(0,0,0,0.35);
   color: #ffffff;
@@ -284,6 +385,8 @@
 
 /* Pager: row 6, col 2 */
 .project-panel__pager {
+  grid-column: 2;
+  grid-row: 7;
 
   color: #ffffff;
   margin: 0.2rem;
@@ -319,7 +422,7 @@
 /* Actions row: keep details left, icons to the right in one line */
 .project-panel__actions {
   grid-column: 2; 
-  grid-row: 5;
+  grid-row: 6;
   display: flex;
   align-items: center;
   justify-content: center;          /* center the group */

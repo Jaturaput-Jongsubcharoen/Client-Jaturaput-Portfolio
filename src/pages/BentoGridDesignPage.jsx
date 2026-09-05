@@ -24,17 +24,56 @@ const CATEGORY_TO_TYPE = {
   architectural: "ARCHITECTURAL DESIGN",
 };
 
+const ALL_PROJECT_CATEGORIES = "ALL";
+
 export default function BentoGridDesignPage() {
   const [selectedCategory, setSelectedCategory] = useState("web");
+  const [selectedProjectCategory, setSelectedProjectCategory] = useState(ALL_PROJECT_CATEGORIES);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   const projectsSectionRef = useRef(null);
+  const projectDetailRef = useRef(null);
+  const wasShowingDetailsRef = useRef(false);
   const [scrollToCategory, setScrollToCategory] = useState(null);
 
-  const filteredProjects = useMemo(() => {
+  const mainTypeProjects = useMemo(() => {
     const type = CATEGORY_TO_TYPE[selectedCategory];
     return projects.filter((p) => p.type === type);
   }, [selectedCategory]);
+
+  const availableProjectCategories = useMemo(() => {
+    return [
+      ALL_PROJECT_CATEGORIES,
+      ...new Set(
+        mainTypeProjects.flatMap((project) =>
+          Array.isArray(project.project_categories)
+            ? project.project_categories.filter(
+                (category) => typeof category === "string" && category.trim()
+              )
+            : []
+        )
+      ),
+    ];
+  }, [mainTypeProjects]);
+
+  const activeProjectCategory = availableProjectCategories.includes(selectedProjectCategory)
+    ? selectedProjectCategory
+    : ALL_PROJECT_CATEGORIES;
+
+  const filteredProjects = useMemo(() => {
+    if (activeProjectCategory === ALL_PROJECT_CATEGORIES) return mainTypeProjects;
+
+    return mainTypeProjects.filter((project) =>
+      Array.isArray(project.project_categories) &&
+      project.project_categories.includes(activeProjectCategory)
+    );
+  }, [activeProjectCategory, mainTypeProjects]);
+
+  useEffect(() => {
+    if (selectedProjectCategory !== activeProjectCategory) {
+      setSelectedProjectCategory(activeProjectCategory);
+    }
+  }, [activeProjectCategory, selectedProjectCategory]);
 
   useEffect(() => {
     setSelectedProject(filteredProjects[0] ?? null);
@@ -58,10 +97,34 @@ export default function BentoGridDesignPage() {
     return () => cancelAnimationFrame(frame);
   }, [scrollToCategory, selectedProject]);
 
+  useEffect(() => {
+    const wasShowingDetails = wasShowingDetailsRef.current;
+    wasShowingDetailsRef.current = showDetails;
+
+    if (!showDetails || wasShowingDetails) return;
+    if (window.innerWidth > 768) return;
+
+    const frame = requestAnimationFrame(() => {
+      projectDetailRef.current?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [showDetails]);
+
   const handleCategoryChange = (cat) => {
     setSelectedCategory(cat);
+    setSelectedProjectCategory(ALL_PROJECT_CATEGORIES);
     setShowDetails(false);
     if (window.innerWidth <= 768) setScrollToCategory(cat);
+  };
+
+  const handleProjectCategoryChange = (category) => {
+    setSelectedProjectCategory(category);
+    setShowDetails(false);
   };
 
   const handlePrev = () => {
@@ -95,6 +158,10 @@ export default function BentoGridDesignPage() {
           sectionRef={projectsSectionRef}
           selectedProject={selectedProject}
           filteredProjects={filteredProjects}
+          availableProjectCategories={availableProjectCategories}
+          selectedProjectCategory={activeProjectCategory}
+          mainProjectCategory={selectedCategory}
+          onProjectCategoryChange={handleProjectCategoryChange}
           showDetails={showDetails}
           setShowDetails={setShowDetails}
           handlePrev={handlePrev}
@@ -105,6 +172,7 @@ export default function BentoGridDesignPage() {
       {/* Mount details when only open to avoid layout push on mobile */}
       {selectedProject && (
         <DisplayProjectDetailPanel
+          detailRef={projectDetailRef}
           selectedProject={selectedProject}
           showDetails={showDetails}
           calculateDuration={calculateDuration}

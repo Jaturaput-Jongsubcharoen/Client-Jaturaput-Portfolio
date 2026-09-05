@@ -2,6 +2,7 @@ import { formatDateWithOrdinal } from "../../helpers/FormatDate";
 import "./DisplayProjectDetailPanel.css";
 
 export default function DisplayProjectDetailPanel({
+  detailRef,
   selectedProject,
   showDetails,
   calculateDuration,
@@ -10,6 +11,7 @@ export default function DisplayProjectDetailPanel({
 
   return (
     <section
+      ref={detailRef}
       className={`detail-panel ${showDetails ? "is-open" : ""}`}
       aria-hidden={!showDetails}
     >

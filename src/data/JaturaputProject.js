@@ -32,6 +32,7 @@ const projects = [
       github_machine_learning: "",
       title: "Search Ranking & Recommender System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics"],
       software_and_tools: "Python, FastAPI, React, Information Retrieval, Search Ranking, TF-IDF, Cosine Similarity, Apriori, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -48,6 +49,7 @@ const projects = [
       github_machine_learning: "https://github.com/Jaturaput-Jongsubcharoen/RoadSense-AI-ML",
       title: "RoadSense AI - Road Intelligence & Agentic RAG System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Backend & API","Data & Analytics"],
       software_and_tools: "Python, TensorFlow, EfficientNetB0, Flask, React, Ollama, Llama 3.1, FAISS, Sentence Transformers, Agentic RAG, REST API, GitHub",
       work_types: "Individual Project",
       project_duration: {
@@ -64,6 +66,7 @@ const projects = [
       github_machine_learning: "",
       title: "Amazon Fashion Sentiment & NLP Analysis",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Data & Analytics"],
       software_and_tools: "Python, Pandas, Scikit-learn, NLTK, VADER, TextBlob, NLP, GridSearchCV, Machine Learning, GitHub",
       work_types: "Group Project",
       project_duration: {
@@ -80,6 +83,7 @@ const projects = [
       github_machine_learning: "",
       title: "Astro Track - Astronomy Database Management System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database"],
       software_and_tools: "Angular, TypeScript, ASP.NET Core, C#, REST API, Oracle SQL, PL/SQL, Docker, GitHub",
       work_types: "Group Project",
       project_duration: {
@@ -96,6 +100,7 @@ const projects = [
       github_machine_learning: "",
       title: "Java JDBC Player Registration System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Backend & API","Database","Cloud & DevOps"],
       software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, Docker, GitHub Actions, CI/CD, REST API",
       work_types: "Individual Project",
       project_duration: {
@@ -112,6 +117,7 @@ const projects = [
       github_machine_learning: "",
       title: "Deep Learning - Chest X-Ray Pneumonia Detection System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics"],
       software_and_tools: "Python, TensorFlow, Keras, React, Flask, REST API, GitHub",
       work_types: "Group Project",
       project_duration: {
@@ -128,6 +134,7 @@ const projects = [
       github_machine_learning: "",
       title: "KiddoLand - AI Storytelling Platform for Children",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Cloud & DevOps"],
       software_and_tools: "React, TypeScript, Material-UI, Python, FastAPI, Hugging Face AI, REST API, Vite, GitHub, Render",
       work_types: "Group Project",
       project_duration: {
@@ -144,6 +151,7 @@ const projects = [
       github_machine_learning: "",
       title: "FleetZero Innovation Jam – Next Stop Station (1st Place Hackathon)",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics"],
       software_and_tools: "React, JavaScript, REST API, AI, Digital Twin, GitHub, Render",
       work_types: "Group Project",
       project_duration: {
@@ -160,6 +168,7 @@ const projects = [
       github_machine_learning: "",
       title: "Bento Grid Design (Website-Mobile) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps","Mobile"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, EmailJS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -176,6 +185,7 @@ const projects = [
       github_machine_learning: "",
       title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -192,6 +202,7 @@ const projects = [
       github_machine_learning: "",
       title: "Thai Tea and Cake Café (Business Website)",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI"],
       software_and_tools: "Wix, Wix Restaurant Menu, Wix CMS",
       work_types: "Individual Project",
       project_duration: {
@@ -208,6 +219,7 @@ const projects = [
       github_machine_learning: "",
       title: "Monalist Channel (Travel & Storytelling Website)",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI"],
       software_and_tools: "Wix, Wix Editor",
       work_types: "Individual Project",
       project_duration: {
@@ -224,6 +236,7 @@ const projects = [
       github_machine_learning: "",
       title: "Amusement Park Database Management System",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Database","Data & Analytics"],
       software_and_tools: "Oracle SQL Developer, draw.io, Power Point",
       work_types: "Group of 3",
       project_duration: {
@@ -240,6 +253,7 @@ const projects = [
       github_machine_learning: "",
       title: "Clinic Appointment (Mobile App) Design",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI","Mobile"],
       software_and_tools: "Figma, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -256,6 +270,7 @@ const projects = [
       github_machine_learning: "",
       title: "Colission Fatality Prediction (Website & Machine Learning) Project",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics","Cloud & DevOps"],
       software_and_tools: "HTML, CSS, JavaScript, Python, React, Trained ML Model (.pkl), Render",
       work_types: "Individual Project",
       project_duration: {
@@ -272,6 +287,7 @@ const projects = [
       github_machine_learning: "",
       title: "Nutritional Tracking (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database","Cloud & DevOps"],
       software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, Photoshop",
       work_types: "Group of 5",
       project_duration: {
@@ -288,6 +304,7 @@ const projects = [
       github_machine_learning: "",
       title: "Tesla Specification (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI"],
       software_and_tools: "HTML, CSS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -304,6 +321,7 @@ const projects = [
       github_machine_learning: "",
       title: "Movie-Addict (Website) Project",
       type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI"],
       software_and_tools: "HTML, CSS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -320,6 +338,7 @@ const projects = [
       github_machine_learning: "",
       title: "Magazine Design",
       type: "MAGAZINE DESIGN",
+      project_categories: ["Publication Design","Editorial Design","Layout Design"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -336,6 +355,7 @@ const projects = [
       github_machine_learning: "",
       title: "Wittawii Company Work Experience",
       type: "ARCHITECTURAL DESIGN",
+      project_categories: ["Residential Design","Commercial Design","3D Visualization","Architectural Presentation"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, Photoshop",
       work_types: "Individual Project",
       project_duration: {
@@ -352,6 +372,7 @@ const projects = [
       github_machine_learning: "",
       title: "Undergraduate Architecture Project",
       type: "ARCHITECTURAL DESIGN",
+      project_categories: ["Concept Design","3D Visualization","Architectural Presentation"],
       software_and_tools: "3D SketchUp, 2D AutoCAD, Enscape, V-Ray, Photoshop, Illustrator",
       work_types: "Individual Project",
       project_duration: {

@@ -2,7 +2,7 @@
 
 /* Stacking above the project panel */
 .detail-panel {
-  grid-area: 2 / 4 / 6 / 7;
+  grid-area: 2 / 4 / 7 / 7;
   align-self: stretch;
   justify-self: stretch;
   position: relative;
@@ -99,6 +99,13 @@
 .detail-panel__section--duration { grid-area: duration; }
 .detail-panel__section--work     { grid-area: work; }
 .detail-panel__section--details  { grid-area: details; }
+
+/* Use the extra desktop row while preserving the existing phone layout. */
+@media (min-width: 769px) {
+  .detail-panel__box {
+    padding: clamp(1.25rem, 1.6vw, 2rem);
+  }
+}
 
 /* Motion accessibility */
 @media (prefers-reduced-motion: reduce) {
