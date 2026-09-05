@@ -87,8 +87,8 @@ const projects = [
       github_machine_learning: "",
       title: "Astro Track - Astronomy Database Management System",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database"],
-      software_and_tools: "Angular, TypeScript, ASP.NET Core, C#, REST API, Oracle SQL, PL/SQL, Docker, GitHub",
+      project_categories: ["Full-Stack","Frontend & UI","Backend & API","Database", "Cloud & DevOps"],
+      software_and_tools: "Angular, TypeScript, ASP.NET Core, C#, REST API, Oracle SQL, PL/SQL, Cloud & DevOps, CI/CD, Docker, GitHub",
       work_types: "Group Project",
       project_duration: {
         start: "2025-01-01",
@@ -105,8 +105,8 @@ const projects = [
       github_machine_learning: "",
       title: "Java JDBC Player Registration System",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["Backend & API","Database","Cloud & DevOps", "Containerization"],
-      software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, Docker, GitHub Actions, CI/CD, REST API",
+      project_categories: ["Backend & API","Database", "Containerization"],
+      software_and_tools: "Java, JavaFX, Spring Boot, Spring Data JPA, JDBC, Maven, Oracle SQL, H2, JUnit 5, CI, Docker, GitHub Actions, CI/CD, REST API",
       work_types: "Individual Project",
       project_duration: {
         start: "2026-08-01",
@@ -178,7 +178,7 @@ const projects = [
       title: "Bento Grid Design (Website-Mobile) Project - Version 2.0",
       type: "WEB & MOBILE DESIGN",
       project_categories: ["Full-Stack","Frontend & UI","Backend & API"],
-      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, Render, EmailJS, Photoshop",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, CI/CD, Docker, Render, EmailJS, Photoshop",
       work_types: "Individual Project",
       project_duration: {
         start: "2025-08-07",
@@ -196,7 +196,7 @@ const projects = [
       title: "Bento Grid Design (Website) Project - Version 1.0",
       type: "WEB & MOBILE DESIGN",
       project_categories: ["Full-Stack","Frontend & UI","Backend & API"],
-      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass,Render, Photoshop",
+      software_and_tools: "HTML, CSS, JavaScript, React, Node, Express, GitHub, MongoDB Compass, CI/CD, Docker, Render, Photoshop",
       work_types: "Individual Project",
       project_duration: {
         start: "2024-12-09",
