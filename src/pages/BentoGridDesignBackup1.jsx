@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import '../styles/BentoGridDesignCSS.css';
 
-import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';
-import Tesla from '../images/screenshots/Tesla(1900x1080).png';
-import NutriKcal from '../images/screenshots/Nutri-Kcal(1900x1080).png';
-import QueueMeMobileApp from '../images/screenshots/QueueMe-Mobile-App3(475x986).png';
+import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).webp';
+import Tesla from '../images/screenshots/Tesla(1900x1080).webp';
+import NutriKcal from '../images/screenshots/Nutri-Kcal(1900x1080).webp';
+import QueueMeMobileApp from '../images/screenshots/QueueMe-Mobile-App3(475x986).webp';
 
-import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).png';
+import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).webp';
 
-import AWIIHouseWorkExperience from '../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png';
+import AWIIHouseWorkExperience from '../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.webp';
 
 function BentoGridDesignBackup1() {
 

@@ -1,26 +1,26 @@
-import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).png";
-import Tesla from "../images/screenshots/Tesla(1900x1080).png";
-import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).png";
+import MovieAddict from "../images/screenshots/Movie-Addict(1900x1080).webp";
+import Tesla from "../images/screenshots/Tesla(1900x1080).webp";
+import NutriKcal from "../images/screenshots/Nutri-Kcal(1900x1080).webp";
 import ColissionFatalityPrediction from "../images/screenshots/Colission-Fatality-Prediction(1900x1080).png";
-import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).png";
-import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.png";
-import MonalistChannel from "../images/screenshots/Monalist-Channel(1900x1080).png";
-import ThaiTeaAndCakeCafe from "../images/screenshots/Thai-Tea-and-Cake-Cafe(1900x1080).png";
-import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
-import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
-import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
-import FleetZeroHackathon from "../images/screenshots/frontend-hackathon-next-stop-station(1900x1080).png";
-import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).png";
-import AstroTrack from "../images/screenshots/Astro-Track(1900x1080).png";
-import AmazonFashionDataset from "../images/screenshots/Amazon-Fashion-Dataset(1900x1080).png";
+import QueueMeMobileApp from "../images/screenshots/QueueMe-Mobile-App3(475x986).webp";
+import HeavenLandOracleSQLDeveloper from "../images/screenshots/HeavenLand-OracleSQLDeveloper(3000x1688)-300PxInch.webp";
+import MonalistChannel from "../images/screenshots/Monalist-Channel(1900x1080).webp";
+import ThaiTeaAndCakeCafe from "../images/screenshots/Thai-Tea-and-Cake-Cafe(1900x1080).webp";
+import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).webp";
+import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).webp";
+import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).webp";
+import FleetZeroHackathon from "../images/screenshots/frontend-hackathon-next-stop-station(1900x1080).webp";
+import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).webp";
+import AstroTrack from "../images/screenshots/Astro-Track(1900x1080).webp";
+import AmazonFashionDataset from "../images/screenshots/Amazon-Fashion-Dataset(1900x1080).webp";
 import RoadSenseAI from "../images/screenshots/RoadSense-AI(1900x1080).png";
 import SearchRankingRecommenderSystem from "../images/screenshots/Search-Ranking-Recommender-System(1900x1080).png";
 import JavaJDBCPlayerRegistrationSystem from "../images/screenshots/Java-JDBC-Player-Registration-System(1900x1080).png";
 
-import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.png";
+import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.webp";
 
-import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png";
-import UndergraduateArchitectureProject from "../images/screenshots/Undergraduate-Architecture-Project(2480x3508)-300PxInch.png";
+import AWIIHouseWorkExperience from "../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.webp";
+import UndergraduateArchitectureProject from "../images/screenshots/Undergraduate-Architecture-Project(2480x3508)-300PxInch.webp";
 
 
 const projects = [

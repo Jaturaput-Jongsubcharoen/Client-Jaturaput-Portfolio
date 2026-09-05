@@ -1,4 +1,4 @@
-import myPicture2 from "../../images/my_picture2_800x800.png";
+import myPicture2 from "../../images/my_picture2_800x800.webp";
 import "../../styles/layout/ResponsiveGrid.css";
 import "./DisplayMyPictureProfile.css"
 

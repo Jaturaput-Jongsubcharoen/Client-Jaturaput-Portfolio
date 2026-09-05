@@ -1,4 +1,4 @@
-import myPicture1 from "../../images/my_picture1_500x750.png";  // renamed file, no parentheses
+import myPicture1 from "../../images/my_picture1_500x750.webp";  // renamed file, no parentheses
 import "../../styles/layout/ResponsiveGrid.css";
 import "./DisplayMyPictureProfile2.css";
 

@@ -26,7 +26,7 @@
   top:  calc(var(--iy) * -100%);
 
   /* use a CSS variable for the background image (set in JSX) */
-  background: url("../../images/my_picture1_500x750.png") no-repeat 0 0 / 100% 100%;
+  background: url("../../images/my_picture1_500x750.webp") no-repeat 0 0 / 100% 100%;
 
   z-index: 20;
   pointer-events: none;

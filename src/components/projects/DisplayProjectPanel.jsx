@@ -47,6 +47,7 @@ export default function DisplayProjectPanel({
                 className="project-panel__image"
                 src={selectedProject.image}
                 alt={selectedProject.title}
+                decoding="async"
               />
               <div className="project-panel__image-hover">
                 <p>V I E W &nbsp;&nbsp; P R O J E C T</p>

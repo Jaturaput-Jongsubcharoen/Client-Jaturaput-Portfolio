@@ -5,7 +5,6 @@
   place-items: center;
   pointer-events: none;
   z-index: 10;
-
 }
 
 .folio-letter h2 {
@@ -18,10 +17,10 @@
 
 /* Staggered delays: F → O → L → i → O, 0.6s apart */
 .folio-letter--f  h2 { animation-delay: 0s; }
-.folio-letter--o1 h2 { animation-delay: 0.6s; }
-.folio-letter--l  h2 { animation-delay: 1.2s; }
-.folio-letter--i  h2 { animation-delay: 1.8s; }
-.folio-letter--o2 h2 { animation-delay: 2.4s; }
+.folio-letter--o1 h2 { animation-delay: -0.6s; }
+.folio-letter--l  h2 { animation-delay: -1.2s; }
+.folio-letter--i  h2 { animation-delay: -1.8s; }
+.folio-letter--o2 h2 { animation-delay: -2.4s; }
 
 @keyframes folio-font-cycle {
   0%   { font-weight: 300; }
