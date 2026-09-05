@@ -16,6 +16,7 @@ import AmazonFashionDataset from "../images/screenshots/Amazon-Fashion-Dataset(1
 import RoadSenseAI from "../images/screenshots/RoadSense-AI(1900x1080).png";
 import SearchRankingRecommenderSystem from "../images/screenshots/Search-Ranking-Recommender-System(1900x1080).png";
 import JavaJDBCPlayerRegistrationSystem from "../images/screenshots/Java-JDBC-Player-Registration-System(1900x1080).png";
+import VoiceActivatedSpeakerForDisabledPeopleLogo from "../images/screenshots/Voice_Activated_Speaker_for_Disabled_People_Logo.png";
 
 import MagazineDesign2 from "../images/screenshots/Magazine-Design2(7200x2480)-300PxInch.webp";
 
@@ -154,8 +155,8 @@ const projects = [
       image: FleetZeroHackathon,
       project_report: "/portfolio/Portfolio_Work_at_FleetZero_Jaturaput(Mac)Jongsubcharoen.pdf",
       link: "https://frontend-hackathon-next-stop-station.onrender.com/",
-      github_frontend: null,
-      github_backend: null,
+      github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/Frontend-Hackathon-Next-Stop-Station",
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/Backend-Hackathon-Next-Stop-Station-Node",
       github_machine_learning: "",
       title: "FleetZero Innovation Jam – Next Stop Station (1st Place Hackathon)",
       type: "WEB & MOBILE DESIGN",
@@ -259,29 +260,11 @@ const projects = [
       detail: "This database system provides a comprehensive framework for managing an amusement park's operations. It ensures data integrity while tracking visitors, ticket sales, attraction management, staff schedules, and seasonal variations. Key tables include Visitor, Ticket, SeasonDate, Attraction, Staff, WorkShift, TicketPurchased, Recording, and TicketAccess, facilitating seamless record-keeping and operational efficiency.",
     },
     {
-      image: QueueMeMobileApp,
-      project_report: "",
-      link: "https://bit.ly/ClinicMobileApp-Figma",
-      github_frontend: null,
-      github_backend: null,
-      github_machine_learning: "",
-      title: "Clinic Appointment (Mobile App) Design",
-      type: "WEB & MOBILE DESIGN",
-      project_categories: ["Frontend & UI"],
-      software_and_tools: "Figma, Photoshop",
-      work_types: "Individual Project",
-      project_duration: {
-        start: "2024-11-21",
-        end: "2024-12-05",
-      },
-      detail: "Designed the test design for Clinic Mobile App, mainly focused on appointment and arrangement flexibly, incorporating features such as AI Chatbot, Prescription, AI chatbot, prescription handling, medical news, and department navigation.",
-    },
-    {
       image: ColissionFatalityPrediction,
       project_report: "/portfolio/Collision_Fatality_Prediction_Report.pdf",
       link: "https://machine-learning-collision-fatality.onrender.com/",
       github_frontend: "https://github.com/Jaturaput-Jongsubcharoen/ML_client",
-      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/ML_server2",      
+      github_backend: "https://github.com/Jaturaput-Jongsubcharoen/ML_server2",
       github_machine_learning: "",
       title: "Colission Fatality Prediction (Website & Machine Learning) Project",
       type: "WEB & MOBILE DESIGN",
@@ -293,6 +276,42 @@ const projects = [
         end: "2025-05-28",
       },
       detail: "This web app predicts the likelihood of a fatal traffic collision in Toronto using machine learning models like Random Forest, KNN, SVM, Neural Networks, and Logistic Regression, based on user-selected road, driver, and environmental conditions. When you select a model, its performance is displayed to help you understand how well it predicts fatal outcomes by Jaturaput (Mac) Jongsubcharoen.",
+    },
+    {
+      image: QueueMeMobileApp,
+      project_report: "/portfolio/QueueMe-Report.pdf",
+      link: "https://www.figma.com/proto/WfzRsl5H8iqr1AYqWP2ycL/QueueMe?page-id=0:1&node-id=110-271&viewport=-518,315,0.25&t=ZEG9tF4v68uK2zM0-9&scaling=scale-down&content-scaling=fixed&starting-point-node-id=110:271&show-proto-sidebar=1",
+      github_frontend: null,
+      github_backend: null,
+      github_machine_learning: "",
+      title: "Clinic Appointment (Mobile App) Design",
+      type: "WEB & MOBILE DESIGN",
+      project_categories: ["Frontend & UI", "Software System Design"],
+      software_and_tools: "Figma, Photoshop, Microsoft Visio, draw.io, Microsoft Word, Microsoft PowerPoint, Software Requirements Specification (SRS), Requirements Analysis, User Stories, Use Case Modeling, Context Flow Diagrams, UML, Domain and Design Class Diagrams, Entity Relationship Diagrams (ERD), CRC Cards, System Sequence Diagrams, State Machine Diagrams, MVC Architecture, Facade Pattern, Singleton Pattern, Observer Pattern, Database Schema Design, Component and Deployment Diagrams, Gantt Charts",
+      work_types: "Group of 7",
+      project_duration: {
+        start: "2024-09-09",
+        end: "2024-12-05",
+      },
+      detail: "Personally designed the Queue.Me mobile UI/UX prototype shown in the project image and was the only team member responsible for creating and connecting the mobile screens in Figma. The linked interactive Figma prototype demonstrates how the mobile application works, including appointment scheduling, prescriptions, medical news, department navigation, AI chatbot features, and user management. The broader Queue.Me software system design was a collaborative team project in which all members participated in requirements analysis, subsystem planning, UML and database modeling, software architecture, design patterns, deployment planning, project management, and documentation.",
+    },
+    {
+      image: VoiceActivatedSpeakerForDisabledPeopleLogo,
+      project_report: "/portfolio/Voice_Activated_Speaker_for_Disabled_People_Report.pdf",
+      link: "/presentation/Voice_Activated_Speaker_for_Disabled_People_Presentation.pdf",
+      github_frontend: null,
+      github_backend: null,
+      github_machine_learning: "",
+      title: "Voice Activated Speaker for Disabled People",
+      type: "WEB & MOBILE DESIGN",
+      project_categories: ["Software System Design"],
+      software_and_tools: "Microsoft Visio, draw.io, Microsoft Word, Microsoft PowerPoint, Software Requirements Specification (SRS), Requirements Analysis, User Stories, Use Case Modeling, UML, Class Diagrams, CRC Cards, Swimlane Diagrams, State Machine Diagrams, Sequence Diagrams, Stakeholder Analysis, AODA Accessibility, Voice Recognition APIs, Google Cloud Speech-to-Text, Amazon Transcribe, Database Design, Smart Home Integration",
+      work_types: "Group of 4",
+      project_duration: {
+        start: "2024-05-22",
+        end: "2024-08-08",
+      },
+      detail: "Designed a software system for a voice-activated speaker that helps people with disabilities control smart-home devices, manage personalized accessibility settings, execute everyday tasks, and receive spoken feedback more independently. Defined the system scope, stakeholders, user stories, functional and nonfunctional requirements, web and mobile interfaces, voice-recognition integrations, authentication, data security, device compatibility, and system-health monitoring. Modeled the architecture and behavior through use cases, class and CRC models, swimlane workflows, state machines, and sequence diagrams covering voice-command capture, recognition, validation, task execution, error handling, and user feedback.",
     },
     {
       image: NutriKcal,
