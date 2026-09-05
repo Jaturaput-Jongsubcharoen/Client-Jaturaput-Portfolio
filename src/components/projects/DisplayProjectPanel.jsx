@@ -17,7 +17,7 @@ export default function DisplayProjectPanel({
 }) {
   if (!selectedProject) return null;
 
-  const { github_frontend, github_backend } = selectedProject;
+  const { github_frontend, github_backend, github_machine_learning } = selectedProject;
 
   return (
     <div className="project-panel">
@@ -71,7 +71,7 @@ export default function DisplayProjectPanel({
               <p>{showDetails ? "Hide Details" : "View Details"}</p>
             </button>
 
-            {(github_frontend || github_backend) && (
+            {(github_frontend || github_backend || github_machine_learning) && (
               <div className="project-panel__code">
                 {github_frontend && (
                 <a
@@ -98,6 +98,20 @@ export default function DisplayProjectPanel({
                     data-label={`${githubLabel} Backend`}   // tooltip
                     data-badge="BE"                         // NEW: corner badge
                     title={`${githubLabel} Backend`}
+                >
+                    <FaGithub className="project-panel__codeicon" />
+                </a>
+                )}
+                {github_machine_learning && (
+                <a
+                    className="project-panel__codebtn"
+                    href={github_machine_learning}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${githubLabel} Machine Learning`}
+                    data-label={`${githubLabel} Machine Learning`}
+                    data-badge="ML"
+                    title={`${githubLabel} Machine Learning`}
                 >
                     <FaGithub className="project-panel__codeicon" />
                 </a>

@@ -334,6 +334,13 @@
   margin-left: .5rem;               /* put icons to the right of the button */
 }
 
+/* Give the extra ML control room without changing button sizes or spacing. */
+@media (min-width: 769px) {
+  .project-panel__actions:has([data-badge="ML"]) {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Icon button */
 .project-panel__codebtn {
   position: relative;
