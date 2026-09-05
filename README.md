@@ -1,5 +1,7 @@
 # Client-Jaturaput-Portfolio (Frontend)
 
+[![CI](https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Jaturaput-Jongsubcharoen/Client-Jaturaput-Portfolio/actions/workflows/ci.yml)
+
 Frontend repository for Jaturaput's personal portfolio website.
 
 Live URL:
