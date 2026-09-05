@@ -7,7 +7,7 @@ import '../App.css';
 
 
 function AboutPage() {
-  const [array, setArray] = useState([]);
+  const [, setArray] = useState([]);
 
   const fetchAPI = async () => {
     try {
@@ -27,23 +27,23 @@ function AboutPage() {
     <>
       <NavigationBar />
       <body>
-        <div class="main-grid">
-          <div class="sub-grid">
+        <div className="main-grid">
+          <div className="sub-grid">
             <h3>Project: </h3>
             <p>This project is about ...</p>
             <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="sub-grid">
+          <div className="sub-grid">
             <h3>Project: </h3>
             <p>This project is about ...</p>
             <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="sub-grid">
+          <div className="sub-grid">
             <h3>Project: </h3>
             <p>This project is about ...</p>
             <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />
           </div>
-          <div class="sub-grid">
+          <div className="sub-grid">
             <h3>Project: </h3>
             <p>This project is about ...</p>
             <img src={MovieAddictLogo} alt="Movie-Addict-Logo2" />

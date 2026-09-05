@@ -5,7 +5,7 @@ import resumeDocs from "../../data/JaturaputResume";
 import transcripts from "../../data/JaturaputTranscripts";
 
 export default function SubQualificationsNav({
-  qualOpen, onHoverIn, onHoverOut, onPick, onOpenDoc, onOpenDocs
+  qualOpen, onHoverIn, onHoverOut, onOpenDocs
 }) {
   return (
     <>

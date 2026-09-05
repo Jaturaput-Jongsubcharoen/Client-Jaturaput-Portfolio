@@ -1,5 +1,3 @@
-import React from "react";
-
 export const formatDateWithOrdinal = (dateString) => {
   // Create a date object without time zone shift
   const [year, month, day] = dateString.split("-");

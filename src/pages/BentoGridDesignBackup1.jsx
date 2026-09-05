@@ -1,11 +1,5 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import NavigationBar from '../helpers/NavigationBar';
+import { useState } from 'react';
 import '../styles/BentoGridDesignCSS.css';
-
-import MovieAddictLogo from '../images/logos/Movie-Addict-Logo2.png';
-import jaturaputLogo from '../images/logos/jaturaput-logo.png';
-import MyPicture from '../images/my_picture1(500x750).png';
 
 import MovieAddict from '../images/screenshots/Movie-Addict(1900x1080).png';
 import Tesla from '../images/screenshots/Tesla(1900x1080).png';
@@ -15,7 +9,6 @@ import QueueMeMobileApp from '../images/screenshots/QueueMe-Mobile-App3(475x986)
 import MagazineDesign from '../images/screenshots/Magazine-Design(1900x1080).png';
 
 import AWIIHouseWorkExperience from '../images/screenshots/AWIIHouse-Work-Experience(3508x2480)-300PxInch.png';
-
 
 function BentoGridDesignBackup1() {
 
@@ -35,7 +28,7 @@ function BentoGridDesignBackup1() {
   ];
   
   // State for selected category and images
-  const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
+  const [, setSelectedCategory] = useState("web"); // Default category
   const [selectedImage, setSelectedImage] = useState(webDesignImages[0]); // Default image
   const [images, setImages] = useState(webDesignImages); // Default image array
   
@@ -86,7 +79,6 @@ function BentoGridDesignBackup1() {
         <title>Home Page</title>
         <link rel="stylesheet" type="text/css" href="portfolio-CSS.css" />
         <link rel="icon" type="logo/x-icon" href="logo/Movie-Addict-Logo2.png" />
-
 
       <script src="portfolio-script.js"></script>
       {

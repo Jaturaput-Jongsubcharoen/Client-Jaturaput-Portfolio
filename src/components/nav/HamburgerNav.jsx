@@ -45,22 +45,11 @@ export default function HamburgerNav({ onPickCategory }) {
 
 
   const closeCompose = () => setCompose(null);
-  const submitCompose = (e) => {
-    e.preventDefault();
-    if (!compose) return;
-    const { toEmail, from, cc, subject, body } = compose;
-    const fullBody = `From: ${from}\n\n${body}`;
-    const url = `mailto:${encodeURIComponent(toEmail)}`
-      + (subject ? `?subject=${encodeURIComponent(subject)}` : "")
-      + `${subject ? "&" : "?"}body=${encodeURIComponent(fullBody)}`
-      + (cc ? `&cc=${encodeURIComponent(cc)}` : "");
-    window.location.href = url;
-    setCompose(null);
-  };
 
   // ---- body lock + esc/arrow handling ----
   useEffect(() => {
     if (!open && !docPanel && !compose) return;
+    const button = buttonRef.current;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     if (open) firstLinkRef.current?.focus();
@@ -81,7 +70,7 @@ export default function HamburgerNav({ onPickCategory }) {
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prev;
-      buttonRef.current?.focus();
+      button?.focus();
     };
   }, [open, docPanel, compose]);
 

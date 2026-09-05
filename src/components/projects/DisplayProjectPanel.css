@@ -433,6 +433,10 @@
 
 /* 1) Make side columns slimmer on phones to widen the middle */
 @media (max-width: 768px) {
+  .project-panel {
+    scroll-margin-top: 1rem;
+  }
+
   .project-panel__project-title {
     grid-column: 1 / 4;  /* span under the arrows */
     padding-inline: calc(var(--side-col, 44px) + .5rem);

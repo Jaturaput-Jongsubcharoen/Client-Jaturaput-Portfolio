@@ -49,7 +49,7 @@ function BentoGridDesignBackup2() {
   ];
 
   // State for selected category and projects
-  const [selectedCategory, setSelectedCategory] = useState("web"); // Default category
+  const [, setSelectedCategory] = useState("web"); // Default category
   const [filteredProjects, setFilteredProjects] = useState(
     projects.filter((project) => project.type === "web & mobile design")
   ); // Default filtered projects

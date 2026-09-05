@@ -8,6 +8,7 @@ const githubLabel =
   SocialLinks.find(s => s.id === "github")?.label ?? "GitHub";
 
 export default function DisplayProjectPanel({
+  sectionRef,
   selectedProject,
   filteredProjects,
   showDetails,
@@ -20,7 +21,7 @@ export default function DisplayProjectPanel({
   const { github_frontend, github_backend, github_machine_learning } = selectedProject;
 
   return (
-    <div className="project-panel">
+    <div className="project-panel" ref={sectionRef}>
       <div className="project-panel__layout">
         <button
           onClick={handlePrev}

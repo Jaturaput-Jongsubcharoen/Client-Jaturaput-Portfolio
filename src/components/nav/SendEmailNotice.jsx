@@ -1,5 +1,5 @@
 // components/nav/SendEmailNotice.jsx
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./SendEmailNotice.css";
 
 /**
@@ -35,7 +35,6 @@ export default function SendEmailNotice({
       // start fade out
       setShown(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, type, title, message]);
 
   // Optional auto-close

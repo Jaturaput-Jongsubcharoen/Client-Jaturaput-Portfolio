@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import ResponsiveGrid from "../components/layout/ResponsiveGrid";
 
@@ -28,6 +28,8 @@ export default function BentoGridDesignPage() {
   const [selectedCategory, setSelectedCategory] = useState("web");
   const [selectedProject, setSelectedProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const projectsSectionRef = useRef(null);
+  const [scrollToCategory, setScrollToCategory] = useState(null);
 
   const filteredProjects = useMemo(() => {
     const type = CATEGORY_TO_TYPE[selectedCategory];
@@ -39,9 +41,27 @@ export default function BentoGridDesignPage() {
     setShowDetails(false); // close details when switching category
   }, [filteredProjects]);
 
+  useEffect(() => {
+    if (!scrollToCategory || selectedProject?.type !== CATEGORY_TO_TYPE[scrollToCategory]) return;
+
+    // Wait for the selected content and the menu's scroll-lock/focus cleanup.
+    const frame = requestAnimationFrame(() => {
+      if (window.innerWidth <= 768) {
+        projectsSectionRef.current?.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+      setScrollToCategory(null);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [scrollToCategory, selectedProject]);
+
   const handleCategoryChange = (cat) => {
     setSelectedCategory(cat);
     setShowDetails(false);
+    if (window.innerWidth <= 768) setScrollToCategory(cat);
   };
 
   const handlePrev = () => {
@@ -72,6 +92,7 @@ export default function BentoGridDesignPage() {
 
       {selectedProject && (
         <DisplayProjectPanel
+          sectionRef={projectsSectionRef}
           selectedProject={selectedProject}
           filteredProjects={filteredProjects}
           showDetails={showDetails}

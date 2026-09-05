@@ -10,7 +10,7 @@ import PaintLetters from '../components/letters/PaintLetters.jsx';
 
 import ProjectCategoryNav from '../components/nav/ProjectCategoryNav.jsx';
 import ContactsButton from "../components/buttons/ContactsButton.jsx";
-import ContactsMenu from '../components/buttons/ContactsMenu.jsx';
+import "../styles/ContactsMenu.css"; // Preserve styles previously loaded by the unused ContactsMenu import.
 
 import DisplayMyPicture from '../components/projects/DisplayMyPicture.jsx';
 import DisplayProject from '../components/projects/DisplayProject.jsx';

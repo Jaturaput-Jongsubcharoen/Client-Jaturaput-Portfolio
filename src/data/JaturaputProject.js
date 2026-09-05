@@ -8,7 +8,6 @@ import MonalistChannel from "../images/screenshots/Monalist-Channel(1900x1080).p
 import ThaiTeaAndCakeCafe from "../images/screenshots/Thai-Tea-and-Cake-Cafe(1900x1080).png";
 import BentoGridDesignV1 from "../images/screenshots/Bento-Grid-Design-v1(1920x1080).png";
 import BentoGridDesignV2 from "../images/screenshots/Bento-Grid-Design-v2(1920x1080).png";
-import FleetPulseDashboard from "../images/screenshots/Mockup-Drag-and-Drop-Eeature-Dashboard(1900x1080).png";
 import DeepLearningChestXRayPneumoniaDetection from "../images/screenshots/Deep-Learning-Pneumonia-Detection(1900x1080).png";
 import FleetZeroHackathon from "../images/screenshots/frontend-hackathon-next-stop-station(1900x1080).png";
 import KiddoLandPlatform from "../images/screenshots/KiddoLand-Platform(1900x1080).png";
