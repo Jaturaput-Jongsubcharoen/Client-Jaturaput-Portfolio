@@ -670,6 +670,13 @@
   color: #6e40c9; /* GitHub icon turns purple */
 }
 
+.project-panel__reportbtn,
+.project-panel__reportbtn:hover,
+.project-panel__reportbtn:focus-visible,
+.project-panel__reportbtn:active {
+  color: #fff;
+}
+
 /* Icon */
 .project-panel__codeicon {
   width: 20px;

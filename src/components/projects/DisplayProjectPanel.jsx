@@ -272,7 +272,7 @@ export default function DisplayProjectPanel({
               <div className="project-panel__code">
                 {project_report && (
                   <a
-                    className="project-panel__codebtn"
+                    className="project-panel__codebtn project-panel__reportbtn"
                     href={project_report}
                     target="_blank"
                     rel="noopener noreferrer"
