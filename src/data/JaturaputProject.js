@@ -160,7 +160,7 @@ const projects = [
       github_machine_learning: "",
       title: "FleetZero Innovation Jam – Next Stop Station (1st Place Hackathon)",
       type: "WEB & MOBILE DESIGN",
-      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics"],
+      project_categories: ["AI & Machine Learning","Full-Stack","Frontend & UI","Backend & API","Data & Analytics", "Hackathon"],
       software_and_tools: "React, JavaScript, REST API, AI, Digital Twin, GitHub, Render",
       work_types: "Group Project",
       project_duration: {
