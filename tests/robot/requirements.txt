@@ -1,0 +1,6 @@
+# Python dependencies for the SeleniumLibrary tests.
+# Selenium 4 includes "Selenium Manager", which downloads the correct
+# ChromeDriver automatically, so we do NOT need webdriver-manager.
+robotframework==7.1.1
+robotframework-seleniumlibrary==6.6.1
+selenium==4.25.0

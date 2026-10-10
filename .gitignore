@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 .env
+
+# Python virtual environment for Robot Framework tests
+.venv/
+
+# Robot Framework generated reports and screenshots
+tests/robot/reports/

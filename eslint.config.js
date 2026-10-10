@@ -5,7 +5,8 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  // Ignore build output and the Python virtual environment / Robot test reports.
+  { ignores: ['dist', '.venv', 'tests/robot/reports'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
